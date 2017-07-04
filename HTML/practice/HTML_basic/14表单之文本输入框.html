@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form action="1.php" method="get">
+	<!-- 表单分组 -->
+	<fieldset>
+	<legend>分组信息</legend>
+		用户名:<input type="text" name="username" maxlength="6">
+		密  码:<input type="password" name="password">
+		注  册:<input type="submit">
+		只  读:<input type="text" readonly="readonly" name="readonly" value="value">
+		未激活:<input type="text" name="disable" disabled="disabled" >
+		<br><br>
+		性  别:<input type="radio" name="gender" checked="checked">男
+		<input type="radio" name="gender">女
+		<br><br>
+
+		<!-- 下拉列表 -->
+		年  龄:<select>
+			<option>19</option>
+			<option>20</option>
+			<option>21</option>
+			<option selected="selected">22</option>
+			<option>23</option>
+		</select>
+		<!-- 下拉列表-多选项 -->
+		<select multiple="multiple">
+			<optgroup>省
+				<option>河北</option>
+				<option>山西</option>
+				<option>广东</option>
+				<option>浙江</option>
+			</optgroup>
+			<optgroup>市
+				<option>榆次</option>
+				<option>榆次</option>
+				<option>榆次</option>
+				<option>榆次</option>
+			</optgroup>
+		</select>
+		<br><br>
+
+		<!-- 多选框 -->
+		<input type="checkbox" name="">喝酒
+		<input type="checkbox" name="">吃肉
+		<input type="checkbox" name="">烫头
+		<br><br>
+
+		<!-- 多选文本框 -->
+		<textarea cols="30" rows="10"></textarea>
+
+		<!-- 文件上传控件 -->
+		<input type="file" name="file">
+
+		<!-- 普通按钮 -->
+		<input type="button" name="target" value="普通按钮">
+
+		<!-- 图片按钮 -->
+		<input type="image" src="resource/iOS.png">
+
+		<!-- 重置按钮 -->
+		<input type="reset">
+	</fieldset>
+	</form>
+</body>
+</html>

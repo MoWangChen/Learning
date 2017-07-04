@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>账户信息</legend>
+			<font color="red" size="2">*</font>用户名:<input type="text" name="user">
+			<br>
+			<br>
+			<font color="red" size="2">*</font>密 &nbsp;&nbsp;码:<input type="text" name="pwd">
+			<br>
+			<br>
+			性 &nbsp;&nbsp;别:<input type="radio" name="gender" checked="checked">男
+			<input type="radio" name="gender">女
+		</fieldset>
+		<fieldset>
+			<legend>公司信息</legend>
+			公司名称:<input type="text" name="comname">
+			<br>
+			<br>
+			公司所在地:
+			<select>
+				<option selected="selected">--请选择--</option>
+				<option>北京</option>
+				<option>天津</option>
+				<option>上海</option>
+			</select>
+			<select>
+				<option selected="selected">--请选择--</option>
+				<option>信阳</option>
+				<option>郑州</option>
+				<option>漯河</option>
+			</select>
+			<select>
+				<option selected="selected">--请选择--</option>
+				<option>信阳</option>
+				<option>郑州</option>
+				<option>漯河</option>
+			</select>
+			<br>
+			<br>
+			<input type="checkbox" checked="checked" name="type">IT
+			<input type="checkbox" name="type">家电
+			<input type="checkbox" name="type">服务
+			<input type="checkbox" name="type">工程
+			<br>
+			公司类型:
+			<select multiple="multiple">
+				<option selected="selected">--请选择--</option>
+				<option>信阳</option>
+				<option>郑州</option>
+				<option>漯河</option>
+			</select>
+			公司介绍:
+			<textarea></textarea>
+			<br>
+			营业执照上传:
+			<input type="file">
+			
+		</fieldset>
+	</form>
+</body>
+</html>

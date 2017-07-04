@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<body background="http://www.w3school.com.cn/i/eg_bg_06.gif">
+
+<form action="">
+
+<p><b>Note:</b>value属性规定输入字段的初始值</p>
+ First name:<br />
+<input type="text" name="firstname" value="John">
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+</form>
+<hr />
+
+<p><b>Note:</b>readonly属性规定输入字段为只读</p>
+<form action="">
+ First name:<br />
+<input type="text" name="firstname" value="John" readonly="readonly">
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+</form>
+<hr />
+
+<p><b>Note:</b>disabled属性规定输入字段是禁用的</p>
+<p><b>Note:</b>被禁用的元素是不可用和不可点击的</p>
+<p><b>Note:</b>被禁用的元素不会被提交</p>
+<form action="">
+ First name:<br />
+<input type="text" name="firstname" value="John" disabled="disabled">
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+</form>
+<hr />
+
+<p><b>Note:</b>size属性规定输入字段的尺寸(以字符计)</p>
+<form action="">
+ First name:<br />
+<input type="text" name="firstname" value="John" size="40">
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+</form>
+<hr />
+
+<p><b>Note:</b>maxlength属性规定输入字段允许的最大长度</p>
+<form action="">
+ First name:<br />
+<input type="text" name="firstname" value="John" maxlength="10">
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+</form>
+<hr />
+
+<h4>HTML 5之后增加属性</h4>
+<p><b>Note:</b>autocomplete属性规定表单或输入字段应该自动完成</p>
+<form action="" autocomplete="on">
+ First name:<br />
+<input type="text" name="firstname" value="John" maxlength="10">
+<br />
+ Last name:<br />
+<input type="text" name="lastname" autocomplete="off">
+<input type="submit">
+</form>
+<hr />
+
+<p><b>Note:</b>novalidate属性规定在提交表单时,不对表单数据进行验证</p>
+<form action="" novalidate="novalidate" id="form1">
+ Email address:<br />
+<input type="email" name="email" value="John@qq.com" />
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+<input type="submit">
+</form>
+<hr />
+
+<p><b>Note:</b>autofocus属性规定当页面加载时,(input)元素自动获得焦点></p>
+<form action="" id="form2">
+ First name:<br />
+<input type="text" name="firstname" value="John" maxlength="10">
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+<input type="submit">
+</form>
+<hr />
+
+
+<p><b>Note:</b>form属性规定(input)元素所属的一个或多个表单</p>
+<form action="" id="form3">
+ First name:<br />
+<input type="text" name="firstname" value="John" maxlength="10">
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+<input type="submit">
+</form>
+
+<p>下面的"author"字段位于form元素之外,但仍然是表单的一部分.</p>
+author:<input type="text" name="lname" form="form1 form2">
+
+<hr />
+
+<p><b>Note:</b>formaction属性规定当提交表单时处理改输入控件的文件的URL</p>
+<p><b>Note:</b>formenctype属性规定当提交表单时处理改输入控件的文件的编码方式,仅对post表单有效</p>
+<p><b>Note:</b>formmethod属性规定当提交表单的http方法</p>
+<p><b>Note:</b>formnovalidate属性规定当提交表单时不对数据进行验证</p>
+<p><b>Note:</b>formtarget属性规定当提交表单时在何处接收响应</p>
+
+<form action="https://www.baidu.com" id="form3">
+ First name:<br />
+<input type="text" name="firstname" value="John" maxlength="10">
+<br />
+ Last name:<br />
+<input type="text" name="lastname">
+<input type="submit">
+<input type="submit" formaction="http://im.qq.com" value="以管理员身份提交" />
+</form>
+<hr />
+
+
+<p><b>Note:</b>multiple属性规定用户在(input)元素中输入一个以上的值.</p>
+<form action="https://www.baidu.com">
+选择图片:
+<input type="file" name="img" multiple="multiple" />
+<input type="submit">
+</form>
+<hr />
+
+
+<p><b>Note:</b>pattern属性规定用于检查(input)元素值的正则表达式</p>
+<form action="https://www.baidu.com">
+国家代码:
+<input type="text" name="country_code" pattern="[A-z]{3}">
+<input type="submit">
+</form>
+<hr />
+
+<p><b>Note:</b>placeholder提示</p>
+<form action="https://www.baidu.com">
+<input type="text" name="user_serach" placeholder="Search Word">
+<input type="submit">
+</form>
+<hr />
+
+</body>
+
+</html>

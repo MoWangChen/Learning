@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor = "lightGray" style = "font-size:16px">
+
+
+
+<a href="#tips">有用的提示</a>
+<hr />
+
+<p>HTML 变量格式化</p>
+<p>爱因斯坦的公式</p>
+<p><var>E</var> = <var>m</var> <var>c</var><sup>2</sup></p>
+<hr />
+
+
+
+<p>code 元素不保留多余的空格和折行:</p>
+<p>如需解决该问题,您需要在pre元素中包围代码:</p>
+<code>
+<pre>
+var person = {
+		firstName:"Bill", 
+		lastName:"Gats", 
+		age:50
+}
+</pre>
+</code>
+<hr />
+
+
+
+<p>编程代码示例:</p>
+<code>
+var person = {firstName:"Bill", lastName:"Gats", age:50}
+</code>
+<hr />
+
+
+<a name="tips">有用的提示</a>
+<p>HTML samp 元素表示计算机输出示例:</p>
+<samp>
+demo.example.com login: Apr 12 09:10:17
+Linux 2.6.10-djklkl
+</samp>
+<hr />
+
+
+
+<p>HTML kbd 元素标识键盘输入:</p>
+<p><kbd>File | Open...</kbd></p>
+<hr />
+
+
+
+<p>如果您的浏览器支持 bdo,则本文将从右往左书写</p>
+<bdo dir = "rtl">
+This line will be written from right to left
+</bdo>
+<hr />
+
+
+
+<p>HTML cite 元素定义著作的标题</p>
+<p>浏览器通畅会以斜体显示cite元素</p>
+<img src = "img_the_scream.jpg" width = "220" height = "277" alt = "The Scream Img">
+<p><cite>The Scream</cite> by Edward Munch. Painted in 1893.</p>
+<hr />
+
+
+
+<p><dfn title = "World Health Organization">WHO</dfn> was found in 1948
+<p><dfn><abbr title = "World Health Organization">WHO</abbr></dfn> was found in 1948.</p>
+<p>对缩写进行标记能够为浏览器、翻译系统以及搜索引擎提供有用额信息.</p>
+<br />
+<p>以下内容引自WWF的网站:</p>
+<blockquote cite="https://www.worldwildlife.org/who/index.html">
+五十年来,WWF一直致力于保护自然界的未来.
+世界领先的环保组织,WWF工作于100个国家,
+并得到美国一百二十万会员及全球近五百万会员的支持.
+</blockquote>
+<br />
+<p><abbr title = "World Health Organization">WHO</abbr>成立于1948年.</p>
+<br />
+<p>WWF的目标是:<q>构建人与自然和谐共存的世界.</q></p>
+<hr />
+
+
+
+<p>一打有<del>二十个</del><ins>十二</ins>件.</p>
+
+<p>大多数浏览器会改写为删除文本和下划线文本.</p>
+<p>一些老式的浏览器会把删除文本和下划线文本显示为普通文本.</p>
+
+<hr />
+
+
+
+这是长的引用:
+<blockquote>
+这是长的引用,这是长的引用,这是长的引用,这是长的引用,这是长的引用
+</blockquote>
+
+这是短的引用:
+<q>
+这是短的引用
+</q>
+
+<p>
+使用blockquote元素的话,浏览器会插入换行和外边距,而q元素不会有任何特殊的呈现.
+</p>
+
+<hr />
+
+
+
+<p>
+如果您的浏览器支持 bi-directional override (bro),下一行会从右向左输入(trl);
+</p>
+<bdo dir = "rtl">
+Here is some Hebrew text
+</bdo>
+<hr />
+
+
+
+<abbr title = "etcetera">etc.
+</abbr>
+<br />
+<acronym title = "World Wide Web">WWW
+</acronym>
+<p>在某些浏览器中,当您把鼠标移至缩略词上时,title可用于展示表达的完整版本
+</p>
+<hr />
+
+
+
+<adress>
+Written by <a href = "mailto:xiepengxiang93@sina.com">Donald Duck </a>.<br />
+Visit us at:<br />
+Box 564, Disneyland<br />
+USA
+</adress>
+<hr />
+
+
+<code>Computer code</code>
+<br />
+<kbd>Keyboard input</kbd>
+<br />
+<tt>Teletype text</tt>
+<br />
+<p>
+<b>注释：</b>这些标签常用于显示计算机、编程代码
+</p> 
+<hr />
+
+
+<pre>
+这是预格式文本。
+他保留了    空格
+和 换行
+</pre>
+
+<pre>
+pre标签很适合显示计算机代码
+for i = 1 to 10
+	print i
+next i
+</pre>
+<hr/>
+
+
+
+<b>This text is bold</b>
+<br/>
+<strong>This text is strong</strong>
+<br/>
+<big>This text is big</big>
+<br/>
+<em>This text is emphasized</em>
+<br/>
+<hr/>
+
+
+
+
+<p style = "text-align:center;background-color:purple;">This is a test paragraph</p>
+
+<p>This is<br/>a paragraph<br/>with line breaks</p>
+
+
+
+<!--This is a comment-->
+
+
+
+<h1 align = "center" >My First Heading</h1>
+<h2 style = "text-align:center">This is a heading</h2>
+<h3 style = "font-family:verdana;color:red;font-size:12px;">This is a heading</h3>
+<h4>This is a heading</h4>
+
+
+
+<p>我的第一个段落</p>
+<p>second</p>
+<p>third</p>
+
+
+
+<br/>
+<br/>
+<br/>
+
+
+<a href = "https://wwww.baidu.com">This is a link</a>
+
+
+<!--
+<img src = "https://github.com/MoWangChen/MXDownloadManager/raw/master/ScreenShot/download.gif" width = "320" height = "568">
+-->
+
+
+</body>
+</html>

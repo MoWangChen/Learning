@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<body background="http://www.w3school.com.cn/i/eg_background.jpg">
+
+
+<!--把图像转换为图像映射-->
+<p>请把鼠标移动到图像上,看一下状态栏的坐标如何变化.
+<a href="http://www.baidu.com/">
+<img src="http://www.w3school.com.cn/i/eg_planets.jpg" ismap />
+</a>
+</p>
+
+<hr />
+
+
+
+<!--创建图像映射-->
+<p>请点击图像上的星球,把他们放大.</p>
+<img src="http://www.w3school.com.cn/i/eg_planets.jpg" border="0" usemap="#planetmap" alt="Planets">
+
+<map name="planetmap" id="planetmap">
+
+<area 
+shape="circle" 
+coords="180,139,14"
+href="http://www.w3school.com.cn/example/html/venus.html"
+target="_blank"
+alt="Venus" />
+
+<area
+shape="rect"
+coords="0,0,110,260"
+href="http://www.w3school.com.cn/example/html/sun.html"
+target="_blank"
+alt="Sun" />
+
+</map>
+
+<p>
+<b>注释:</b>img元素中的"usemap"属性引用map元素中的"id"或"name"属性(根据浏览器),所以我们同时向map元素添加了"id"和"name"属性.
+</p>
+
+<hr />
+
+
+
+<!--浮动图像-->
+<p><img src="http://www.w3school.com.cn/i/eg_cute.gif" align="left">带有图像的一个段落.图像的align属性设置为"left".图像将浮动到文本的左侧.
+</p>
+
+<p>
+<img src="http://www.w3school.com.cn/i/eg_cute.gif" align="right">带有图像的一个段落.图像的align属性设置为"right".图像将浮动到文本的右侧.
+</p>
+<hr />
+
+
+<h4>未设置对齐方式的图像:</h4>
+<p>图像<img src="http://www.w3school.com.cn/i/eg_cute.gif">在文本中</p>
+
+<h4>已设置对齐方式的图像:</h4>
+<p>图像<img src="http://www.w3school.com.cn/i/eg_cute.gif" align="bottom">在文本中</p>
+<p>图像<img src="http://www.w3school.com.cn/i/eg_cute.gif" align="middle">在文本中</p>
+<p>图像<img src="http://www.w3school.com.cn/i/eg_cute.gif" align="top">在文本中</p>
+<p>请注意,bottom对齐方式是默认的对齐方式</p>
+
+
+
+
+<h4>图像背景</h4>
+<p>gif 和 jpg 文件均可用作HTML背景</p>
+<p>如果图像小于页面,图像会进行重复</p>
+<hr />
+
+
+
+<!--跳转链接-->
+<p>
+<a href="/index.html">本文本</a>是一个指向本网站中的一个页面的链接.</p>
+<a href="https://www.baidu.com/" target="_blank">本文本</a>是一个指向万维网的连接</p>
+
+<a href="https://www.baidu.com/">
+<img src="https://github.com/MoWangChen/MXDownloadManager/raw/master/ScreenShot/download.gif">
+</a>
+</p>
+<hr />
+
+
+
+<!--电子邮件链接-->
+<p>这是邮件链接:
+<a href="mailto:xiepengxiang93@sina.com?subject=Hello%20again">发送邮件
+</a>
+</p>
+
+<p>这是另一个mailto链接
+<a href="mailto:xiepengxiang93@sina.com?cc=xiepengxiang@sina.com&bcc=someoneelse@sina.com&subject=Summer%20Party&body=You%20are%20invited%20a%20big%20summer%20party!">发送邮件
+</a>
+</p>
+
+
+
+
+
+</body>
+</html>

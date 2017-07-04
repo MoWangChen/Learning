@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.header, .main, .footer{
+			width: 500px;
+		}
+		.header{
+			height: 100px;
+			background: #014532;
+		}
+		.main{
+			/*height: 200px;*/
+			/*background: #901324;*/
+			margin: 10px 0;
+		}
+		.main .content{
+			width: 300px;
+			height: 200px;
+			background: orange;
+			margin-top: -100px;
+			float: left;
+		}
+		.main .sidebar{
+			width: 190px;
+			height: 200px;
+			/*margin-left: 10px;*/
+			background: blue;
+			float: right;;
+		}
+		.footer{
+			height: 100px;
+			background: #333;
+		}
+		.clearfix:after{
+			content: ".baqidfjkad ";
+			display: block;
+			height: 0;
+			line-height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+		/*兼容ie浏览器*/
+		.clearfix{
+			zoom:1;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="header">
+		
+	</div>
+	<div class="main clearfix">
+		<div class="content"></div>
+		<div class="sidebar"></div>
+	</div>
+	<div class="footer">
+		
+	</div>
+
+</body>
+</html>

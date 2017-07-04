@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body, ul, li, p, h1, h2, h3, h4, h5, h6, dl, dt, input{
+			padding: 0;
+			margin: 0;
+		}
+		img{
+			border: 0 none;
+		}
+		li{
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		input{
+			border: 0 none;
+			outline-style: none;
+		}
+		.fl{
+			float: left;
+		}
+		.fr{
+			float: right;
+		}
+		.header{
+			width: 980px;
+			height: 39px;
+			margin: 20px auto 0;
+		}
+		.logo{
+			width: 179px;
+			height: 39px;
+		}
+		.search{
+			width: 195px;
+			height: 39px;
+		}
+		.search input[type="text"]{
+			width: 163px;
+			height: 28px;
+			border: 1px solid #ececec;
+			vertical-align: top;
+		}
+		.search input[type="button"]{
+			width: 30px;
+			height: 30px;
+			vertical-align: top;
+			background: url('../resource/search2.jpg');
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<!-- .header>.logo>img[src="images/logo.jpg"]+^.search>input[type="text"]+input[type="button"] -->
+	<div class="header">
+		<div class="logo fl"><img src="../resource/logo.jpg" alt=""></div>
+		<div class="search fr"><input type="text" value="请输入..."><input type="button"></div>
+	</div>
+
+</body>
+</html>

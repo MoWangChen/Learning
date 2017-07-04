@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.box{
+			font-size: 20px;
+			line-height: 2;
+		}
+		p{
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+
+	<!-- 行高 单位除了像素以外,行高都是与文字大小乘积 -->
+	<div class="box">
+		扯淡
+	</div>
+
+	<!-- 子元素行高:不带单位时,行高是和子元素文字大小乘积, em和%的行高是和父元素文字大小相乘.行高以像素为单位,就是定义的行高值 -->
+	<div class="box">
+		<p>
+			扯淡
+		</p>
+	</div>
+
+</body>
+</html>

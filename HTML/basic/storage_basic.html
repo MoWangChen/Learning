@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<body background="http://www.w3school.com.cn/i/eg_bg_06.gif">
+
+<div id="result"></div>
+
+<script>
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+	//Store
+	//localStorage.setItem("lastname","Gates");
+	document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+}else {
+	document.getElementById("result").innerHTML = "Sorry, your browser can't support storage";
+}
+</script>
+<hr />
+
+<h4>localStorage</h4>
+
+<script>
+ function clickCounter() {
+   if(typeof(Storage) !== "undefined"){
+     if(localStorage.clickcount) {
+       localStorage.clickcount = Number(localStorage.clickcount) + 1;
+     }else {
+       localStorage.clickcount = 1;
+     }
+     document.getElementById("result").innerHTML = "您已经点了" + localStorage.clickcount + "次";
+   }else {
+   	  document.getElementById("result").innerHTML = "Sorry, your browser can't support storage";
+   }
+ }
+
+</script>
+
+<p><button onclick="clickCounter()" type="button">请点击这里!</button></p>
+<p>请关闭浏览器或标签页,然后再试一次,计数器将继续计数</p>
+
+<hr />
+
+<h4>sessionStorage</h4>
+
+<script>
+  function clickCounter1() {
+    if (typeof(Storage) !== "undefined"){
+      if (sessionStorage.clickcount) {
+        sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+      }else {
+        sessionStorage.clickcount = 1;
+      } 
+      document.getElementById("result").innerHTML = "您已经点了" + sessionStorage.clickcount + "次";
+    }else {
+      document.getElementById("result").innerHTML = "Sorry, your browser can't support storage";
+    }
+  }
+</script>
+
+<p><button onclick="clickCounter1()" type="button">请点击这里!</button></p>
+<p>请关闭浏览器或标签页,然后再试一次,计数器会重置</p>
+
+</body>
+
+</html>

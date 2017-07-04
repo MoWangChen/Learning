@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<body background="http://www.w3school.com.cn/i/eg_bg_06.gif">
+
+<canvas id="myCanvas" width="200" height="100">
+</canvas>
+
+<script type="text/javascript">
+  var c = document.getElementById("myCanvas");
+  var cxt = c.getContext("2d");
+  cxt.fillStyle = "#33CC66";
+  cxt.fillRect(0,0,150,75);
+</script>
+<hr />
+
+<canvas id="myCanvas1" width="200" height="100">
+</canvas>
+
+<script text="text/javascript">
+  var c = document.getElementById("myCanvas1");
+  var cxt = c.getContext("2d");
+  cxt.fillStyle = "#33CC66";
+  cxt.moveTo(10,10);
+  cxt.lineTo(150,50);
+  cxt.lineTo(10,50);
+  cxt.stroke();
+</script>
+<hr />
+
+<canvas id="myCanvas2" width="200" height="100" style="border:3px">
+</canvas>
+
+<script text="text/javascript">
+  var c = document.getElementById("myCanvas2");
+  var cxt = c.getContext("2d");
+  cxt.fillStyle = "#ff0000";
+  cxt.beginPath();
+  cxt.arc(70,18,15,0,Math.PI*2,true);
+  cxt.closePath();
+  cxt.fill();
+</script>
+<hr />
+
+<canvas id="myCanvas3" width="200" height="100" style="border:1px solid #c3c3c3">
+</canvas>
+
+<script text="text/javascript">
+  var c = document.getElementById("myCanvas3");
+  var cxt = c.getContext("2d");
+  var grd = cxt.createLinearGradient(0,0,175,50);
+  grd.addColorStop(0,"#ff0000");
+  grd.addColorStop(1,"#00ff00");
+  cxt.fillStyle = grd;
+  cxt.fillRect(0,0,175,50);
+</script>
+<hr />
+
+<canvas id="myCanvas4" width="200" height="100" style="border:3px solid #c3c3c3">
+</canvas>
+
+<script text="text/javascript">
+  var c = document.getElementById("myCanvas4");
+  var cxt = c.getContext("2d");
+  var img = new Image();
+  img.src = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1487567817517&di=7e7d6a639c067a7841816181c35aa45e&imgtype=0&src=http%3A%2F%2Fimg.citscq.com%2Fupfiles%2F2014%2F10%2F08%2F151553543.jpg";
+  cxt.drawImage(img,0,0);
+</script>
+<hr />
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.box{
+			width: 100px;
+			height: 100px;
+			background: #eee;
+			/*静态定位*/
+			/*position: static;*/
+			/*绝对定位*/
+			position: absolute;
+			bottom: 100px;
+		}
+		.box1{
+			width: 200px;
+			height: 200px;
+			background: green;
+		}
+		.father{
+			width: 300px;
+			height: 300px;
+			background: gray;
+			position: absolute;;
+		}
+		.baby{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background: orange;
+			/*值越大,元素越在上面*/
+			z-index: 2;
+		}
+		.baby1{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box1">
+		
+	</div>
+	<div class="father">
+		<div class="box">
+		
+		</div>
+	</div>
+	<span class="baby"></span>
+	<span class="baby1"></span>
+
+</body>
+</html>

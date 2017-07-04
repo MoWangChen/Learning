@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		input{
+			border: 0 none;			/*去掉边框*/
+			outline-style: none;	/*去掉轮廓线*/
+		}
+		.username{
+			background: lightgray;
+			border: 1px dashed darkgray;
+		}
+		.username:focus{
+			background-color: red;
+		}
+		.email{
+			border-bottom: 1px dashed red;
+		}
+		.search{
+			border: 1px solid #999999;
+			background: url(resource/iOS.png) no-repeat right;
+		}
+	</style>
+</head>
+<body>
+
+	<label for="username">用户名:</label><input type="text" class="username" id="username"><br>
+	<label>邮  箱:</label><input type="text" class="email"><br>
+	<label>搜索一下:</label><input type="text" class="search"><br>
+
+</body>
+</html>
