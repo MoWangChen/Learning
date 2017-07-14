@@ -12,6 +12,9 @@
 #import "TransformViewController.h"
 #import "ReplicatorViewController.h"
 #import "EmitterViewController.h"
+#import "EAGLViewController.h"
+#import "TransactionViewController.h"
+#import "PresentationViewController.h"
 
 @interface ViewController ()
 
@@ -28,7 +31,22 @@
 {
     [super viewDidAppear:animated];
     
-    [self testEmitter];
+    [self testTransaction];
+}
+
+- (void)testPresentation
+{
+    [self presentViewController:[PresentationViewController new] animated:YES completion:nil];
+}
+
+- (void)testTransaction
+{
+    [self presentViewController:[TransactionViewController new] animated:YES completion:nil];
+}
+
+- (void)testEAGLLayer
+{
+    [self presentViewController:[EAGLViewController new] animated:YES completion:nil];
 }
 
 - (void)testEmitter

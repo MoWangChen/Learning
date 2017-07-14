@@ -7,8 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "EAGLViewController.h"
+#import "EmitterViewController.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -17,9 +19,34 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    [self testTabbarControllerFade];
+    
     return YES;
 }
 
+- (void)testTabbarControllerFade
+{
+    _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    EmitterViewController *emitter = [[EmitterViewController alloc] init];
+    EAGLViewController *eagl = [[EAGLViewController alloc] init];
+    
+    UITabBarController *tabbar = [[UITabBarController alloc] init];
+    tabbar.viewControllers = @[emitter, eagl];
+    tabbar.delegate = self;
+    _window.rootViewController = tabbar;
+    [_window makeKeyAndVisible];
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
+{
+    // set up crossfade transition
+    CATransition *transition = [CATransition animation];
+    transition.type = kCATransitionFade;
+    // apply transition to tabbar controller's view
+    [_window.rootViewController.view.layer addAnimation:transition forKey:nil];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

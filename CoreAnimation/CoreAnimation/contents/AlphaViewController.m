@@ -10,6 +10,8 @@
 
 @interface AlphaViewController ()
 
+
+
 @end
 
 @implementation AlphaViewController
@@ -26,6 +28,11 @@
     
     self.view.backgroundColor = [UIColor lightGrayColor];
     
+    [self testAlpha];
+}
+
+- (void)testAlpha
+{
     [self testView];
     [self testLayer];
 }
