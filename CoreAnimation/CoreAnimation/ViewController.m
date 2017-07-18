@@ -15,6 +15,7 @@
 #import "EAGLViewController.h"
 #import "TransactionViewController.h"
 #import "PresentationViewController.h"
+#import "TimingFunctionController.h"
 
 @interface ViewController ()
 
@@ -31,7 +32,12 @@
 {
     [super viewDidAppear:animated];
     
-    [self testTransaction];
+    [self testTimingFunction];
+}
+
+- (void)testTimingFunction
+{
+    [self presentViewController:[TimingFunctionController new] animated:YES completion:nil];
 }
 
 - (void)testPresentation
