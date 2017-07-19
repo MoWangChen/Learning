@@ -14,6 +14,10 @@
 		DD1CCB9E1F18699200846E02 /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1CCB9D1F18699200846E02 /* PresentationViewController.m */; };
 		DD2964771F1DA95100BE4172 /* TimingFunctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2964761F1DA95100BE4172 /* TimingFunctionController.m */; };
 		DD29647A1F1DAC2500BE4172 /* TimingFunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2964791F1DAC2500BE4172 /* TimingFunctionTool.m */; };
+		DD2964841F1F2FC500BE4172 /* InstrumentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2964831F1F2FC500BE4172 /* InstrumentsViewController.m */; };
+		DD2964941F1F3ADF00BE4172 /* twitterlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2964931F1F3ADF00BE4172 /* twitterlogo.png */; };
+		DD2964961F1F3B2300BE4172 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2964951F1F3B2300BE4172 /* Pause.png */; };
+		DD2964981F1F3B2D00BE4172 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = DD2964971F1F3B2D00BE4172 /* Play.png */; };
 		DD90BA921F00F71500DDC88C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD90BA911F00F71500DDC88C /* main.m */; };
 		DD90BA951F00F71500DDC88C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD90BA941F00F71500DDC88C /* AppDelegate.m */; };
 		DD90BA981F00F71500DDC88C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD90BA971F00F71500DDC88C /* ViewController.m */; };
@@ -43,6 +47,11 @@
 		DD2964761F1DA95100BE4172 /* TimingFunctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingFunctionController.m; sourceTree = "<group>"; };
 		DD2964781F1DAC2500BE4172 /* TimingFunctionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingFunctionTool.h; sourceTree = "<group>"; };
 		DD2964791F1DAC2500BE4172 /* TimingFunctionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingFunctionTool.m; sourceTree = "<group>"; };
+		DD2964821F1F2FC500BE4172 /* InstrumentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstrumentsViewController.h; sourceTree = "<group>"; };
+		DD2964831F1F2FC500BE4172 /* InstrumentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstrumentsViewController.m; sourceTree = "<group>"; };
+		DD2964931F1F3ADF00BE4172 /* twitterlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = twitterlogo.png; sourceTree = "<group>"; };
+		DD2964951F1F3B2300BE4172 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
+		DD2964971F1F3B2D00BE4172 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
 		DD90BA8D1F00F71500DDC88C /* CoreAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD90BA911F00F71500DDC88C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DD90BA931F00F71500DDC88C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,6 +140,25 @@
 			path = CAMediaTimingFunction;
 			sourceTree = "<group>";
 		};
+		DD2964811F1F0A7600BE4172 /* Instruments */ = {
+			isa = PBXGroup;
+			children = (
+				DD2964821F1F2FC500BE4172 /* InstrumentsViewController.h */,
+				DD2964831F1F2FC500BE4172 /* InstrumentsViewController.m */,
+			);
+			path = Instruments;
+			sourceTree = "<group>";
+		};
+		DD2964921F1F3AD500BE4172 /* avatar */ = {
+			isa = PBXGroup;
+			children = (
+				DD2964931F1F3ADF00BE4172 /* twitterlogo.png */,
+				DD2964951F1F3B2300BE4172 /* Pause.png */,
+				DD2964971F1F3B2D00BE4172 /* Play.png */,
+			);
+			path = avatar;
+			sourceTree = "<group>";
+		};
 		DD90BA841F00F71500DDC88C = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +188,7 @@
 				DD1CCB971F1777DB00846E02 /* 隐式动画&过渡动画 */,
 				DD1CCB9B1F18697400846E02 /* 呈现树 */,
 				DD2964711F1DA86300BE4172 /* 自定义缓冲函数 */,
+				DD2964811F1F0A7600BE4172 /* Instruments */,
 				DD90BA931F00F71500DDC88C /* AppDelegate.h */,
 				DD90BA941F00F71500DDC88C /* AppDelegate.m */,
 				DD90BA961F00F71500DDC88C /* ViewController.h */,
@@ -168,6 +197,7 @@
 				DD90BA9C1F00F71500DDC88C /* Assets.xcassets */,
 				DD90BA9E1F00F71500DDC88C /* LaunchScreen.storyboard */,
 				DD90BAA11F00F71500DDC88C /* Info.plist */,
+				DD2964921F1F3AD500BE4172 /* avatar */,
 				DD90BA901F00F71500DDC88C /* Supporting Files */,
 			);
 			path = CoreAnimation;
@@ -293,7 +323,10 @@
 			files = (
 				DD90BAA01F00F71500DDC88C /* LaunchScreen.storyboard in Resources */,
 				DD90BA9D1F00F71500DDC88C /* Assets.xcassets in Resources */,
+				DD2964941F1F3ADF00BE4172 /* twitterlogo.png in Resources */,
 				DD90BA9B1F00F71500DDC88C /* Main.storyboard in Resources */,
+				DD2964961F1F3B2300BE4172 /* Pause.png in Resources */,
+				DD2964981F1F3B2D00BE4172 /* Play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +343,7 @@
 				DD2964771F1DA95100BE4172 /* TimingFunctionController.m in Sources */,
 				DDD418601F0BABB00080992D /* ScrollView.m in Sources */,
 				DDD418531F05FC2C0080992D /* SolidViewController.m in Sources */,
+				DD2964841F1F2FC500BE4172 /* InstrumentsViewController.m in Sources */,
 				DD1CCB9A1F1777FF00846E02 /* TransactionViewController.m in Sources */,
 				DDFE56AD1F037D470041BB3A /* AlphaViewController.m in Sources */,
 				DDD418591F068E470080992D /* TransformViewController.m in Sources */,

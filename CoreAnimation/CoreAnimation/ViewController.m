@@ -16,6 +16,7 @@
 #import "TransactionViewController.h"
 #import "PresentationViewController.h"
 #import "TimingFunctionController.h"
+#import "InstrumentsViewController.h"
 
 @interface ViewController ()
 
@@ -32,7 +33,13 @@
 {
     [super viewDidAppear:animated];
     
-    [self testTimingFunction];
+    [self testInstruments];
+}
+
+- (void)testInstruments
+{
+    [self presentViewController:[InstrumentsViewController new] animated:YES
+                     completion:nil];
 }
 
 - (void)testTimingFunction
