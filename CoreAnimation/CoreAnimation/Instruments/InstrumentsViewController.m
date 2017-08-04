@@ -7,11 +7,13 @@
 //
 
 #import "InstrumentsViewController.h"
+#import "YYFPSLabel.h"
 
 @interface InstrumentsViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) YYFPSLabel *fpsLabel;
 
 @end
 
@@ -27,6 +29,11 @@
     self.items = array;
     [self.view addSubview:self.tableView];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
+    
+        _fpsLabel = [YYFPSLabel new];
+        _fpsLabel.frame = CGRectMake(200, 200, 50, 30);
+        [_fpsLabel sizeToFit];
+        [self.view addSubview:_fpsLabel];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
@@ -39,8 +46,8 @@
 {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     NSDictionary *item = self.items[indexPath.row];
-//    NSString *filePath = [[NSBundle mainBundle] pathForResource:item[@"image"] ofType:nil];
-//    cell.imageView.image = [UIImage imageWithContentsOfFile:filePath];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:item[@"image"] ofType:nil];
+    cell.imageView.image = [UIImage imageWithContentsOfFile:filePath];
     cell.imageView.image = [UIImage imageNamed:item[@"image"]];
     cell.imageView.backgroundColor = [UIColor whiteColor];
     cell.textLabel.text = item[@"name"];
@@ -56,7 +63,7 @@
     cell.textLabel.layer.shadowOpacity = 0.5;
     
     // rasterize
-    cell.layer.shouldRasterize = YES;
+//    cell.layer.shouldRasterize = YES;
     cell.layer.rasterizationScale = [UIScreen mainScreen].scale;
     
     return cell;

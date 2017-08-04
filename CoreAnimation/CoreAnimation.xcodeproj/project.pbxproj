@@ -12,6 +12,8 @@
 		DD1CCB921F161CBC00846E02 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1CCB911F161CBC00846E02 /* OpenGLES.framework */; };
 		DD1CCB9A1F1777FF00846E02 /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1CCB991F1777FF00846E02 /* TransactionViewController.m */; };
 		DD1CCB9E1F18699200846E02 /* PresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD1CCB9D1F18699200846E02 /* PresentationViewController.m */; };
+		DD27AACA1F238450002D4CEE /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = DD27AAC71F238450002D4CEE /* YYFPSLabel.m */; };
+		DD27AACB1F238450002D4CEE /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD27AAC91F238450002D4CEE /* YYWeakProxy.m */; };
 		DD2964771F1DA95100BE4172 /* TimingFunctionController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2964761F1DA95100BE4172 /* TimingFunctionController.m */; };
 		DD29647A1F1DAC2500BE4172 /* TimingFunctionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2964791F1DAC2500BE4172 /* TimingFunctionTool.m */; };
 		DD2964841F1F2FC500BE4172 /* InstrumentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD2964831F1F2FC500BE4172 /* InstrumentsViewController.m */; };
@@ -43,6 +45,10 @@
 		DD1CCB991F1777FF00846E02 /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
 		DD1CCB9C1F18699200846E02 /* PresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentationViewController.h; sourceTree = "<group>"; };
 		DD1CCB9D1F18699200846E02 /* PresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentationViewController.m; sourceTree = "<group>"; };
+		DD27AAC61F238450002D4CEE /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
+		DD27AAC71F238450002D4CEE /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
+		DD27AAC81F238450002D4CEE /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
+		DD27AAC91F238450002D4CEE /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		DD2964751F1DA95100BE4172 /* TimingFunctionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingFunctionController.h; sourceTree = "<group>"; };
 		DD2964761F1DA95100BE4172 /* TimingFunctionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingFunctionController.m; sourceTree = "<group>"; };
 		DD2964781F1DAC2500BE4172 /* TimingFunctionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingFunctionTool.h; sourceTree = "<group>"; };
@@ -128,6 +134,17 @@
 			path = presentationLayer;
 			sourceTree = "<group>";
 		};
+		DD27AAC51F238450002D4CEE /* YYFPSLabel */ = {
+			isa = PBXGroup;
+			children = (
+				DD27AAC61F238450002D4CEE /* YYFPSLabel.h */,
+				DD27AAC71F238450002D4CEE /* YYFPSLabel.m */,
+				DD27AAC81F238450002D4CEE /* YYWeakProxy.h */,
+				DD27AAC91F238450002D4CEE /* YYWeakProxy.m */,
+			);
+			path = YYFPSLabel;
+			sourceTree = "<group>";
+		};
 		DD2964711F1DA86300BE4172 /* 自定义缓冲函数 */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +206,7 @@
 				DD1CCB9B1F18697400846E02 /* 呈现树 */,
 				DD2964711F1DA86300BE4172 /* 自定义缓冲函数 */,
 				DD2964811F1F0A7600BE4172 /* Instruments */,
+				DD27AAC51F238450002D4CEE /* YYFPSLabel */,
 				DD90BA931F00F71500DDC88C /* AppDelegate.h */,
 				DD90BA941F00F71500DDC88C /* AppDelegate.m */,
 				DD90BA961F00F71500DDC88C /* ViewController.h */,
@@ -339,6 +357,7 @@
 			files = (
 				DD90BA981F00F71500DDC88C /* ViewController.m in Sources */,
 				DD1CCB901F1618B800846E02 /* EAGLViewController.m in Sources */,
+				DD27AACA1F238450002D4CEE /* YYFPSLabel.m in Sources */,
 				DD1CCB9E1F18699200846E02 /* PresentationViewController.m in Sources */,
 				DD2964771F1DA95100BE4172 /* TimingFunctionController.m in Sources */,
 				DDD418601F0BABB00080992D /* ScrollView.m in Sources */,
@@ -349,6 +368,7 @@
 				DDD418591F068E470080992D /* TransformViewController.m in Sources */,
 				DD1CCB8C1F14E80700846E02 /* EmitterViewController.m in Sources */,
 				DD90BA951F00F71500DDC88C /* AppDelegate.m in Sources */,
+				DD27AACB1F238450002D4CEE /* YYWeakProxy.m in Sources */,
 				DD29647A1F1DAC2500BE4172 /* TimingFunctionTool.m in Sources */,
 				DD90BA921F00F71500DDC88C /* main.m in Sources */,
 				DDD4185C1F0B963E0080992D /* ReplicatorViewController.m in Sources */,
