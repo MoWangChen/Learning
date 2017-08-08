@@ -9,9 +9,13 @@
 #import "ViewController.h"
 #import "Person.h"
 #import "DealerProxy.h"
-
+#import "DataSource.h"
+#import "DuckEntity.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) DataSource *dataSource;
 
 @end
 
@@ -20,12 +24,47 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [self loadTableView];
+    
+    [self testDuckEntity];
+}
+
+- (void)testDuckEntity
+{
+    NSDictionary *dic = @{@"name":@"xiaobai",
+                          @"sex":@"man",
+                          @"age":@"13",
+                          @"teacher":@"teacher Li"};
+    NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];
+    NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    id<UserDuckEntry> entity = DuckEntityCreateWithJSON(jsonString);
+    NSLog(@"name:%@  ",entity.name);
+    
+    entity.teacher = @"teacher Luo";
+    NSLog(@"teacher: %@",entity.teacher);
+}
+
+- (void)testProxy
+{
     Person *person = [[Person alloc] init];
     [person run];
     
     DealerProxy *proxy = [DealerProxy dealerProxy];
     [proxy purchaseBookWithTitle:@"horizon"];
     [proxy purchaseClothesWithSize:@"small"];
+}
+
+- (void)loadTableView
+{
+    if (!_tableView) {
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height) style:UITableViewStylePlain];
+//        tableView.dataSource = (Class <UITableViewDataSource>)[DataSource class];
+        _dataSource = [[DataSource alloc] init];
+        tableView.dataSource = _dataSource;
+        _tableView = tableView;
+        [self.view addSubview:_tableView];
+    }
 }
 
 @end

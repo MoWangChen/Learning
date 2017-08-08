@@ -18,6 +18,8 @@
 		DD950C161F346AF200FA6E35 /* BookProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C151F346AF200FA6E35 /* BookProvider.m */; };
 		DD950C191F346B8400FA6E35 /* ClothesProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C181F346B8400FA6E35 /* ClothesProvider.m */; };
 		DD950C1C1F346CDC00FA6E35 /* DealerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C1B1F346CDC00FA6E35 /* DealerProxy.m */; };
+		DD950C201F3811EF00FA6E35 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C1F1F3811EE00FA6E35 /* DataSource.m */; };
+		DD950C241F384DBB00FA6E35 /* DuckEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C231F384DBB00FA6E35 /* DuckEntity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,10 @@
 		DD950C181F346B8400FA6E35 /* ClothesProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClothesProvider.m; sourceTree = "<group>"; };
 		DD950C1A1F346CDC00FA6E35 /* DealerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealerProxy.h; sourceTree = "<group>"; };
 		DD950C1B1F346CDC00FA6E35 /* DealerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealerProxy.m; sourceTree = "<group>"; };
+		DD950C1E1F3811EE00FA6E35 /* DataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataSource.h; sourceTree = "<group>"; };
+		DD950C1F1F3811EE00FA6E35 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
+		DD950C221F384DBB00FA6E35 /* DuckEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuckEntity.h; sourceTree = "<group>"; };
+		DD950C231F384DBB00FA6E35 /* DuckEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuckEntity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 			children = (
 				DD950C0C1F345DE900FA6E35 /* Transpond */,
 				DD950C131F345DF100FA6E35 /* MultipleInheritance */,
+				DD950C1D1F380DC800FA6E35 /* 鸭子类型 */,
 				DD950BF11F32F40300FA6E35 /* AppDelegate.h */,
 				DD950BF21F32F40300FA6E35 /* AppDelegate.m */,
 				DD950BF41F32F40300FA6E35 /* ViewController.h */,
@@ -118,6 +125,26 @@
 				DD950C1B1F346CDC00FA6E35 /* DealerProxy.m */,
 			);
 			path = MultipleInheritance;
+			sourceTree = "<group>";
+		};
+		DD950C1D1F380DC800FA6E35 /* 鸭子类型 */ = {
+			isa = PBXGroup;
+			children = (
+				DD950C211F384CB100FA6E35 /* JsonEntity */,
+				DD950C1E1F3811EE00FA6E35 /* DataSource.h */,
+				DD950C1F1F3811EE00FA6E35 /* DataSource.m */,
+			);
+			name = "鸭子类型";
+			path = objc;
+			sourceTree = "<group>";
+		};
+		DD950C211F384CB100FA6E35 /* JsonEntity */ = {
+			isa = PBXGroup;
+			children = (
+				DD950C221F384DBB00FA6E35 /* DuckEntity.h */,
+				DD950C231F384DBB00FA6E35 /* DuckEntity.m */,
+			);
+			path = JsonEntity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD950BF61F32F40300FA6E35 /* ViewController.m in Sources */,
+				DD950C241F384DBB00FA6E35 /* DuckEntity.m in Sources */,
 				DD950BF31F32F40300FA6E35 /* AppDelegate.m in Sources */,
 				DD950C121F345DE900FA6E35 /* Person.m in Sources */,
 				DD950C111F345DE900FA6E35 /* Car.m in Sources */,
@@ -200,6 +228,7 @@
 				DD950C191F346B8400FA6E35 /* ClothesProvider.m in Sources */,
 				DD950C161F346AF200FA6E35 /* BookProvider.m in Sources */,
 				DD950C1C1F346CDC00FA6E35 /* DealerProxy.m in Sources */,
+				DD950C201F3811EF00FA6E35 /* DataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
