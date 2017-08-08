@@ -11,6 +11,8 @@
 #import "DealerProxy.h"
 #import "DataSource.h"
 #import "DuckEntity.h"
+#import "DIProxy.h"
+#import "Girl.h"
 
 @interface ViewController ()
 
@@ -24,9 +26,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self loadTableView];
+//    [self loadTableView];
     
-    [self testDuckEntity];
+//    [self testDuckEntity];
+    
+    [self testDependencyInjection];
+}
+
+- (void)testDependencyInjection
+{
+    LinZhiLing *implementA = [[LinZhiLing alloc] init];
+    ZhangYang *implementB = [[ZhangYang alloc] init];
+    
+    id<DIProxy,GirlFriend> girl = DIProxyCreate();
+    [girl injectDependencyObject:implementA forProtocol:@protocol(GirlFriend)];
+    [girl kiss];
+    [girl injectDependencyObject:implementB forProtocol:@protocol(GirlFriend)];
+    [girl kiss];
 }
 
 - (void)testDuckEntity

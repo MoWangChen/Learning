@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-extern id DuckEntityCreateWithJSON(NSString *json);
-
 @protocol UserDuckEntry <NSObject>
 
 @property (nonatomic, strong) NSString *name;
@@ -18,3 +16,5 @@ extern id DuckEntityCreateWithJSON(NSString *json);
 @property (nonatomic, strong) NSString *teacher;
 
 @end
+
+extern id DuckEntityCreateWithJSON(NSString *json);

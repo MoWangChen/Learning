@@ -20,6 +20,8 @@
 		DD950C1C1F346CDC00FA6E35 /* DealerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C1B1F346CDC00FA6E35 /* DealerProxy.m */; };
 		DD950C201F3811EF00FA6E35 /* DataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C1F1F3811EE00FA6E35 /* DataSource.m */; };
 		DD950C241F384DBB00FA6E35 /* DuckEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C231F384DBB00FA6E35 /* DuckEntity.m */; };
+		DD950C281F39665F00FA6E35 /* DIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C271F39665F00FA6E35 /* DIProxy.m */; };
+		DD950C2B1F3974DC00FA6E35 /* Girl.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C2A1F3974DC00FA6E35 /* Girl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,10 @@
 		DD950C1F1F3811EE00FA6E35 /* DataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataSource.m; sourceTree = "<group>"; };
 		DD950C221F384DBB00FA6E35 /* DuckEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuckEntity.h; sourceTree = "<group>"; };
 		DD950C231F384DBB00FA6E35 /* DuckEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuckEntity.m; sourceTree = "<group>"; };
+		DD950C261F39665F00FA6E35 /* DIProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIProxy.h; sourceTree = "<group>"; };
+		DD950C271F39665F00FA6E35 /* DIProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIProxy.m; sourceTree = "<group>"; };
+		DD950C291F3974DC00FA6E35 /* Girl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Girl.h; sourceTree = "<group>"; };
+		DD950C2A1F3974DC00FA6E35 /* Girl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Girl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				DD950C211F384CB100FA6E35 /* JsonEntity */,
+				DD950C251F39640500FA6E35 /* DependencyInjection */,
 				DD950C1E1F3811EE00FA6E35 /* DataSource.h */,
 				DD950C1F1F3811EE00FA6E35 /* DataSource.m */,
 			);
@@ -145,6 +152,17 @@
 				DD950C231F384DBB00FA6E35 /* DuckEntity.m */,
 			);
 			path = JsonEntity;
+			sourceTree = "<group>";
+		};
+		DD950C251F39640500FA6E35 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				DD950C261F39665F00FA6E35 /* DIProxy.h */,
+				DD950C271F39665F00FA6E35 /* DIProxy.m */,
+				DD950C291F3974DC00FA6E35 /* Girl.h */,
+				DD950C2A1F3974DC00FA6E35 /* Girl.m */,
+			);
+			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,9 +244,11 @@
 				DD950C111F345DE900FA6E35 /* Car.m in Sources */,
 				DD950BF01F32F40300FA6E35 /* main.m in Sources */,
 				DD950C191F346B8400FA6E35 /* ClothesProvider.m in Sources */,
+				DD950C281F39665F00FA6E35 /* DIProxy.m in Sources */,
 				DD950C161F346AF200FA6E35 /* BookProvider.m in Sources */,
 				DD950C1C1F346CDC00FA6E35 /* DealerProxy.m in Sources */,
 				DD950C201F3811EF00FA6E35 /* DataSource.m in Sources */,
+				DD950C2B1F3974DC00FA6E35 /* Girl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
