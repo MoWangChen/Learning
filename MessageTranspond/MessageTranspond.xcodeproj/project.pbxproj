@@ -22,6 +22,8 @@
 		DD950C241F384DBB00FA6E35 /* DuckEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C231F384DBB00FA6E35 /* DuckEntity.m */; };
 		DD950C281F39665F00FA6E35 /* DIProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C271F39665F00FA6E35 /* DIProxy.m */; };
 		DD950C2B1F3974DC00FA6E35 /* Girl.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C2A1F3974DC00FA6E35 /* Girl.m */; };
+		DD950C2F1F41B84300FA6E35 /* Rectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = DD950C2E1F41B84300FA6E35 /* Rectangle.m */; };
+		DDF139F81F42F3ED00B4BCBA /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF139F71F42F3ED00B4BCBA /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,10 @@
 		DD950C271F39665F00FA6E35 /* DIProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIProxy.m; sourceTree = "<group>"; };
 		DD950C291F3974DC00FA6E35 /* Girl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Girl.h; sourceTree = "<group>"; };
 		DD950C2A1F3974DC00FA6E35 /* Girl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Girl.m; sourceTree = "<group>"; };
+		DD950C2D1F41B84300FA6E35 /* Rectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Rectangle.h; sourceTree = "<group>"; };
+		DD950C2E1F41B84300FA6E35 /* Rectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Rectangle.m; sourceTree = "<group>"; };
+		DDF139F61F42F3ED00B4BCBA /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		DDF139F71F42F3ED00B4BCBA /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 				DD950C0C1F345DE900FA6E35 /* Transpond */,
 				DD950C131F345DF100FA6E35 /* MultipleInheritance */,
 				DD950C1D1F380DC800FA6E35 /* 鸭子类型 */,
+				DD950C2C1F41B82800FA6E35 /* NSException */,
 				DD950BF11F32F40300FA6E35 /* AppDelegate.h */,
 				DD950BF21F32F40300FA6E35 /* AppDelegate.m */,
 				DD950BF41F32F40300FA6E35 /* ViewController.h */,
@@ -165,6 +172,17 @@
 			path = DependencyInjection;
 			sourceTree = "<group>";
 		};
+		DD950C2C1F41B82800FA6E35 /* NSException */ = {
+			isa = PBXGroup;
+			children = (
+				DD950C2D1F41B84300FA6E35 /* Rectangle.h */,
+				DD950C2E1F41B84300FA6E35 /* Rectangle.m */,
+				DDF139F61F42F3ED00B4BCBA /* Person.h */,
+				DDF139F71F42F3ED00B4BCBA /* Person.m */,
+			);
+			path = NSException;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -239,8 +257,10 @@
 			files = (
 				DD950BF61F32F40300FA6E35 /* ViewController.m in Sources */,
 				DD950C241F384DBB00FA6E35 /* DuckEntity.m in Sources */,
+				DDF139F81F42F3ED00B4BCBA /* Person.m in Sources */,
 				DD950BF31F32F40300FA6E35 /* AppDelegate.m in Sources */,
 				DD950C121F345DE900FA6E35 /* Person.m in Sources */,
+				DD950C2F1F41B84300FA6E35 /* Rectangle.m in Sources */,
 				DD950C111F345DE900FA6E35 /* Car.m in Sources */,
 				DD950BF01F32F40300FA6E35 /* main.m in Sources */,
 				DD950C191F346B8400FA6E35 /* ClothesProvider.m in Sources */,
@@ -407,6 +427,7 @@
 				DD950C041F32F40300FA6E35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
