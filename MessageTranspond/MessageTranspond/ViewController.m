@@ -14,7 +14,9 @@
 #import "DIProxy.h"
 #import "Girl.h"
 
-@interface ViewController ()
+#import "ZombieClass.h"
+
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) DataSource *dataSource;
@@ -30,7 +32,14 @@
     
 //    [self testDuckEntity];
     
-    [self testDependencyInjection];
+//    [self testDependencyInjection];
+    
+    [self testZombieClass];
+}
+
+- (void)testZombieClass
+{
+    testRelease();
 }
 
 - (void)testDependencyInjection
