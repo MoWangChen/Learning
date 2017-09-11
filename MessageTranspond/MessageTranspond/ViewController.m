@@ -34,7 +34,30 @@
     
 //    [self testDependencyInjection];
     
-    [self testZombieClass];
+//    [self testZombieClass];
+    
+    [self testBlock];
+}
+
+- (void)testBlock
+{
+    void (^someBlock)();
+    
+    int i = 3;
+    
+    if ( i > 1) {
+        
+        someBlock = [^{
+            NSLog(@"someBlock 1");
+        } copy];
+        
+    }else {
+        
+        someBlock = [^{
+            NSLog(@"someBlock 2");
+        } copy];
+    }
+    someBlock();
 }
 
 - (void)testZombieClass
