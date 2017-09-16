@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) EAGLContext *context;
 @property (nonatomic, assign) GLuint shaderProgram;
+@property (nonatomic, assign) GLfloat elapsedTime;
 
 @end
 
@@ -44,6 +45,8 @@
     // 他就会行走3m/s * deltaTime，这样做就可以让游戏物体的行走实际速度与update调用频次无关
     // NSTimeInterval deltaTime = self.timeSinceLastUpdate;
     
+    NSTimeInterval deltaTime = self.timeSinceLastUpdate;
+    self.elapsedTime += deltaTime;
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
@@ -54,17 +57,95 @@
     
     // 使用fragment.glsl 和 vertex.glsl中的shader
     glUseProgram(self.shaderProgram);
-    [self drawTriangle];
+    
+    // 设置shader中 uniform elapseTime 的值
+    GLuint elapsedTimeUniformLocation = glGetUniformLocation(self.shaderProgram, "elapsedTime");
+    glUniform1f(elapsedTimeUniformLocation, (GLfloat)self.elapsedTime);
+    
+    [self drawPoints];
 }
+
+#pragma mark - Draw Graph
 
 - (void)drawTriangle
 {
-    static GLfloat triangleData[18] = {
-        -0.5f,  0.5f,   0,  1,  0,  0, // x, y, z, r, g, b,每一行存储一个点的信息,位置和颜色
-        -0.5f, -0.5f,   0,  0,  1,  0,
-        0.5f,  -0.5f,   0,  0,  0,  1,
+    static GLfloat triangleData[36] = {
+        0,      0.5f,   0,  1,  0,  0, // x, y, z, r, g, b,每一行存储一个点的信息,位置和颜色
+        -0.5f,  0.0f,   0,  0,  1,  0,
+        0.5f,   0.0f,   0,  0,  0,  1,
+        0.0f,  -0.5f,   0,  1,  0,  0,
+        -0.5f,  0.0f,   0,  0,  1,  0,
+        0.5f,   0.0f,   0,  0,  0,  1,
     };
-    
+    [self bindAttributes:triangleData];
+    glDrawArrays(GL_TRIANGLES, 0, 6);
+}
+
+- (void)drawTriangleStrip
+{
+    static GLfloat triangleData[] = {
+        0,      0.5f,   0,  1,  0,  0,
+        -0.5f,  0.0f,   0,  0,  1,  0,
+        0.5f,   0.0f,   0,  0,  0,  1,
+        0,      -0.5f,  0,  1,  0,  0,
+        0.5f,   -0.5f,  0,  0,  1,  0,
+        0.8f,   -0.8f,  0,  1,  0,  0,
+    };
+    [self bindAttributes:triangleData];
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 6);
+}
+
+- (void)drawTriangleFan // 原点为中心顶点, 遍历两个点为顶点,绘制三角形
+{
+    static GLfloat triangleData[] = {
+        -0.5,   0.0f,   0,  1,  0,  0,
+        0,      0.5f,   0,  0,  1,  0,
+        0.5f,   0.0f,   0,  0,  0,  1,
+        0,      -0.5f,  0,  1,  0,  0,
+        -0.3,   -0.8f,  0,  0,  1,  0,
+    };
+    [self bindAttributes:triangleData];
+    glDrawArrays(GL_TRIANGLE_FAN, 0, 5);
+}
+
+- (void)drawLines
+{
+    static GLfloat lineData[] = {
+        0.0f,  0.0f,  0,  0,  1,  0,
+        0.5,   0.5f,  0,  1,  0,  0,
+        0.0f,  0.0f,  0,  0,  0,  1,
+        0.5,   -0.5f, 0,  1,  0,  0,
+    };
+    [self bindAttributes:lineData];
+    glLineWidth(5);
+    glDrawArrays(GL_LINES, 0, 4);
+}
+
+- (void)drawLineStrip
+{
+    static GLfloat lineData[] = {
+        0.0f,  0.0f,  0,  0,  1,  0,
+        0.5,   0.5f,  0,  1,  0,  0,
+        0.5,   -0.5f, 0,  1,  0,  0,
+    };
+    [self bindAttributes:lineData];
+    glLineWidth(5);
+    glDrawArrays(GL_LINE_STRIP, 0, 3);
+}
+
+- (void)drawPoints
+{
+    static GLfloat pointData[] = {
+        0.0f,  0.0f,  0,  0,  1,  0,
+        0.5,   0.5f,  0,  1,  0,  0,
+        0.5,   -0.5f, 0,  1,  0,  0,
+    };
+    [self bindAttributes:pointData];
+    glDrawArrays(GL_POINTS, 0, 3);
+}
+
+- (void)bindAttributes:(GLfloat *)triangleData
+{
     // 启用Shader中的两个属性
     // attribute vec4 positon
     // attribute vec4 color
@@ -77,7 +158,6 @@
     //
     glVertexAttribPointer(positionAttribLocation, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (char *)triangleData);
     glVertexAttribPointer(colorAttribLocation, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (char *)triangleData + 3 * sizeof(GLfloat));
-    glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
 #pragma mark - Prepare Shaders
@@ -225,6 +305,7 @@ bool validateProgram(GLuint prog) {
     GLuint program;
     createProgram(vertexShaderContent.UTF8String, fragmentShaderContent.UTF8String, &program);
     self.shaderProgram = program;
+    
 }
 
 @end
