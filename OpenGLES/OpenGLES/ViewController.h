@@ -6,9 +6,9 @@
 //  Copyright © 2017年 365ime. All rights reserved.
 //
 
-#import <GLKit/GLKit.h>
+#import "GLBaseViewController.h"
 
-@interface ViewController : GLKViewController
+@interface ViewController : GLBaseViewController
 
 
 @end
