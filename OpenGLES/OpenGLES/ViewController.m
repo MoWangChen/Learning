@@ -37,6 +37,12 @@
 {
     [super update];
     
+    [self orthoTransformMatrix];
+}
+
+#pragma mark - transformMatrix
+- (void)noarmalTransformMatrix
+{
     float varyingFactor = sin(self.elapsedTime);
     GLKMatrix4 scaleMatrix = GLKMatrix4MakeScale(varyingFactor, varyingFactor, 1.0);
     GLKMatrix4 rotateMatrix = GLKMatrix4MakeRotation(varyingFactor, 0.0, 0.0, 1.0);
@@ -46,7 +52,36 @@
     // 如果这个顺序反过来,就完全不同了.从线性代数角度来讲,矩阵A乘以B, 不等于矩阵B乘以A
     self.transformMatrix = GLKMatrix4Multiply(translateMatrix, rotateMatrix);
     self.transformMatrix = GLKMatrix4Multiply(self.transformMatrix, scaleMatrix);
+}
+
+// 透视投影
+- (void)perspectiveTransformMatrix
+{
+    float varyingFactor = self.elapsedTime;
     
+    GLKMatrix4 rotateMatrix = GLKMatrix4MakeRotation(varyingFactor, 0, 1, 0);
+ 
+    float aspect = self.view.frame.size.width / self.view.frame.size.height;
+    // GLKMathDegreesToRadians 将角度转换成弧度
+    GLKMatrix4 perspectiveMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(90), aspect, 0.1, 10);
+    GLKMatrix4 translateMatrix = GLKMatrix4MakeTranslation(0, 0, -1.6);
+    self.transformMatrix = GLKMatrix4Multiply(translateMatrix, rotateMatrix);
+    self.transformMatrix = GLKMatrix4Multiply(perspectiveMatrix, self.transformMatrix);
+}
+
+// 正交投影
+- (void)orthoTransformMatrix
+{
+    float varyingFactor = self.elapsedTime;
+    
+    GLKMatrix4 rotateMatrix = GLKMatrix4MakeRotation(varyingFactor, 0, 1, 0);
+    
+    float viewWidth = self.view.frame.size.width;
+    float viewHeight = self.view.frame.size.height;
+    GLKMatrix4 orthMatrix = GLKMatrix4MakeOrtho(-viewWidth/2, viewWidth/2, -viewHeight/2, viewHeight/2, -10, -10);
+    GLKMatrix4 scaleMatrix = GLKMatrix4MakeScale(200, 200, 200);
+    self.transformMatrix = GLKMatrix4Multiply(scaleMatrix, rotateMatrix);
+    self.transformMatrix = GLKMatrix4Multiply(orthMatrix, self.transformMatrix);
 }
 
 #pragma mark - Draw Graph
@@ -54,15 +89,14 @@
 - (void)drawTriangle
 {
     static GLfloat triangleData[36] = {
-        0,      0.5f,   0,  1,  0,  0, // x, y, z, r, g, b,每一行存储一个点的信息,位置和颜色
-        -0.5f,  0.0f,   0,  0,  1,  0,
-        0.5f,   0.0f,   0,  0,  0,  1,
-        0.0f,  -0.5f,   0,  1,  0,  0,
-        -0.5f,  0.0f,   0,  0,  1,  0,
-        0.5f,   0.0f,   0,  0,  0,  1,
+        -0.5,   0.5f,   0,  1,  0,  0, // x, y, z, r, g, b,每一行存储一个点的信息,位置和颜色
+        -0.5f, -0.5f,   0,  0,  1,  0,
+        0.5f,  -0.5f,   0,  0,  0,  1,
+        0.5f,   0.5f,   0,  1,  0,  0,
+        -0.5f,  0.5f,   0,  0,  1,  0,
     };
     [self bindAttributes:triangleData];
-    glDrawArrays(GL_TRIANGLES, 0, 6);
+    glDrawArrays(GL_TRIANGLES, 0, 5);
 }
 
 - (void)drawTriangleStrip
