@@ -50,10 +50,12 @@
 {
     // 清空之前的绘制
     glClearColor(0.6, 0.2, 0.2, 1);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // 使用fragment.glsl 和 vertex.glsl中的shader
     glUseProgram(self.shaderProgram);
+    
+    glEnable(GL_DEPTH_TEST);
     
     // 设置shader中 uniform elapseTime 的值
     GLuint elapsedTimeUniformLocation = glGetUniformLocation(self.shaderProgram, "elapsedTime");

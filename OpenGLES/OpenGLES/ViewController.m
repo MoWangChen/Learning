@@ -12,6 +12,11 @@
 
 @property (nonatomic, assign) GLKMatrix4 transformMatrix;
 
+@property (nonatomic, assign) GLKMatrix4 projectionMatrix;  // 投影矩阵
+@property (nonatomic, assign) GLKMatrix4 cameraMatrix;      // 观察矩阵
+@property (nonatomic, assign) GLKMatrix4 modelMatrix1;      // 第一个矩形的模型变换
+@property (nonatomic, assign) GLKMatrix4 modelMatrix2;      // 第二个矩形的模型变换
+
 @end
 
 @implementation ViewController
@@ -20,6 +25,7 @@
     [super viewDidLoad];
 
     self.transformMatrix = GLKMatrix4Identity;
+    [self cameraMatrixInit];
 }
 
 #pragma mark - GLKViewDelegate
@@ -27,20 +33,71 @@
 {
     [super glkView:view drawInRect:rect];
     
-    GLuint transformUniformLocation = glGetUniformLocation(self.shaderProgram, "transform");
-    glUniformMatrix4fv(transformUniformLocation, 1, 0, self.transformMatrix.m);
-    
-    [self drawTriangle];
+    [self cameraTransformDrawInRect];
 }
 
 - (void)update
 {
     [super update];
     
-    [self orthoTransformMatrix];
+    [self cameraTransformMatrix];
+}
+
+#pragma mark - 摄像机
+- (void)cameraTransformDrawInRect
+{
+    GLuint projectionMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "projectionMatrix");
+    glUniformMatrix4fv(projectionMatrixUniformLocation, 1, 0, self.projectionMatrix.m);
+    GLuint cameraMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "cameraMatrix");
+    glUniformMatrix4fv(cameraMatrixUniformLocation, 1, 0, self.cameraMatrix.m);
+    
+    GLuint modelMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "modelMatrix");
+    
+    glUniformMatrix4fv(modelMatrixUniformLocation, 1, 0, self.modelMatrix1.m);
+    [self drawTriangle];
+    
+    glUniformMatrix4fv(modelMatrixUniformLocation, 1, 0, self.modelMatrix2.m);
+    [self drawTriangle];
+}
+
+// 初始化各参数
+- (void)cameraMatrixInit
+{
+    // 使用透视投影矩阵
+    float aspect = self.view.frame.size.width / self.view.frame.size.height;
+    self.projectionMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(90), aspect, 0.1, 100);
+    
+    // 设置摄像机在 0, 0, 2坐标,看向0,0,0点. Y轴正向为摄像机顶部指向的方向
+    self.cameraMatrix = GLKMatrix4MakeLookAt(0, 0, 2, 0, 0, 0, 0, 1, 0);
+    
+    // 初始化矩形1,矩形2的模型矩阵为单位矩阵
+    self.modelMatrix1 = GLKMatrix4Identity;
+    self.modelMatrix2 = GLKMatrix4Identity;
+}
+
+- (void)cameraTransformMatrix
+{
+    float varyingFactor = (sin(self.elapsedTime) + 1) / 2.0;  // 0 ~ 1
+    self.cameraMatrix = GLKMatrix4MakeLookAt(0, 0, 2 * (varyingFactor + 1), 0, 0, 0, 0, 1, 0);
+    
+    GLKMatrix4 translateMatrix1 = GLKMatrix4MakeTranslation(-0.7, 0, 0);
+    GLKMatrix4 rotateMatrix1 = GLKMatrix4MakeRotation(varyingFactor * M_PI * 2, 0, 1, 0);
+    self.modelMatrix1 = GLKMatrix4Multiply(translateMatrix1, rotateMatrix1);
+    
+    GLKMatrix4 translateMatrix2 = GLKMatrix4MakeTranslation(0.7, 0, 0);
+    GLKMatrix4 rotateMatrix2 = GLKMatrix4MakeRotation(varyingFactor * M_PI * 2, 0, 0, 1);
+    self.modelMatrix2 = GLKMatrix4Multiply(translateMatrix2, rotateMatrix2);
 }
 
 #pragma mark - transformMatrix
+- (void)transformDrawInRect
+{
+    GLuint transformUniformLocation = glGetUniformLocation(self.shaderProgram, "transform");
+    glUniformMatrix4fv(transformUniformLocation, 1, 0, self.transformMatrix.m);
+    
+    [self drawTriangle];
+}
+
 - (void)noarmalTransformMatrix
 {
     float varyingFactor = sin(self.elapsedTime);
@@ -92,11 +149,12 @@
         -0.5,   0.5f,   0,  1,  0,  0, // x, y, z, r, g, b,每一行存储一个点的信息,位置和颜色
         -0.5f, -0.5f,   0,  0,  1,  0,
         0.5f,  -0.5f,   0,  0,  0,  1,
+        0.5f,  -0.5f,   0,  0,  0,  1,
         0.5f,   0.5f,   0,  1,  0,  0,
         -0.5f,  0.5f,   0,  0,  1,  0,
     };
     [self bindAttributes:triangleData];
-    glDrawArrays(GL_TRIANGLES, 0, 5);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
 }
 
 - (void)drawTriangleStrip

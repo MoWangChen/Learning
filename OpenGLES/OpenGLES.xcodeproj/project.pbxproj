@@ -16,6 +16,7 @@
 		DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C531F666B41004049FB /* LaunchScreen.storyboard */; };
 		DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C5C1F666BCB004049FB /* fragment.glsl */; };
 		DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C5D1F666BCB004049FB /* vertex.glsl */; };
+		DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		DDA04C561F666B41004049FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDA04C5C1F666BCB004049FB /* fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
 		DDA04C5D1F666BCB004049FB /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeViewController.h; sourceTree = "<group>"; };
+		DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,8 @@
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
 				DDA04C4B1F666B41004049FB /* ViewController.h */,
 				DDA04C4C1F666B41004049FB /* ViewController.m */,
+				DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */,
+				DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */,
 				DD04DA641F6D7E8C0093FD7C /* GLBaseViewController.h */,
 				DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */,
 				DDA04C4E1F666B41004049FB /* Main.storyboard */,
@@ -166,6 +171,7 @@
 			files = (
 				DDA04C4D1F666B41004049FB /* ViewController.m in Sources */,
 				DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */,
+				DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */,
 				DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */,
 				DDA04C471F666B41004049FB /* main.m in Sources */,
 			);

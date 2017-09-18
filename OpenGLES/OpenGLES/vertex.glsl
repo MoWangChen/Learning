@@ -4,11 +4,16 @@ attribute vec4 color;
 uniform float elapsedTime;
 uniform mat4 transform;
 
+uniform mat4 projectionMatrix;
+uniform mat4 cameraMatrix;
+uniform mat4 modelMatrix;
+
 varying vec4 fragColor;
 
 void main(void) {
     fragColor = color;
-    gl_Position = transform * position;
+    mat4 mvp = projectionMatrix * cameraMatrix * modelMatrix;
+    gl_Position = mvp * position;
     gl_PointSize = 25.0;
 }
 
@@ -18,4 +23,10 @@ void test(void) {
     float xPos = position.x * cos(angle) - position.y * sin(angle);
     float yPos = position.x * sin(angle) + position.y * cos(angle);
     gl_Position = vec4(xPos, yPos, position.z, 1.0);
+}
+
+void testMatrixTransform(void) {
+    fragColor = color;
+    gl_Position = transform * position;
+    gl_PointSize = 25.0;
 }
