@@ -70,7 +70,7 @@
     // attribute vec4 color
     GLuint positionAttribLocation = glGetAttribLocation(self.shaderProgram, "position");
     glEnableVertexAttribArray(positionAttribLocation);
-    GLuint colorAttribLocation = glGetAttribLocation(self.shaderProgram, "color");
+    GLuint colorAttribLocation = glGetAttribLocation(self.shaderProgram, "normal");
     glEnableVertexAttribArray(colorAttribLocation);
     
     // 为shader中的position和color赋值
