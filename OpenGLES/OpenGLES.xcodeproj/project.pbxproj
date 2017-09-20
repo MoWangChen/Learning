@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */; };
+		DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0709CB1F7225EC000CDE9B /* texture.jpg */; };
 		DDA04C471F666B41004049FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C461F666B41004049FB /* main.m */; };
 		DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C491F666B41004049FB /* AppDelegate.m */; };
 		DDA04C4D1F666B41004049FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C4C1F666B41004049FB /* ViewController.m */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		DD04DA641F6D7E8C0093FD7C /* GLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBaseViewController.h; sourceTree = "<group>"; };
 		DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBaseViewController.m; sourceTree = "<group>"; };
+		DD0709CB1F7225EC000CDE9B /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
 		DDA04C421F666B41004049FB /* OpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA04C461F666B41004049FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DDA04C481F666B41004049FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 		DDA04C441F666B41004049FB /* OpenGLES */ = {
 			isa = PBXGroup;
 			children = (
+				DD0709CB1F7225EC000CDE9B /* texture.jpg */,
 				DDA04C5C1F666BCB004049FB /* fragment.glsl */,
 				DDA04C5D1F666BCB004049FB /* vertex.glsl */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
@@ -157,6 +160,7 @@
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,
 				DDA04C521F666B41004049FB /* Assets.xcassets in Resources */,
+				DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */,
 				DDA04C501F666B41004049FB /* Main.storyboard in Resources */,
 				DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */,
 			);

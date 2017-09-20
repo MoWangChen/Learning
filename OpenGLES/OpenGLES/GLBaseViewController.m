@@ -63,20 +63,29 @@
 }
 
 #pragma mark - private method
+- (void)bindAttribs:(GLfloat *)triangleData
+{
+    [self bindAttributes:triangleData];
+}
+
 - (void)bindAttributes:(GLfloat *)triangleData
 {
     // 启用Shader中的两个属性
     // attribute vec4 positon
     // attribute vec4 color
+    // attribute vec2 uv
     GLuint positionAttribLocation = glGetAttribLocation(self.shaderProgram, "position");
     glEnableVertexAttribArray(positionAttribLocation);
     GLuint colorAttribLocation = glGetAttribLocation(self.shaderProgram, "normal");
     glEnableVertexAttribArray(colorAttribLocation);
+    GLuint uvAttribLocation = glGetAttribLocation(self.shaderProgram, "uv");
+    glEnableVertexAttribArray(uvAttribLocation);
     
     // 为shader中的position和color赋值
     //
-    glVertexAttribPointer(positionAttribLocation, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (char *)triangleData);
-    glVertexAttribPointer(colorAttribLocation, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (char *)triangleData + 3 * sizeof(GLfloat));
+    glVertexAttribPointer(positionAttribLocation, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData);
+    glVertexAttribPointer(colorAttribLocation, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData + 3 * sizeof(GLfloat));
+    glVertexAttribPointer(uvAttribLocation, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData + 6 * sizeof(GLfloat));
 }
 
 #pragma mark - Prepare Shaders

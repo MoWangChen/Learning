@@ -16,6 +16,8 @@
 
 @property (nonatomic, assign) GLKVector3 lightDirection;    // 平行光照方向
 
+@property (nonatomic, strong) GLKTextureInfo *diffuseTexture;
+
 @end
 
 @implementation CubeViewController
@@ -23,10 +25,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.lightDirection = GLKVector3Make(0, -1, 0);
+    self.lightDirection = GLKVector3Make(1, -1, 0);
+    [self genTexture];
     [self cameraMatrixInit];
 }
 
+- (void)genTexture
+{
+    NSString *textureFile = [[NSBundle mainBundle] pathForResource:@"texture" ofType:@"jpg"];
+    NSError *error;
+    self.diffuseTexture = [GLKTextureLoader textureWithContentsOfFile:textureFile options:0 error:&error];
+    NSLog(@"%@",error);
+}
+
+#pragma mark - over ride
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     [super glkView:view drawInRect:rect];
@@ -50,6 +62,11 @@
     GLuint lightDirectionUniformLocation = glGetUniformLocation(self.shaderProgram, "lightDirection");
     glUniform3fv(lightDirectionUniformLocation, 1, self.lightDirection.v);
     
+    GLuint diffuseMapUniformLocation = glGetUniformLocation(self.shaderProgram, "diffuseMap");
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, self.diffuseTexture.name);
+    glUniform1i(diffuseMapUniformLocation, 0);
+    
     [self drawCube];
 }
 
@@ -63,6 +80,7 @@
     GLKMatrix4 rotateMatrix = GLKMatrix4MakeRotation(varyingFactor * M_PI * 2, 1, 1, 1);
     self.modelMatrix = rotateMatrix;
 }
+
 
 #pragma mark - transformMatrix
 // 初始化各参数
@@ -83,66 +101,66 @@
 #pragma mark - Draw Graph
 - (void)drawCube
 {
-    [self drawXPlans];
-    [self drawYPlans];
-    [self drawZPlans];
+    [self drawXPlanes];
+    [self drawYPlanes];
+    [self drawZPlanes];
 }
 
-- (void)drawXPlans
+- (void)drawXPlanes
 {
     static GLfloat triangleData[] = {
-         0.5f,  -0.5f,   0.5f,   1,  0,  0,
-         0.5f,  -0.5f,  -0.5f,   1,  0,  0,
-         0.5f,   0.5f,  -0.5f,   1,  0,  0,
-         0.5f,   0.5f,  -0.5f,   1,  0,  0,
-         0.5f,   0.5f,   0.5f,   1,  0,  0,
-         0.5f,  -0.5f,   0.5f,   1,  0,  0,
-        -0.5f,  -0.5f,   0.5f,  -1,  0,  0,
-        -0.5f,  -0.5f,  -0.5f,  -1,  0,  0,
-        -0.5f,   0.5f,  -0.5f,  -1,  0,  0,
-        -0.5f,   0.5f,  -0.5f,  -1,  0,  0,
-        -0.5f,   0.5f,   0.5f,  -1,  0,  0,
-        -0.5f,  -0.5f,   0.5f,  -1,  0,  0,
+         0.5f,  -0.5f,   0.5f,   1,  0,  0, 0,  1,
+         0.5f,  -0.5f,  -0.5f,   1,  0,  0, 1,  1,
+         0.5f,   0.5f,  -0.5f,   1,  0,  0, 1,  0,
+         0.5f,   0.5f,  -0.5f,   1,  0,  0, 1,  0,
+         0.5f,   0.5f,   0.5f,   1,  0,  0, 0,  0,
+         0.5f,  -0.5f,   0.5f,   1,  0,  0, 0,  1,
+        -0.5f,  -0.5f,   0.5f,  -1,  0,  0, 0,  1,
+        -0.5f,  -0.5f,  -0.5f,  -1,  0,  0, 1,  1,
+        -0.5f,   0.5f,  -0.5f,  -1,  0,  0, 1,  0,
+        -0.5f,   0.5f,  -0.5f,  -1,  0,  0, 1,  0,
+        -0.5f,   0.5f,   0.5f,  -1,  0,  0, 0,  0,
+        -0.5f,  -0.5f,   0.5f,  -1,  0,  0, 0,  1,
     };
     [self bindAttributes:triangleData];
     glDrawArrays(GL_TRIANGLES, 0, 12);
 }
 
-- (void)drawYPlans
+- (void)drawYPlanes
 {
     static GLfloat triangleData[] = {
-        -0.5f,    0.5f,    0.5f,   0,   1,  0,
-        -0.5f,    0.5f,   -0.5f,   0,   1,  0,
-         0.5f,    0.5f,   -0.5f,   0,   1,  0,
-         0.5f,    0.5f,   -0.5f,   0,   1,  0,
-         0.5f,    0.5f,    0.5f,   0,   1,  0,
-        -0.5f,    0.5f,    0.5f,   0,   1,  0,
-        -0.5f,   -0.5f,    0.5f,   0,  -1,  0,
-        -0.5f,   -0.5f,   -0.5f,   0,  -1,  0,
-         0.5f,   -0.5f,   -0.5f,   0,  -1,  0,
-         0.5f,   -0.5f,   -0.5f,   0,  -1,  0,
-         0.5f,   -0.5f,    0.5f,   0,  -1,  0,
-        -0.5f,   -0.5f,    0.5f,   0,  -1,  0,
+        -0.5f,    0.5f,    0.5f,   0,   1,  0,  0,  1,
+        -0.5f,    0.5f,   -0.5f,   0,   1,  0,  1,  1,
+         0.5f,    0.5f,   -0.5f,   0,   1,  0,  1,  0,
+         0.5f,    0.5f,   -0.5f,   0,   1,  0,  1,  0,
+         0.5f,    0.5f,    0.5f,   0,   1,  0,  0,  0,
+        -0.5f,    0.5f,    0.5f,   0,   1,  0,  0,  1,
+        -0.5f,   -0.5f,    0.5f,   0,  -1,  0,  0,  1,
+        -0.5f,   -0.5f,   -0.5f,   0,  -1,  0,  1,  1,
+         0.5f,   -0.5f,   -0.5f,   0,  -1,  0,  1,  0,
+         0.5f,   -0.5f,   -0.5f,   0,  -1,  0,  1,  0,
+         0.5f,   -0.5f,    0.5f,   0,  -1,  0,  0,  0,
+        -0.5f,   -0.5f,    0.5f,   0,  -1,  0,  0,  1,
     };
     [self bindAttributes:triangleData];
     glDrawArrays(GL_TRIANGLES, 0, 12);
 }
 
-- (void)drawZPlans
+- (void)drawZPlanes
 {
     static GLfloat triangleData[] = {
-        -0.5f,  0.5f,   0.5f,   0,  0,   1,
-        -0.5f, -0.5f,   0.5f,   0,  0,   1,
-        0.5f,  -0.5f,   0.5f,   0,  0,   1,
-        0.5f,  -0.5f,   0.5f,   0,  0,   1,
-        0.5f,   0.5f,   0.5f,   0,  0,   1,
-        -0.5f,  0.5f,   0.5f,   0,  0,   1,
-        -0.5f,  0.5f,  -0.5f,   0,  0,  -1,
-        -0.5f, -0.5f,  -0.5f,   0,  0,  -1,
-        0.5f,  -0.5f,  -0.5f,   0,  0,  -1,
-        0.5f,  -0.5f,  -0.5f,   0,  0,  -1,
-        0.5f,   0.5f,  -0.5f,   0,  0,  -1,
-        -0.5f,  0.5f,  -0.5f,   0,  0,  -1,
+        -0.5f,  0.5f,   0.5f,   0,  0,   1, 0,  1,
+        -0.5f, -0.5f,   0.5f,   0,  0,   1, 1,  1,
+        0.5f,  -0.5f,   0.5f,   0,  0,   1, 1,  0,
+        0.5f,  -0.5f,   0.5f,   0,  0,   1, 1,  0,
+        0.5f,   0.5f,   0.5f,   0,  0,   1, 0,  0,
+        -0.5f,  0.5f,   0.5f,   0,  0,   1, 0,  1,
+        -0.5f,  0.5f,  -0.5f,   0,  0,  -1, 0,  1,
+        -0.5f, -0.5f,  -0.5f,   0,  0,  -1, 1,  1,
+        0.5f,  -0.5f,  -0.5f,   0,  0,  -1, 1,  0,
+        0.5f,  -0.5f,  -0.5f,   0,  0,  -1, 1,  0,
+        0.5f,   0.5f,  -0.5f,   0,  0,  -1, 0,  0,
+        -0.5f,  0.5f,  -0.5f,   0,  0,  -1, 0,  1,
     };
     [self bindAttributes:triangleData];
     glDrawArrays(GL_TRIANGLES, 0, 12);

@@ -15,6 +15,7 @@
 @property (nonatomic, assign) GLfloat elapsedTime;
 
 - (void)update;
+- (void)bindAttribs:(GLfloat *)triangleData;
 - (void)bindAttributes:(GLfloat *)triangleData;
 
 @end
