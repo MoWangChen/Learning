@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */; };
 		DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0709CB1F7225EC000CDE9B /* texture.jpg */; };
+		DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */; };
+		DD16F9551F810E7C00B9AD1B /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = DD16F9501F81082500B9AD1B /* green.png */; };
+		DD16F9561F810E8000B9AD1B /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = DD16F9511F81082500B9AD1B /* red.png */; };
 		DDA04C471F666B41004049FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C461F666B41004049FB /* main.m */; };
 		DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C491F666B41004049FB /* AppDelegate.m */; };
 		DDA04C4D1F666B41004049FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C4C1F666B41004049FB /* ViewController.m */; };
@@ -24,6 +27,10 @@
 		DD04DA641F6D7E8C0093FD7C /* GLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBaseViewController.h; sourceTree = "<group>"; };
 		DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBaseViewController.m; sourceTree = "<group>"; };
 		DD0709CB1F7225EC000CDE9B /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
+		DD16F9501F81082500B9AD1B /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
+		DD16F9511F81082500B9AD1B /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
+		DD16F9521F81097200B9AD1B /* AlphaMixtureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaMixtureViewController.h; sourceTree = "<group>"; };
+		DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlphaMixtureViewController.m; sourceTree = "<group>"; };
 		DDA04C421F666B41004049FB /* OpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA04C461F666B41004049FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DDA04C481F666B41004049FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +77,8 @@
 		DDA04C441F666B41004049FB /* OpenGLES */ = {
 			isa = PBXGroup;
 			children = (
+				DD16F9501F81082500B9AD1B /* green.png */,
+				DD16F9511F81082500B9AD1B /* red.png */,
 				DD0709CB1F7225EC000CDE9B /* texture.jpg */,
 				DDA04C5C1F666BCB004049FB /* fragment.glsl */,
 				DDA04C5D1F666BCB004049FB /* vertex.glsl */,
@@ -79,6 +88,8 @@
 				DDA04C4C1F666B41004049FB /* ViewController.m */,
 				DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */,
 				DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */,
+				DD16F9521F81097200B9AD1B /* AlphaMixtureViewController.h */,
+				DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */,
 				DD04DA641F6D7E8C0093FD7C /* GLBaseViewController.h */,
 				DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */,
 				DDA04C4E1F666B41004049FB /* Main.storyboard */,
@@ -157,6 +168,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD16F9561F810E8000B9AD1B /* red.png in Resources */,
+				DD16F9551F810E7C00B9AD1B /* green.png in Resources */,
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,
 				DDA04C521F666B41004049FB /* Assets.xcassets in Resources */,
@@ -173,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */,
 				DDA04C4D1F666B41004049FB /* ViewController.m in Sources */,
 				DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */,
 				DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */,

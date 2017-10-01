@@ -34,6 +34,11 @@
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
     [EAGLContext setCurrentContext:self.context];
+    
+    // 设置OpenGL状态
+    glEnable(GL_DEPTH_TEST);    // 开启深度测试
+    glEnable(GL_BLEND);     // 开启颜色混合
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);  //
 }
 
 - (void)update {

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "CubeViewController.h"
+#import "AlphaMixtureViewController.h"
 
 @interface AppDelegate ()
 
@@ -21,7 +22,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [CubeViewController new];
+    _window.rootViewController = [AlphaMixtureViewController new];
     [_window makeKeyAndVisible];
     
     return YES;
