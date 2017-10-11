@@ -7,11 +7,12 @@
 //
 
 #import <GLKit/GLKit.h>
+#import "GLContext.h"
 
 @interface GLBaseViewController : GLKViewController
 
 @property (nonatomic, strong) EAGLContext *context;
-@property (nonatomic, assign) GLuint shaderProgram;
+@property (nonatomic, strong) GLContext *glContext;
 @property (nonatomic, assign) GLfloat elapsedTime;
 
 - (void)update;

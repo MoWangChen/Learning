@@ -21,6 +21,7 @@
 		DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C5C1F666BCB004049FB /* fragment.glsl */; };
 		DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C5D1F666BCB004049FB /* vertex.glsl */; };
 		DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */; };
+		DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0601F8CC6E600563E68 /* GLContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		DDA04C5D1F666BCB004049FB /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
 		DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeViewController.h; sourceTree = "<group>"; };
 		DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeViewController.m; sourceTree = "<group>"; };
+		DDE9E05F1F8CC6E600563E68 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
+		DDE9E0601F8CC6E600563E68 /* GLContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +80,7 @@
 		DDA04C441F666B41004049FB /* OpenGLES */ = {
 			isa = PBXGroup;
 			children = (
+				DDE9E05E1F8CC6D200563E68 /* Tools */,
 				DD16F9501F81082500B9AD1B /* green.png */,
 				DD16F9511F81082500B9AD1B /* red.png */,
 				DD0709CB1F7225EC000CDE9B /* texture.jpg */,
@@ -107,6 +111,15 @@
 				DDA04C461F666B41004049FB /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DDE9E05E1F8CC6D200563E68 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				DDE9E05F1F8CC6E600563E68 /* GLContext.h */,
+				DDE9E0601F8CC6E600563E68 /* GLContext.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +204,7 @@
 				DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */,
 				DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */,
 				DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */,
+				DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */,
 				DDA04C471F666B41004049FB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

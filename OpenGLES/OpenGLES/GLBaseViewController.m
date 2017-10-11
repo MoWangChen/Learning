@@ -58,13 +58,13 @@
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // 使用fragment.glsl 和 vertex.glsl中的shader
-    glUseProgram(self.shaderProgram);
+//    glUseProgram(self.glContext.program);
+    [self.glContext active];
     
     glEnable(GL_DEPTH_TEST);
     
     // 设置shader中 uniform elapseTime 的值
-    GLuint elapsedTimeUniformLocation = glGetUniformLocation(self.shaderProgram, "elapsedTime");
-    glUniform1f(elapsedTimeUniformLocation, (GLfloat)self.elapsedTime);
+    [self.glContext setUniform1f:@"elapsedTime" value:(GLfloat)self.elapsedTime];
 }
 
 #pragma mark - private method
@@ -79,11 +79,11 @@
     // attribute vec4 positon
     // attribute vec4 color
     // attribute vec2 uv
-    GLuint positionAttribLocation = glGetAttribLocation(self.shaderProgram, "position");
+    GLuint positionAttribLocation = glGetAttribLocation(self.glContext.program, "position");
     glEnableVertexAttribArray(positionAttribLocation);
-    GLuint colorAttribLocation = glGetAttribLocation(self.shaderProgram, "normal");
+    GLuint colorAttribLocation = glGetAttribLocation(self.glContext.program, "normal");
     glEnableVertexAttribArray(colorAttribLocation);
-    GLuint uvAttribLocation = glGetAttribLocation(self.shaderProgram, "uv");
+    GLuint uvAttribLocation = glGetAttribLocation(self.glContext.program, "uv");
     glEnableVertexAttribArray(uvAttribLocation);
     
     // 为shader中的position和color赋值
@@ -93,152 +93,10 @@
     glVertexAttribPointer(uvAttribLocation, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData + 6 * sizeof(GLfloat));
 }
 
-#pragma mark - Prepare Shaders
-bool createProgram(const char *vertexShader, const char *fragmentShader, GLuint *pProgram) {
-    GLuint program, vertShader, fragShader;
-    // Create shader program.
-    program = glCreateProgram();
-    
-    const GLchar *vssource = (GLchar *)vertexShader;
-    const GLchar *fssource = (GLchar *)fragmentShader;
-    
-    if (!compileShader(&vertShader,GL_VERTEX_SHADER, vssource)) {
-        printf("Failed to compile vertex shader");
-        return false;
-    }
-    
-    if (!compileShader(&fragShader,GL_FRAGMENT_SHADER, fssource)) {
-        printf("Failed to compile fragment shader");
-        return false;
-    }
-    
-    // Attach vertex shader to program.
-    glAttachShader(program, vertShader);
-    
-    // Attach fragment shader to program.
-    glAttachShader(program, fragShader);
-    
-    // Link program.
-    if (!linkProgram(program)) {
-        printf("Failed to link program: %d", program);
-        
-        if (vertShader) {
-            glDeleteShader(vertShader);
-            vertShader = 0;
-        }
-        if (fragShader) {
-            glDeleteShader(fragShader);
-            fragShader = 0;
-        }
-        if (program) {
-            glDeleteProgram(program);
-            program = 0;
-        }
-        return false;
-    }
-    
-    // Release vertex and fragment shaders.
-    if (vertShader) {
-        glDetachShader(program, vertShader);
-        glDeleteShader(vertShader);
-    }
-    if (fragShader) {
-        glDetachShader(program, fragShader);
-        glDeleteShader(fragShader);
-    }
-    
-    *pProgram = program;
-    printf("Effect build success => %d \n", program);
-    return true;
-}
-
-
-bool compileShader(GLuint *shader, GLenum type, const GLchar *source) {
-    GLint status;
-    
-    if (!source) {
-        printf("Failed to load vertex shader");
-        return false;
-    }
-    
-    *shader = glCreateShader(type);
-    glShaderSource(*shader, 1, &source, NULL);
-    glCompileShader(*shader);
-    
-    GLint logLength;
-    glGetShaderiv(*shader, GL_INFO_LOG_LENGTH, &logLength);
-    
-#if Debug
-    if (logLength > 0) {
-        GLchar *log = (GLchar *)malloc(logLength);
-        glGetShaderInfoLog(*shader, logLength, &logLength, log);
-        printf("Shader compile log:\n%s", log);
-        printf("Shader: \n %s\n", source);
-        free(log);
-    }
-#endif
-    
-    glGetShaderiv(*shader, GL_COMPILE_STATUS, &status);
-    if (status == 0) {
-        glDeleteShader(*shader);
-        return false;
-    }
-    
-    return true;
-}
-
-bool linkProgram(GLuint prog) {
-    GLint status;
-    glLinkProgram(prog);
-    
-#if Debug
-    GLint logLength;
-    glGetProgramiv(prog, GL_INFO_LOG_LENGTH, &logLength);
-    if (logLength > 0) {
-        GLchar *log = (GLchar *)malloc(logLength);
-        glGetProgramInfoLog(prog, logLength, &logLength, log);
-        printf("Program link log:\n%s", log);
-        free(log);
-    }
-#endif
-    
-    glGetProgramiv(prog, GL_LINK_STATUS, &status);
-    if (status == 0) {
-        return false;
-    }
-    
-    return true;
-}
-
-bool validateProgram(GLuint prog) {
-    GLint logLength, status;
-    
-    glValidateProgram(prog);
-    glGetProgramiv(prog, GL_INFO_LOG_LENGTH, &logLength);
-    if (logLength > 0) {
-        GLchar *log = (GLchar *)malloc(logLength);
-        glGetProgramInfoLog(prog, logLength, &logLength, log);
-        printf("Program validate log:\n%s", log);
-        free(log);
-    }
-    
-    glGetProgramiv(prog, GL_VALIDATE_STATUS, &status);
-    if (status == 0) {
-        return false;
-    }
-    
-    return true;
-}
-
 - (void)setupShader {
     NSString *vertexShaderPath = [[NSBundle mainBundle] pathForResource:@"vertex" ofType:@"glsl"];
     NSString *fragmentShaderPath = [[NSBundle mainBundle] pathForResource:@"fragment" ofType:@"glsl"];
-    NSString *vertexShaderContent = [NSString stringWithContentsOfFile:vertexShaderPath encoding:NSUTF8StringEncoding error:nil];
-    NSString *fragmentShaderContent = [NSString stringWithContentsOfFile:fragmentShaderPath encoding:NSUTF8StringEncoding error:nil];
-    GLuint program;
-    createProgram(vertexShaderContent.UTF8String, fragmentShaderContent.UTF8String, &program);
-    self.shaderProgram = program;
-    
+    self.glContext = [GLContext contextWithVertexShaderPath:vertexShaderPath fragmentShaderPath:fragmentShaderPath];;
 }
 
 @end

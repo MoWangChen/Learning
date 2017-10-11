@@ -46,12 +46,12 @@
 #pragma mark - 摄像机
 - (void)cameraTransformDrawInRect
 {
-    GLuint projectionMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "projectionMatrix");
+    GLuint projectionMatrixUniformLocation = glGetUniformLocation(self.glContext.program, "projectionMatrix");
     glUniformMatrix4fv(projectionMatrixUniformLocation, 1, 0, self.projectionMatrix.m);
-    GLuint cameraMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "cameraMatrix");
+    GLuint cameraMatrixUniformLocation = glGetUniformLocation(self.glContext.program, "cameraMatrix");
     glUniformMatrix4fv(cameraMatrixUniformLocation, 1, 0, self.cameraMatrix.m);
     
-    GLuint modelMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "modelMatrix");
+    GLuint modelMatrixUniformLocation = glGetUniformLocation(self.glContext.program, "modelMatrix");
     
     glUniformMatrix4fv(modelMatrixUniformLocation, 1, 0, self.modelMatrix1.m);
     [self drawTriangle];
@@ -92,7 +92,7 @@
 #pragma mark - transformMatrix
 - (void)transformDrawInRect
 {
-    GLuint transformUniformLocation = glGetUniformLocation(self.shaderProgram, "transform");
+    GLuint transformUniformLocation = glGetUniformLocation(self.glContext.program, "transform");
     glUniformMatrix4fv(transformUniformLocation, 1, 0, self.transformMatrix.m);
     
     [self drawTriangle];

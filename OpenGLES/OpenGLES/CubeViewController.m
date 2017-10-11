@@ -43,26 +43,26 @@
 {
     [super glkView:view drawInRect:rect];
     
-    GLuint projectionMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "projectionMatrix");
+    GLuint projectionMatrixUniformLocation = glGetUniformLocation(self.glContext.program, "projectionMatrix");
     glUniformMatrix4fv(projectionMatrixUniformLocation, 1, 0, self.projectionMatrix.m);
     
-    GLuint cameraMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "cameraMatrix");
+    GLuint cameraMatrixUniformLocation = glGetUniformLocation(self.glContext.program, "cameraMatrix");
     glUniformMatrix4fv(cameraMatrixUniformLocation, 1, 0, self.cameraMatrix.m);
     
-    GLuint modelMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "modelMatrix");
+    GLuint modelMatrixUniformLocation = glGetUniformLocation(self.glContext.program, "modelMatrix");
     glUniformMatrix4fv(modelMatrixUniformLocation, 1, 0, self.modelMatrix.m);
     
     bool canInvert;
     GLKMatrix4 normalMatrix = GLKMatrix4InvertAndTranspose(self.modelMatrix, &canInvert);
     if (canInvert) {
-        GLuint modelMatrixUniformLocation = glGetUniformLocation(self.shaderProgram, "normalMatrix");
+        GLuint modelMatrixUniformLocation = glGetUniformLocation(self.glContext.program, "normalMatrix");
         glUniformMatrix4fv(modelMatrixUniformLocation, 1, 0, normalMatrix.m);
     }
     
-    GLuint lightDirectionUniformLocation = glGetUniformLocation(self.shaderProgram, "lightDirection");
+    GLuint lightDirectionUniformLocation = glGetUniformLocation(self.glContext.program, "lightDirection");
     glUniform3fv(lightDirectionUniformLocation, 1, self.lightDirection.v);
     
-    GLuint diffuseMapUniformLocation = glGetUniformLocation(self.shaderProgram, "diffuseMap");
+    GLuint diffuseMapUniformLocation = glGetUniformLocation(self.glContext.program, "diffuseMap");
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, self.diffuseTexture.name);
     glUniform1i(diffuseMapUniformLocation, 0);
