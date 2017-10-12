@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "CubeViewController.h"
 #import "AlphaMixtureViewController.h"
+#import "LaserViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [AlphaMixtureViewController new];
+    _window.rootViewController = [LaserViewController new];
     [_window makeKeyAndVisible];
     
     return YES;

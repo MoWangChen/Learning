@@ -54,14 +54,14 @@
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
 {
     // 清空之前的绘制
-    glClearColor(0.6, 0.2, 0.2, 1);
+    glClearColor(0.0, 0.0, 0.0, 1);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // 使用fragment.glsl 和 vertex.glsl中的shader
 //    glUseProgram(self.glContext.program);
     [self.glContext active];
     
-    glEnable(GL_DEPTH_TEST);
+//    glEnable(GL_DEPTH_TEST);
     
     // 设置shader中 uniform elapseTime 的值
     [self.glContext setUniform1f:@"elapsedTime" value:(GLfloat)self.elapsedTime];
