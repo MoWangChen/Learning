@@ -16,8 +16,12 @@
 - (id)initWithVertexShader:(NSString *)vertexShader fragmentShader:(NSString *)fragmentShader;
 - (void)active;
 
+- (void)bindAttributes:(GLfloat *)triangleData;
+
 // draw
 - (void)drawTriangles:(GLfloat *)triangleData vertexCount:(GLint)vertexCount;
+- (void)drawTrianglesWithVBO:(GLuint)vbo vertexCount:(GLint)vertexCount;
+- (void)drawTrianglesWithVAO:(GLuint)vao vertexCount:(GLint)vertexCount;
 
 // uniform setters
 - (void)setUniform1i:(NSString *)uniformName value:(GLuint)value;

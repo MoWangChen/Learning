@@ -23,7 +23,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [LaserViewController new];
+    _window.rootViewController = [CubeViewController new];
     [_window makeKeyAndVisible];
     
     return YES;

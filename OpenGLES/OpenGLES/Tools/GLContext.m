@@ -7,6 +7,7 @@
 //
 
 #import "GLContext.h"
+#import <OpenGLES/ES2/glext.h>
 
 @implementation GLContext
 
@@ -32,7 +33,7 @@
     glUseProgram(program);
 }
 
-- (void)drawTriangles:(GLfloat *)triangleData vertexCount:(GLint)vertexCount
+- (void)bindAttributes:(GLfloat *)triangleData
 {
     // 启用Shader中的两个属性
     // attribute vec4 positon
@@ -50,7 +51,25 @@
     glVertexAttribPointer(positionAttribLocation, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData);
     glVertexAttribPointer(colorAttribLocation, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData + 3 * sizeof(GLfloat));
     glVertexAttribPointer(uvAttribLocation, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData + 6 * sizeof(GLfloat));
-    
+}
+
+#pragma mark - Draw
+- (void)drawTriangles:(GLfloat *)triangleData vertexCount:(GLint)vertexCount
+{
+    [self bindAttributes:triangleData];
+    glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+}
+
+- (void)drawTrianglesWithVBO:(GLuint)vbo vertexCount:(GLint)vertexCount
+{
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    [self bindAttributes:NULL];
+    glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+}
+
+- (void)drawTrianglesWithVAO:(GLuint)vao vertexCount:(GLint)vertexCount
+{
+    glBindVertexArrayOES(vao);
     glDrawArrays(GL_TRIANGLES, 0, vertexCount);
 }
 

@@ -11,7 +11,6 @@
 
 @interface GLBaseViewController : GLKViewController
 
-@property (nonatomic, strong) EAGLContext *context;
 @property (nonatomic, strong) GLContext *glContext;
 @property (nonatomic, assign) GLfloat elapsedTime;
 

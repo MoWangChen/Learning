@@ -10,6 +10,8 @@
 
 @interface GLBaseViewController ()
 
+@property (nonatomic, strong) EAGLContext *context;
+
 @end
 
 @implementation GLBaseViewController
@@ -18,13 +20,16 @@
     [super viewDidLoad];
 
     [self setupContext];
-    [self setupShader];
+    [self setupGLContext];
 }
 
 - (void)setupContext
 {
     // 使用OpenGL ES2,  ES2 之后都采用shader来管理渲染管线
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    
+    // 设置帧率为60fps
+    self.preferredFramesPerSecond = 60;
     
     if (!self.context) {
         NSLog(@"fail to create ES context");
@@ -33,6 +38,7 @@
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
     view.drawableDepthFormat = GLKViewDrawableDepthFormat24;
+    view.drawableMultisample = GLKViewDrawableMultisample4X;
     [EAGLContext setCurrentContext:self.context];
     
     // 设置OpenGL状态
@@ -41,13 +47,11 @@
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);  //
 }
 
-- (void)update {
-    // 距离上一次调用update过了多长时间，比如一个游戏物体速度是3m/s,那么每一次调用update，
-    // 他就会行走3m/s * deltaTime，这样做就可以让游戏物体的行走实际速度与update调用频次无关
-    // NSTimeInterval deltaTime = self.timeSinceLastUpdate;
-    
-    NSTimeInterval deltaTime = self.timeSinceLastUpdate;
-    self.elapsedTime += deltaTime;
+- (void)setupGLContext
+{
+    NSString *vertexShaderPath = [[NSBundle mainBundle] pathForResource:@"vertex" ofType:@"glsl"];
+    NSString *fragmentShaderPath = [[NSBundle mainBundle] pathForResource:@"fragment" ofType:@"glsl"];
+    self.glContext = [GLContext contextWithVertexShaderPath:vertexShaderPath fragmentShaderPath:fragmentShaderPath];
 }
 
 #pragma mark - GLKViewDelegate
@@ -65,6 +69,15 @@
     
     // 设置shader中 uniform elapseTime 的值
     [self.glContext setUniform1f:@"elapsedTime" value:(GLfloat)self.elapsedTime];
+}
+
+- (void)update {
+    // 距离上一次调用update过了多长时间，比如一个游戏物体速度是3m/s,那么每一次调用update，
+    // 他就会行走3m/s * deltaTime，这样做就可以让游戏物体的行走实际速度与update调用频次无关
+    // NSTimeInterval deltaTime = self.timeSinceLastUpdate;
+    
+    NSTimeInterval deltaTime = self.timeSinceLastUpdate;
+    self.elapsedTime += deltaTime;
 }
 
 #pragma mark - private method
@@ -91,12 +104,6 @@
     glVertexAttribPointer(positionAttribLocation, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData);
     glVertexAttribPointer(colorAttribLocation, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData + 3 * sizeof(GLfloat));
     glVertexAttribPointer(uvAttribLocation, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (char *)triangleData + 6 * sizeof(GLfloat));
-}
-
-- (void)setupShader {
-    NSString *vertexShaderPath = [[NSBundle mainBundle] pathForResource:@"vertex" ofType:@"glsl"];
-    NSString *fragmentShaderPath = [[NSBundle mainBundle] pathForResource:@"fragment" ofType:@"glsl"];
-    self.glContext = [GLContext contextWithVertexShaderPath:vertexShaderPath fragmentShaderPath:fragmentShaderPath];;
 }
 
 @end

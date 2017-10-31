@@ -20,6 +20,7 @@
 		DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C531F666B41004049FB /* LaunchScreen.storyboard */; };
 		DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C5C1F666BCB004049FB /* fragment.glsl */; };
 		DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C5D1F666BCB004049FB /* vertex.glsl */; };
+		DDA07FF11FA8595800127BF2 /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA07FF01FA8595800127BF2 /* Cube.m */; };
 		DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */; };
 		DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0601F8CC6E600563E68 /* GLContext.m */; };
 		DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E06C1F8DF12500563E68 /* LaserViewController.m */; };
@@ -27,6 +28,7 @@
 		DDE9E0711F8DF26A00563E68 /* laserVertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E06F1F8DF26A00563E68 /* laserVertex.glsl */; };
 		DDE9E0741F8E04A100563E68 /* Laser.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0731F8E04A100563E68 /* Laser.m */; };
 		DDE9E0751F8E29B900563E68 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E0621F8DEB5400563E68 /* laser.png */; };
+		DDE9E0781F8F740100563E68 /* GLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0771F8F740000563E68 /* GLObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		DDA04C561F666B41004049FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDA04C5C1F666BCB004049FB /* fragment.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fragment.glsl; sourceTree = "<group>"; };
 		DDA04C5D1F666BCB004049FB /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		DDA07FEF1FA8595800127BF2 /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
+		DDA07FF01FA8595800127BF2 /* Cube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cube.m; sourceTree = "<group>"; };
 		DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeViewController.h; sourceTree = "<group>"; };
 		DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeViewController.m; sourceTree = "<group>"; };
 		DDE9E05F1F8CC6E600563E68 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
@@ -60,6 +64,8 @@
 		DDE9E06F1F8DF26A00563E68 /* laserVertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = laserVertex.glsl; sourceTree = "<group>"; };
 		DDE9E0721F8E04A100563E68 /* Laser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Laser.h; sourceTree = "<group>"; };
 		DDE9E0731F8E04A100563E68 /* Laser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Laser.m; sourceTree = "<group>"; };
+		DDE9E0761F8F740000563E68 /* GLObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLObject.h; sourceTree = "<group>"; };
+		DDE9E0771F8F740000563E68 /* GLObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,22 +100,14 @@
 			children = (
 				DDE9E05E1F8CC6D200563E68 /* Tools */,
 				DDE9E06A1F8DF11400563E68 /* Laser */,
-				DD16F9501F81082500B9AD1B /* green.png */,
-				DD16F9511F81082500B9AD1B /* red.png */,
-				DD0709CB1F7225EC000CDE9B /* texture.jpg */,
-				DDE9E0621F8DEB5400563E68 /* laser.png */,
-				DDA04C5C1F666BCB004049FB /* fragment.glsl */,
-				DDA04C5D1F666BCB004049FB /* vertex.glsl */,
+				DDA07FEE1FA8591300127BF2 /* Cube */,
+				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
 				DDA04C4B1F666B41004049FB /* ViewController.h */,
 				DDA04C4C1F666B41004049FB /* ViewController.m */,
-				DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */,
-				DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */,
 				DD16F9521F81097200B9AD1B /* AlphaMixtureViewController.h */,
 				DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */,
-				DD04DA641F6D7E8C0093FD7C /* GLBaseViewController.h */,
-				DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */,
 				DDA04C4E1F666B41004049FB /* Main.storyboard */,
 				DDA04C511F666B41004049FB /* Assets.xcassets */,
 				DDA04C531F666B41004049FB /* LaunchScreen.storyboard */,
@@ -127,11 +125,39 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DDA07FED1FA858F400127BF2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DD16F9501F81082500B9AD1B /* green.png */,
+				DD16F9511F81082500B9AD1B /* red.png */,
+				DD0709CB1F7225EC000CDE9B /* texture.jpg */,
+				DDE9E0621F8DEB5400563E68 /* laser.png */,
+				DDA04C5C1F666BCB004049FB /* fragment.glsl */,
+				DDA04C5D1F666BCB004049FB /* vertex.glsl */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DDA07FEE1FA8591300127BF2 /* Cube */ = {
+			isa = PBXGroup;
+			children = (
+				DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */,
+				DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */,
+				DDA07FEF1FA8595800127BF2 /* Cube.h */,
+				DDA07FF01FA8595800127BF2 /* Cube.m */,
+			);
+			path = Cube;
+			sourceTree = "<group>";
+		};
 		DDE9E05E1F8CC6D200563E68 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				DDE9E05F1F8CC6E600563E68 /* GLContext.h */,
 				DDE9E0601F8CC6E600563E68 /* GLContext.m */,
+				DDE9E0761F8F740000563E68 /* GLObject.h */,
+				DDE9E0771F8F740000563E68 /* GLObject.m */,
+				DD04DA641F6D7E8C0093FD7C /* GLBaseViewController.h */,
+				DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -229,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA07FF11FA8595800127BF2 /* Cube.m in Sources */,
 				DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */,
 				DDA04C4D1F666B41004049FB /* ViewController.m in Sources */,
 				DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */,
@@ -236,6 +263,7 @@
 				DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */,
 				DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */,
 				DDE9E0741F8E04A100563E68 /* Laser.m in Sources */,
+				DDE9E0781F8F740100563E68 /* GLObject.m in Sources */,
 				DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */,
 				DDA04C471F666B41004049FB /* main.m in Sources */,
 			);
