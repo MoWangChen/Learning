@@ -22,6 +22,7 @@
 - (void)drawTriangles:(GLfloat *)triangleData vertexCount:(GLint)vertexCount;
 - (void)drawTrianglesWithVBO:(GLuint)vbo vertexCount:(GLint)vertexCount;
 - (void)drawTrianglesWithVAO:(GLuint)vao vertexCount:(GLint)vertexCount;
+- (void)drawTrianglesWithIndiceVAO:(GLuint)vao vertexCount:(GLint)vertexCount;
 
 // uniform setters
 - (void)setUniform1i:(NSString *)uniformName value:(GLuint)value;

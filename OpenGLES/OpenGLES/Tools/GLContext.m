@@ -73,6 +73,12 @@
     glDrawArrays(GL_TRIANGLES, 0, vertexCount);
 }
 
+- (void)drawTrianglesWithIndiceVAO:(GLuint)vao vertexCount:(GLint)vertexCount
+{
+    glBindVertexArrayOES(vao);
+    glDrawElements(GL_TRIANGLES, vertexCount, GL_UNSIGNED_SHORT, (void *)0);
+}
+
 #pragma mark - uniform setters
 - (void)setUniform1i:(NSString *)uniformName value:(GLuint)value
 {
