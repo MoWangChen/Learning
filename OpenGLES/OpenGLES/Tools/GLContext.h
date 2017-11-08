@@ -8,6 +8,7 @@
 
 #import <GLKit/GLKit.h>
 
+@class GLGeometry;
 @interface GLContext : NSObject
 
 @property (nonatomic, assign) GLuint program;
@@ -23,6 +24,7 @@
 - (void)drawTrianglesWithVBO:(GLuint)vbo vertexCount:(GLint)vertexCount;
 - (void)drawTrianglesWithVAO:(GLuint)vao vertexCount:(GLint)vertexCount;
 - (void)drawTrianglesWithIndiceVAO:(GLuint)vao vertexCount:(GLint)vertexCount;
+- (void)drawGeometry:(GLGeometry *)geometry;
 
 // uniform setters
 - (void)setUniform1i:(NSString *)uniformName value:(GLuint)value;

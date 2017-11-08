@@ -11,6 +11,7 @@
 #import "CubeViewController.h"
 #import "AlphaMixtureViewController.h"
 #import "LaserViewController.h"
+#import "CylinderViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +24,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [CubeViewController new];
+    _window.rootViewController = [CylinderViewController new];
     [_window makeKeyAndVisible];
     
     return YES;

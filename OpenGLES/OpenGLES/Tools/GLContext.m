@@ -8,6 +8,7 @@
 
 #import "GLContext.h"
 #import <OpenGLES/ES2/glext.h>
+#import "GLGeometry.h"
 
 @implementation GLContext
 
@@ -77,6 +78,19 @@
 {
     glBindVertexArrayOES(vao);
     glDrawElements(GL_TRIANGLES, vertexCount, GL_UNSIGNED_SHORT, (void *)0);
+}
+
+- (void)drawGeometry:(GLGeometry *)geometry
+{
+    glBindBuffer(GL_ARRAY_BUFFER, [geometry getVBO]);
+    [self bindAttributes:nil];
+    if (geometry.geometryType == GLGeometryTypeTriangles) {
+        glDrawArrays(GL_TRIANGLES, 0, [geometry vertexCount]);
+    }else if (geometry.geometryType == GLGeometryTypeTriangleFan) {
+        glDrawArrays(GL_TRIANGLE_FAN, 0, [geometry vertexCount]);
+    }else if (geometry.geometryType == GLGeometryTypeTriangleStrip) {
+        glDrawArrays(GL_TRIANGLE_STRIP, 0, [geometry vertexCount]);
+    }
 }
 
 #pragma mark - uniform setters

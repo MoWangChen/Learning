@@ -12,6 +12,11 @@
 		DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */; };
 		DD16F9551F810E7C00B9AD1B /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = DD16F9501F81082500B9AD1B /* green.png */; };
 		DD16F9561F810E8000B9AD1B /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = DD16F9511F81082500B9AD1B /* red.png */; };
+		DD5263E11FB2FD5A005D91ED /* CylinderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5263E01FB2FD5A005D91ED /* CylinderViewController.m */; };
+		DD5263E51FB30519005D91ED /* metal_01.png in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E21FB2FF61005D91ED /* metal_01.png */; };
+		DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E31FB2FF61005D91ED /* metal_02.jpg */; };
+		DD5263E71FB3051F005D91ED /* metal_03.png in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E41FB2FF61005D91ED /* metal_03.png */; };
+		DD7085681FAC470F006ECAC6 /* Cylinder.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7085671FAC470F006ECAC6 /* Cylinder.m */; };
 		DDA04C471F666B41004049FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C461F666B41004049FB /* main.m */; };
 		DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C491F666B41004049FB /* AppDelegate.m */; };
 		DDA04C4D1F666B41004049FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C4C1F666B41004049FB /* ViewController.m */; };
@@ -29,6 +34,7 @@
 		DDE9E0741F8E04A100563E68 /* Laser.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0731F8E04A100563E68 /* Laser.m */; };
 		DDE9E0751F8E29B900563E68 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E0621F8DEB5400563E68 /* laser.png */; };
 		DDE9E0781F8F740100563E68 /* GLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0771F8F740000563E68 /* GLObject.m */; };
+		DDFF99421FA9C67D009E420A /* GLGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFF99411FA9C67D009E420A /* GLGeometry.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +45,13 @@
 		DD16F9511F81082500B9AD1B /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		DD16F9521F81097200B9AD1B /* AlphaMixtureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaMixtureViewController.h; sourceTree = "<group>"; };
 		DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlphaMixtureViewController.m; sourceTree = "<group>"; };
+		DD5263DF1FB2FD5A005D91ED /* CylinderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderViewController.h; sourceTree = "<group>"; };
+		DD5263E01FB2FD5A005D91ED /* CylinderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderViewController.m; sourceTree = "<group>"; };
+		DD5263E21FB2FF61005D91ED /* metal_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_01.png; sourceTree = "<group>"; };
+		DD5263E31FB2FF61005D91ED /* metal_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal_02.jpg; sourceTree = "<group>"; };
+		DD5263E41FB2FF61005D91ED /* metal_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_03.png; sourceTree = "<group>"; };
+		DD7085661FAC470F006ECAC6 /* Cylinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cylinder.h; sourceTree = "<group>"; };
+		DD7085671FAC470F006ECAC6 /* Cylinder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cylinder.m; sourceTree = "<group>"; };
 		DDA04C421F666B41004049FB /* OpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA04C461F666B41004049FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DDA04C481F666B41004049FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -66,6 +79,8 @@
 		DDE9E0731F8E04A100563E68 /* Laser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Laser.m; sourceTree = "<group>"; };
 		DDE9E0761F8F740000563E68 /* GLObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLObject.h; sourceTree = "<group>"; };
 		DDE9E0771F8F740000563E68 /* GLObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLObject.m; sourceTree = "<group>"; };
+		DDFF99401FA9C67D009E420A /* GLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLGeometry.h; sourceTree = "<group>"; };
+		DDFF99411FA9C67D009E420A /* GLGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLGeometry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +94,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD7085651FAC46F9006ECAC6 /* Cylinder */ = {
+			isa = PBXGroup;
+			children = (
+				DD7085661FAC470F006ECAC6 /* Cylinder.h */,
+				DD7085671FAC470F006ECAC6 /* Cylinder.m */,
+				DD5263DF1FB2FD5A005D91ED /* CylinderViewController.h */,
+				DD5263E01FB2FD5A005D91ED /* CylinderViewController.m */,
+			);
+			path = Cylinder;
+			sourceTree = "<group>";
+		};
 		DDA04C391F666B41004049FB = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +127,7 @@
 				DDE9E05E1F8CC6D200563E68 /* Tools */,
 				DDE9E06A1F8DF11400563E68 /* Laser */,
 				DDA07FEE1FA8591300127BF2 /* Cube */,
+				DD7085651FAC46F9006ECAC6 /* Cylinder */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -128,6 +155,9 @@
 		DDA07FED1FA858F400127BF2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DD5263E21FB2FF61005D91ED /* metal_01.png */,
+				DD5263E31FB2FF61005D91ED /* metal_02.jpg */,
+				DD5263E41FB2FF61005D91ED /* metal_03.png */,
 				DD16F9501F81082500B9AD1B /* green.png */,
 				DD16F9511F81082500B9AD1B /* red.png */,
 				DD0709CB1F7225EC000CDE9B /* texture.jpg */,
@@ -156,6 +186,8 @@
 				DDE9E0601F8CC6E600563E68 /* GLContext.m */,
 				DDE9E0761F8F740000563E68 /* GLObject.h */,
 				DDE9E0771F8F740000563E68 /* GLObject.m */,
+				DDFF99401FA9C67D009E420A /* GLGeometry.h */,
+				DDFF99411FA9C67D009E420A /* GLGeometry.m */,
 				DD04DA641F6D7E8C0093FD7C /* GLBaseViewController.h */,
 				DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */,
 			);
@@ -236,10 +268,13 @@
 			files = (
 				DD16F9561F810E8000B9AD1B /* red.png in Resources */,
 				DD16F9551F810E7C00B9AD1B /* green.png in Resources */,
+				DD5263E71FB3051F005D91ED /* metal_03.png in Resources */,
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,
 				DDA04C521F666B41004049FB /* Assets.xcassets in Resources */,
 				DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */,
+				DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */,
+				DD5263E51FB30519005D91ED /* metal_01.png in Resources */,
 				DDA04C501F666B41004049FB /* Main.storyboard in Resources */,
 				DDE9E0711F8DF26A00563E68 /* laserVertex.glsl in Resources */,
 				DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */,
@@ -257,12 +292,15 @@
 			files = (
 				DDA07FF11FA8595800127BF2 /* Cube.m in Sources */,
 				DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */,
+				DDFF99421FA9C67D009E420A /* GLGeometry.m in Sources */,
 				DDA04C4D1F666B41004049FB /* ViewController.m in Sources */,
 				DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */,
 				DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */,
 				DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */,
 				DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */,
 				DDE9E0741F8E04A100563E68 /* Laser.m in Sources */,
+				DD7085681FAC470F006ECAC6 /* Cylinder.m in Sources */,
+				DD5263E11FB2FD5A005D91ED /* CylinderViewController.m in Sources */,
 				DDE9E0781F8F740100563E68 /* GLObject.m in Sources */,
 				DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */,
 				DDA04C471F666B41004049FB /* main.m in Sources */,
