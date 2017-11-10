@@ -17,6 +17,12 @@
 		DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E31FB2FF61005D91ED /* metal_02.jpg */; };
 		DD5263E71FB3051F005D91ED /* metal_03.png in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E41FB2FF61005D91ED /* metal_03.png */; };
 		DD7085681FAC470F006ECAC6 /* Cylinder.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7085671FAC470F006ECAC6 /* Cylinder.m */; };
+		DD89B04E1FB4498300520ADF /* Terrain.m in Sources */ = {isa = PBXBuildFile; fileRef = DD89B04D1FB4498300520ADF /* Terrain.m */; };
+		DD89B0511FB552C200520ADF /* TerrainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD89B0501FB552C200520ADF /* TerrainViewController.m */; };
+		DD89B0561FB57C0F00520ADF /* frag_terrain.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0551FB57C0F00520ADF /* frag_terrain.glsl */; };
+		DD89B0571FB57D0B00520ADF /* terrain_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0531FB57BC300520ADF /* terrain_01.jpg */; };
+		DD89B0581FB57D0E00520ADF /* grass_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0521FB57BC300520ADF /* grass_01.jpg */; };
+		DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0541FB57BC300520ADF /* dirt_01.jpg */; };
 		DDA04C471F666B41004049FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C461F666B41004049FB /* main.m */; };
 		DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C491F666B41004049FB /* AppDelegate.m */; };
 		DDA04C4D1F666B41004049FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C4C1F666B41004049FB /* ViewController.m */; };
@@ -52,6 +58,14 @@
 		DD5263E41FB2FF61005D91ED /* metal_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_03.png; sourceTree = "<group>"; };
 		DD7085661FAC470F006ECAC6 /* Cylinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cylinder.h; sourceTree = "<group>"; };
 		DD7085671FAC470F006ECAC6 /* Cylinder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cylinder.m; sourceTree = "<group>"; };
+		DD89B04C1FB4498300520ADF /* Terrain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
+		DD89B04D1FB4498300520ADF /* Terrain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Terrain.m; sourceTree = "<group>"; };
+		DD89B04F1FB552C200520ADF /* TerrainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TerrainViewController.h; sourceTree = "<group>"; };
+		DD89B0501FB552C200520ADF /* TerrainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TerrainViewController.m; sourceTree = "<group>"; };
+		DD89B0521FB57BC300520ADF /* grass_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grass_01.jpg; sourceTree = "<group>"; };
+		DD89B0531FB57BC300520ADF /* terrain_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = terrain_01.jpg; sourceTree = "<group>"; };
+		DD89B0541FB57BC300520ADF /* dirt_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dirt_01.jpg; sourceTree = "<group>"; };
+		DD89B0551FB57C0F00520ADF /* frag_terrain.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_terrain.glsl; sourceTree = "<group>"; };
 		DDA04C421F666B41004049FB /* OpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA04C461F666B41004049FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DDA04C481F666B41004049FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +119,18 @@
 			path = Cylinder;
 			sourceTree = "<group>";
 		};
+		DD89B04B1FB4496000520ADF /* Terrain */ = {
+			isa = PBXGroup;
+			children = (
+				DD89B04C1FB4498300520ADF /* Terrain.h */,
+				DD89B04D1FB4498300520ADF /* Terrain.m */,
+				DD89B04F1FB552C200520ADF /* TerrainViewController.h */,
+				DD89B0501FB552C200520ADF /* TerrainViewController.m */,
+				DD89B0551FB57C0F00520ADF /* frag_terrain.glsl */,
+			);
+			path = Terrain;
+			sourceTree = "<group>";
+		};
 		DDA04C391F666B41004049FB = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +154,7 @@
 				DDE9E06A1F8DF11400563E68 /* Laser */,
 				DDA07FEE1FA8591300127BF2 /* Cube */,
 				DD7085651FAC46F9006ECAC6 /* Cylinder */,
+				DD89B04B1FB4496000520ADF /* Terrain */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -155,6 +182,9 @@
 		DDA07FED1FA858F400127BF2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DD89B0541FB57BC300520ADF /* dirt_01.jpg */,
+				DD89B0521FB57BC300520ADF /* grass_01.jpg */,
+				DD89B0531FB57BC300520ADF /* terrain_01.jpg */,
 				DD5263E21FB2FF61005D91ED /* metal_01.png */,
 				DD5263E31FB2FF61005D91ED /* metal_02.jpg */,
 				DD5263E41FB2FF61005D91ED /* metal_03.png */,
@@ -267,6 +297,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD16F9561F810E8000B9AD1B /* red.png in Resources */,
+				DD89B0561FB57C0F00520ADF /* frag_terrain.glsl in Resources */,
+				DD89B0571FB57D0B00520ADF /* terrain_01.jpg in Resources */,
 				DD16F9551F810E7C00B9AD1B /* green.png in Resources */,
 				DD5263E71FB3051F005D91ED /* metal_03.png in Resources */,
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
@@ -275,10 +307,12 @@
 				DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */,
 				DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */,
 				DD5263E51FB30519005D91ED /* metal_01.png in Resources */,
+				DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */,
 				DDA04C501F666B41004049FB /* Main.storyboard in Resources */,
 				DDE9E0711F8DF26A00563E68 /* laserVertex.glsl in Resources */,
 				DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */,
 				DDE9E0751F8E29B900563E68 /* laser.png in Resources */,
+				DD89B0581FB57D0E00520ADF /* grass_01.jpg in Resources */,
 				DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,11 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD89B04E1FB4498300520ADF /* Terrain.m in Sources */,
 				DDA07FF11FA8595800127BF2 /* Cube.m in Sources */,
 				DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */,
 				DDFF99421FA9C67D009E420A /* GLGeometry.m in Sources */,
 				DDA04C4D1F666B41004049FB /* ViewController.m in Sources */,
 				DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */,
+				DD89B0511FB552C200520ADF /* TerrainViewController.m in Sources */,
 				DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */,
 				DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */,
 				DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */,

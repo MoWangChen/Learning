@@ -12,6 +12,7 @@
 #import "AlphaMixtureViewController.h"
 #import "LaserViewController.h"
 #import "CylinderViewController.h"
+#import "TerrainViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +25,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [CylinderViewController new];
+    _window.rootViewController = [TerrainViewController new];
     [_window makeKeyAndVisible];
     
     return YES;

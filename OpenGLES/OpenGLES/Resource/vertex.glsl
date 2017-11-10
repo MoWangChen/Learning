@@ -10,6 +10,7 @@ uniform mat4 projectionMatrix;
 uniform mat4 cameraMatrix;
 uniform mat4 modelMatrix;
 
+varying vec3 fragPosition;
 varying vec4 fragColor;
 varying vec3 fragNormal;
 varying vec2 fragUV;
@@ -17,6 +18,7 @@ varying vec2 fragUV;
 void main(void) {
     fragNormal = normal;
     fragUV = uv;
+    fragPosition = position.xyz;
     mat4 mvp = projectionMatrix * cameraMatrix * modelMatrix;
     gl_Position = mvp * position;
     gl_PointSize = 25.0;
