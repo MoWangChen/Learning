@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */; };
 		DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0709CB1F7225EC000CDE9B /* texture.jpg */; };
+		DD0C8FD31FBAF9E000EACE72 /* WavefrontOBJ.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0C8FD21FBAF9E000EACE72 /* WavefrontOBJ.m */; };
 		DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */; };
 		DD16F9551F810E7C00B9AD1B /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = DD16F9501F81082500B9AD1B /* green.png */; };
 		DD16F9561F810E8000B9AD1B /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = DD16F9511F81082500B9AD1B /* red.png */; };
@@ -32,6 +33,13 @@
 		DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C5C1F666BCB004049FB /* fragment.glsl */; };
 		DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDA04C5D1F666BCB004049FB /* vertex.glsl */; };
 		DDA07FF11FA8595800127BF2 /* Cube.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA07FF01FA8595800127BF2 /* Cube.m */; };
+		DDA37A841FBDA04700072E4F /* car.mtl in Resources */ = {isa = PBXBuildFile; fileRef = DDA37A7E1FBDA04700072E4F /* car.mtl */; };
+		DDA37A851FBDA04700072E4F /* cube.obj in Resources */ = {isa = PBXBuildFile; fileRef = DDA37A7F1FBDA04700072E4F /* cube.obj */; };
+		DDA37A861FBDA04700072E4F /* smoothMonkey.mtl in Resources */ = {isa = PBXBuildFile; fileRef = DDA37A801FBDA04700072E4F /* smoothMonkey.mtl */; };
+		DDA37A871FBDA04700072E4F /* car.obj in Resources */ = {isa = PBXBuildFile; fileRef = DDA37A811FBDA04700072E4F /* car.obj */; };
+		DDA37A881FBDA04700072E4F /* smoothMonkey.obj in Resources */ = {isa = PBXBuildFile; fileRef = DDA37A821FBDA04700072E4F /* smoothMonkey.obj */; };
+		DDA37A891FBDA04700072E4F /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = DDA37A831FBDA04700072E4F /* cube.mtl */; };
+		DDA37A8C1FBDA08D00072E4F /* OBJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA37A8B1FBDA08C00072E4F /* OBJViewController.m */; };
 		DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */; };
 		DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0601F8CC6E600563E68 /* GLContext.m */; };
 		DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E06C1F8DF12500563E68 /* LaserViewController.m */; };
@@ -47,6 +55,8 @@
 		DD04DA641F6D7E8C0093FD7C /* GLBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLBaseViewController.h; sourceTree = "<group>"; };
 		DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLBaseViewController.m; sourceTree = "<group>"; };
 		DD0709CB1F7225EC000CDE9B /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
+		DD0C8FD11FBAF9E000EACE72 /* WavefrontOBJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WavefrontOBJ.h; sourceTree = "<group>"; };
+		DD0C8FD21FBAF9E000EACE72 /* WavefrontOBJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WavefrontOBJ.m; sourceTree = "<group>"; };
 		DD16F9501F81082500B9AD1B /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		DD16F9511F81082500B9AD1B /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		DD16F9521F81097200B9AD1B /* AlphaMixtureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaMixtureViewController.h; sourceTree = "<group>"; };
@@ -80,6 +90,14 @@
 		DDA04C5D1F666BCB004049FB /* vertex.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
 		DDA07FEF1FA8595800127BF2 /* Cube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cube.h; sourceTree = "<group>"; };
 		DDA07FF01FA8595800127BF2 /* Cube.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cube.m; sourceTree = "<group>"; };
+		DDA37A7E1FBDA04700072E4F /* car.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = car.mtl; sourceTree = "<group>"; };
+		DDA37A7F1FBDA04700072E4F /* cube.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.obj; sourceTree = "<group>"; };
+		DDA37A801FBDA04700072E4F /* smoothMonkey.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoothMonkey.mtl; sourceTree = "<group>"; };
+		DDA37A811FBDA04700072E4F /* car.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = car.obj; sourceTree = "<group>"; };
+		DDA37A821FBDA04700072E4F /* smoothMonkey.obj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = smoothMonkey.obj; sourceTree = "<group>"; };
+		DDA37A831FBDA04700072E4F /* cube.mtl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cube.mtl; sourceTree = "<group>"; };
+		DDA37A8A1FBDA08C00072E4F /* OBJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OBJViewController.h; sourceTree = "<group>"; };
+		DDA37A8B1FBDA08C00072E4F /* OBJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBJViewController.m; sourceTree = "<group>"; };
 		DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeViewController.h; sourceTree = "<group>"; };
 		DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeViewController.m; sourceTree = "<group>"; };
 		DDE9E05F1F8CC6E600563E68 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
@@ -108,6 +126,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD0C8FD01FBAF9B000EACE72 /* OBJ */ = {
+			isa = PBXGroup;
+			children = (
+				DD0C8FD11FBAF9E000EACE72 /* WavefrontOBJ.h */,
+				DD0C8FD21FBAF9E000EACE72 /* WavefrontOBJ.m */,
+				DDA37A8A1FBDA08C00072E4F /* OBJViewController.h */,
+				DDA37A8B1FBDA08C00072E4F /* OBJViewController.m */,
+			);
+			path = OBJ;
+			sourceTree = "<group>";
+		};
 		DD7085651FAC46F9006ECAC6 /* Cylinder */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +184,7 @@
 				DDA07FEE1FA8591300127BF2 /* Cube */,
 				DD7085651FAC46F9006ECAC6 /* Cylinder */,
 				DD89B04B1FB4496000520ADF /* Terrain */,
+				DD0C8FD01FBAF9B000EACE72 /* OBJ */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -182,6 +212,12 @@
 		DDA07FED1FA858F400127BF2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DDA37A7E1FBDA04700072E4F /* car.mtl */,
+				DDA37A811FBDA04700072E4F /* car.obj */,
+				DDA37A831FBDA04700072E4F /* cube.mtl */,
+				DDA37A7F1FBDA04700072E4F /* cube.obj */,
+				DDA37A801FBDA04700072E4F /* smoothMonkey.mtl */,
+				DDA37A821FBDA04700072E4F /* smoothMonkey.obj */,
 				DD89B0541FB57BC300520ADF /* dirt_01.jpg */,
 				DD89B0521FB57BC300520ADF /* grass_01.jpg */,
 				DD89B0531FB57BC300520ADF /* terrain_01.jpg */,
@@ -300,18 +336,24 @@
 				DD89B0561FB57C0F00520ADF /* frag_terrain.glsl in Resources */,
 				DD89B0571FB57D0B00520ADF /* terrain_01.jpg in Resources */,
 				DD16F9551F810E7C00B9AD1B /* green.png in Resources */,
+				DDA37A871FBDA04700072E4F /* car.obj in Resources */,
 				DD5263E71FB3051F005D91ED /* metal_03.png in Resources */,
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
+				DDA37A861FBDA04700072E4F /* smoothMonkey.mtl in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,
 				DDA04C521F666B41004049FB /* Assets.xcassets in Resources */,
 				DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */,
 				DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */,
 				DD5263E51FB30519005D91ED /* metal_01.png in Resources */,
+				DDA37A841FBDA04700072E4F /* car.mtl in Resources */,
 				DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */,
 				DDA04C501F666B41004049FB /* Main.storyboard in Resources */,
 				DDE9E0711F8DF26A00563E68 /* laserVertex.glsl in Resources */,
 				DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */,
+				DDA37A891FBDA04700072E4F /* cube.mtl in Resources */,
+				DDA37A851FBDA04700072E4F /* cube.obj in Resources */,
 				DDE9E0751F8E29B900563E68 /* laser.png in Resources */,
+				DDA37A881FBDA04700072E4F /* smoothMonkey.obj in Resources */,
 				DD89B0581FB57D0E00520ADF /* grass_01.jpg in Resources */,
 				DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */,
 			);
@@ -324,6 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA37A8C1FBDA08D00072E4F /* OBJViewController.m in Sources */,
+				DD0C8FD31FBAF9E000EACE72 /* WavefrontOBJ.m in Sources */,
 				DD89B04E1FB4498300520ADF /* Terrain.m in Sources */,
 				DDA07FF11FA8595800127BF2 /* Cube.m in Sources */,
 				DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */,
