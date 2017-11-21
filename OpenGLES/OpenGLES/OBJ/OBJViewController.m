@@ -35,6 +35,8 @@ typedef struct {
 @property (nonatomic, strong) WavefrontOBJ *carModel;
 @property (nonatomic, strong) NSMutableArray<GLObject *> *objects;
 
+@property (nonatomic, strong) UIStackView *stackView;
+
 @end
 
 @implementation OBJViewController
@@ -65,6 +67,8 @@ typedef struct {
     
     self.objects = [NSMutableArray new];
     [self createMonkeyFromObj];
+    
+    [self loadStackView];
 }
 
 - (void)createMonkeyFromObj
@@ -107,6 +111,90 @@ typedef struct {
         [obj.context setUniform1f:@"material.smoothness" value:self.material.smoothness];
         [obj draw:obj.context];
     }];
+}
+
+
+#pragma mark - UI
+- (void)loadStackView
+{
+    if (!_stackView) {
+        _stackView = [[UIStackView alloc] initWithFrame: CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 200, [UIScreen mainScreen].bounds.size.width, 200)];
+        _stackView.distribution = UIStackViewDistributionEqualCentering;
+        _stackView.axis = UILayoutConstraintAxisVertical;
+        _stackView.alignment = UIStackViewAlignmentFill;
+        for (int i = 0; i < 6; i++) {
+            UISlider *slider = [[UISlider alloc] initWithFrame: CGRectMake(0, i * 30, [UIScreen mainScreen].bounds.size.width, 30)];
+            slider.tag = i + 1;
+            [slider addTarget:self action:@selector(colorAdjust:) forControlEvents: UIControlEventValueChanged];
+            [_stackView addArrangedSubview:slider];
+        }
+        [self.view addSubview:_stackView];
+    }
+}
+
+- (void)colorAdjust:(UISlider *)sender
+{
+    if (sender.tag == 1) {
+        Material material = self.material;
+        material.smoothness = sender.value;
+        self.material = material;
+    }else if (sender.tag == 2){
+        Directionlight light = self.light;
+        light.indensity = sender.value;
+        self.light = light;
+    }else if (sender.tag == 3){
+        GLKVector3 yuv = GLKVector3Make(1.0, (cos(sender.value) + 1.0) / 2.0, (sin(sender.value) + 1.0) / 2.0);
+        Directionlight light = self.light;
+        light.color = [self colorFromYUV:yuv];
+        if (sender.value == sender.maximumValue) {
+            light.color = GLKVector3Make(1, 1, 1);
+        }
+        self.light = light;
+        sender.backgroundColor = [UIColor colorWithRed:_light.color.r green:_light.color.g blue:_light.color.b alpha:1.0];
+    }else if (sender.tag == 4){
+        GLKVector3 yuv = GLKVector3Make(1.0, (cos(sender.value) + 1.0) / 2.0, (sin(sender.value) + 1.0) / 2.0);
+        Material material = self.material;
+        material.ambientColor = [self colorFromYUV:yuv];
+        if (sender.value == sender.maximumValue) {
+            material.ambientColor = GLKVector3Make(1, 1, 1);
+        }
+        self.material = material;
+        sender.backgroundColor = [UIColor colorWithRed:_material.ambientColor.r green:_material.ambientColor.g blue:_material.ambientColor.b alpha:1.0];
+    }else if (sender.tag == 5){
+        GLKVector3 yuv = GLKVector3Make(1.0, (cos(sender.value) + 1.0) / 2.0, (sin(sender.value) + 1.0) / 2.0);
+        Material material = self.material;
+        material.diffuseColor = [self colorFromYUV:yuv];
+        if (sender.value == sender.maximumValue) {
+            material.diffuseColor = GLKVector3Make(1, 1, 1);
+        }
+        self.material = material;
+        sender.backgroundColor = [UIColor colorWithRed:_material.diffuseColor.r green:_material.diffuseColor.g blue:_material.diffuseColor.b alpha:1.0];
+    }else if (sender.tag == 6){
+        GLKVector3 yuv = GLKVector3Make(1.0, (cos(sender.value) + 1.0) / 2.0, (sin(sender.value) + 1.0) / 2.0);
+        Material material = self.material;
+        material.specularColor = [self colorFromYUV:yuv];
+        if (sender.value == sender.maximumValue) {
+            material.specularColor = GLKVector3Make(1, 1, 1);
+        }
+        self.material = material;
+        sender.backgroundColor = [UIColor colorWithRed:_material.specularColor.r green:_material.specularColor.g blue:_material.specularColor.b alpha:1.0];
+    }
+    
+}
+
+- (GLKVector3)colorFromYUV:(GLKVector3)yuv
+{
+    float Cb, Cr, Y;
+    float R, G, B;
+    Y = yuv.x * 255.0;
+    Cb = yuv.y * 255.0 - 128;
+    Cr = yuv.z * 255.0 - 128;
+    
+    R = 1.402 * Cr + Y;
+    G = -0.344 * Cb - 0.714 * Cr + Y;
+    B = 1.772 * Cb + Y;
+    
+    return GLKVector3Make(MIN(1.0, R / 255.0), MIN(1.0, G / 255.0), MIN(1.0, B / 255.0));
 }
 
 @end
