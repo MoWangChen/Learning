@@ -24,6 +24,7 @@
 		DD89B0571FB57D0B00520ADF /* terrain_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0531FB57BC300520ADF /* terrain_01.jpg */; };
 		DD89B0581FB57D0E00520ADF /* grass_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0521FB57BC300520ADF /* grass_01.jpg */; };
 		DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0541FB57BC300520ADF /* dirt_01.jpg */; };
+		DD8A3FEA1FCC797200324EFC /* normal.png in Resources */ = {isa = PBXBuildFile; fileRef = DD8A3FE91FCC797200324EFC /* normal.png */; };
 		DDA04C471F666B41004049FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C461F666B41004049FB /* main.m */; };
 		DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C491F666B41004049FB /* AppDelegate.m */; };
 		DDA04C4D1F666B41004049FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C4C1F666B41004049FB /* ViewController.m */; };
@@ -76,6 +77,7 @@
 		DD89B0531FB57BC300520ADF /* terrain_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = terrain_01.jpg; sourceTree = "<group>"; };
 		DD89B0541FB57BC300520ADF /* dirt_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dirt_01.jpg; sourceTree = "<group>"; };
 		DD89B0551FB57C0F00520ADF /* frag_terrain.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_terrain.glsl; sourceTree = "<group>"; };
+		DD8A3FE91FCC797200324EFC /* normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal.png; sourceTree = "<group>"; };
 		DDA04C421F666B41004049FB /* OpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA04C461F666B41004049FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DDA04C481F666B41004049FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				DDA37A7F1FBDA04700072E4F /* cube.obj */,
 				DDA37A801FBDA04700072E4F /* smoothMonkey.mtl */,
 				DDA37A821FBDA04700072E4F /* smoothMonkey.obj */,
+				DD8A3FE91FCC797200324EFC /* normal.png */,
 				DD89B0541FB57BC300520ADF /* dirt_01.jpg */,
 				DD89B0521FB57BC300520ADF /* grass_01.jpg */,
 				DD89B0531FB57BC300520ADF /* terrain_01.jpg */,
@@ -338,6 +341,7 @@
 				DD16F9551F810E7C00B9AD1B /* green.png in Resources */,
 				DDA37A871FBDA04700072E4F /* car.obj in Resources */,
 				DD5263E71FB3051F005D91ED /* metal_03.png in Resources */,
+				DD8A3FEA1FCC797200324EFC /* normal.png in Resources */,
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
 				DDA37A861FBDA04700072E4F /* smoothMonkey.mtl in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,

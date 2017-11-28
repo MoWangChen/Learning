@@ -10,14 +10,21 @@ uniform mat4 projectionMatrix;
 uniform mat4 cameraMatrix;
 uniform mat4 modelMatrix;
 
+attribute vec3 tangent;
+attribute vec3 bitangent;
+
 varying vec3 fragPosition;
 varying vec4 fragColor;
 varying vec3 fragNormal;
 varying vec2 fragUV;
+varying vec3 fragTangent;
+varying vec3 fragBitangent;
 
 void main(void) {
     fragNormal = normal;
     fragUV = uv;
+    fragTangent = tangent;
+    fragBitangent = bitangent;
     fragPosition = position.xyz;
     mat4 mvp = projectionMatrix * cameraMatrix * modelMatrix;
     gl_Position = mvp * position;

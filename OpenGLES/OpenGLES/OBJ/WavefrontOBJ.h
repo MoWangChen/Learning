@@ -12,4 +12,6 @@
 
 - (instancetype)initWithGLContext:(GLContext *)context objFile:(NSString *)filePath;
 
++ (instancetype)objWithGLContext:(GLContext *)context objFile:(NSString *)filePath diffuseMap:(GLKTextureInfo *)diffuseMap normalMap:(GLKTextureInfo *)normalMap;
+
 @end

@@ -35,7 +35,7 @@ typedef struct {
 @property (nonatomic, strong) WavefrontOBJ *carModel;
 @property (nonatomic, strong) NSMutableArray<GLObject *> *objects;
 
-@property (nonatomic, strong) UIStackView *stackView;
+@property (nonatomic, assign) BOOL useNormalMap;
 
 @end
 
@@ -53,7 +53,7 @@ typedef struct {
     // 设置平行光方向
     Directionlight defaultLight;
     defaultLight.color = GLKVector3Make(1, 1, 1); // 白色的灯
-    defaultLight.direction = GLKVector3Make(1, -1, 0);
+    defaultLight.direction = GLKVector3Make(30, 100, 0);
     defaultLight.indensity = 1.0;
     defaultLight.ambientIndensity = 0.1;
     self.light = defaultLight;
@@ -62,13 +62,16 @@ typedef struct {
     material.ambientColor = GLKVector3Make(1, 1, 1);
     material.diffuseColor = GLKVector3Make(0.1, 0.1, 0.1);
     material.specularColor = GLKVector3Make(1, 1, 1);
-    material.smoothness = 300;
+    material.smoothness = 70;
     self.material = material;
     
+    self.useNormalMap = YES;
+    
     self.objects = [NSMutableArray new];
-    [self createMonkeyFromObj];
+    [self createCube];
     
     [self loadStackView];
+    [self loadSwitch];
 }
 
 - (void)createMonkeyFromObj
@@ -80,14 +83,27 @@ typedef struct {
     [self.objects addObject:obj];
 }
 
+- (void)createCube
+{
+    UIImage *normalImage = [UIImage imageNamed:@"normal.png"];
+    GLKTextureInfo *normalMap = [GLKTextureLoader textureWithCGImage:normalImage.CGImage options:nil error:nil];
+    UIImage *diffuseImage = [UIImage imageNamed:@"texture.jpg"];
+    GLKTextureInfo *diffuseMap = [GLKTextureLoader textureWithCGImage:diffuseImage.CGImage options:nil error:nil];
+    
+    NSString *objFilePath = [[NSBundle mainBundle] pathForResource:@"cube" ofType:@"obj"];
+    self.carModel = [WavefrontOBJ objWithGLContext:self.glContext objFile:objFilePath diffuseMap:diffuseMap normalMap:normalMap];
+    self.carModel.modelMatrix = GLKMatrix4MakeRotation(-M_PI / 2.0, 0, 1, 0);
+    [self.objects addObject:self.carModel];
+}
+
 #pragma mark - Update Delegate
 - (void)update
 {
     [super update];
-    self.eyePosition = GLKVector3Make(60, 100, 200);
+    self.eyePosition = GLKVector3Make(0, 2, 6);
     GLKVector3 lookAtPosition = GLKVector3Make(0, 0, 0);
     self.cameraMatrix = GLKMatrix4MakeLookAt(self.eyePosition.x, self.eyePosition.y, self.eyePosition.z, lookAtPosition.x, lookAtPosition.y, lookAtPosition.z, 0, 1, 0);
-    self.carModel.modelMatrix = GLKMatrix4MakeRotation(-M_PI * 2.0 * self.elapsedTime / 4.0, 0, 1, 0);
+    self.carModel.modelMatrix = GLKMatrix4MakeRotation(-M_PI / 2.0 * self.elapsedTime / 4.0, 1, 1, 1);
 }
 
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
@@ -109,27 +125,55 @@ typedef struct {
         [obj.context setUniform3fv:@"material.ambientColor" value:self.material.ambientColor];
         [obj.context setUniform3fv:@"material.specularColor" value:self.material.specularColor];
         [obj.context setUniform1f:@"material.smoothness" value:self.material.smoothness];
+        
+        [obj.context setUniform1f:@"useNormalMap" value:self.useNormalMap];
         [obj draw:obj.context];
     }];
 }
 
 
 #pragma mark - UI
+- (void)loadSwitch
+{
+    UISwitch *button = [[UISwitch alloc] initWithFrame:CGRectMake(0, 30, 80, 30)];
+    [button addTarget:self action:@selector(switchUseNormalMap:) forControlEvents: UIControlEventValueChanged];
+    [button setOn:YES];
+    [self.view addSubview:button];
+}
+
+- (void)switchUseNormalMap:(UISwitch *)sender
+{
+    self.useNormalMap = sender.isOn;
+}
+
 - (void)loadStackView
 {
-    if (!_stackView) {
-        _stackView = [[UIStackView alloc] initWithFrame: CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 200, [UIScreen mainScreen].bounds.size.width, 200)];
-        _stackView.distribution = UIStackViewDistributionEqualCentering;
-        _stackView.axis = UILayoutConstraintAxisVertical;
-        _stackView.alignment = UIStackViewAlignmentFill;
-        for (int i = 0; i < 6; i++) {
-            UISlider *slider = [[UISlider alloc] initWithFrame: CGRectMake(0, i * 30, [UIScreen mainScreen].bounds.size.width, 30)];
-            slider.tag = i + 1;
-            [slider addTarget:self action:@selector(colorAdjust:) forControlEvents: UIControlEventValueChanged];
-            [_stackView addArrangedSubview:slider];
-        }
-        [self.view addSubview:_stackView];
+    UIStackView *labelStackView = [[UIStackView alloc] initWithFrame: CGRectMake(0, [UIScreen mainScreen].bounds.size.height - 200, 100, 200)];
+    labelStackView.distribution = UIStackViewDistributionEqualCentering;
+    labelStackView.axis = UILayoutConstraintAxisVertical;
+    labelStackView.alignment = UIStackViewAlignmentFill;
+    NSArray *textArray = @[@"光滑度", @"indensity", @"lightColor", @"ambientColor", @"diffuseColor", @"specularColor"];
+    for (NSString *text in textArray) {
+        UILabel *label = [[UILabel alloc] init];
+        label.textColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.text = text;
+        label.font = [UIFont systemFontOfSize:14];
+        [labelStackView addArrangedSubview:label];
     }
+    [self.view addSubview:labelStackView];
+    
+    UIStackView *sliderStackView = [[UIStackView alloc] initWithFrame: CGRectMake(100, [UIScreen mainScreen].bounds.size.height - 200, [UIScreen mainScreen].bounds.size.width - 130, 200)];
+    sliderStackView.distribution = UIStackViewDistributionEqualCentering;
+    sliderStackView.axis = UILayoutConstraintAxisVertical;
+    sliderStackView.alignment = UIStackViewAlignmentFill;
+    for (int i = 0; i < 6; i++) {
+        UISlider *slider = [[UISlider alloc] initWithFrame: CGRectMake(10, i * 30, [UIScreen mainScreen].bounds.size.width - 150, 30)];
+        slider.tag = i + 1;
+        [slider addTarget:self action:@selector(colorAdjust:) forControlEvents: UIControlEventValueChanged];
+        [sliderStackView addArrangedSubview:slider];
+    }
+    [self.view addSubview:sliderStackView];
 }
 
 - (void)colorAdjust:(UISlider *)sender
