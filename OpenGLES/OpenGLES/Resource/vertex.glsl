@@ -28,7 +28,6 @@ void main(void) {
     fragPosition = position.xyz;
     mat4 mvp = projectionMatrix * cameraMatrix * modelMatrix;
     gl_Position = mvp * position;
-    gl_PointSize = 25.0;
 }
 
 void test(void) {

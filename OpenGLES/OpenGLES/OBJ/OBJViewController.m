@@ -167,8 +167,24 @@ typedef struct {
     sliderStackView.distribution = UIStackViewDistributionEqualCentering;
     sliderStackView.axis = UILayoutConstraintAxisVertical;
     sliderStackView.alignment = UIStackViewAlignmentFill;
+    NSArray *keyValues = @[@{@"value":@70,
+                             @"maxValue":@100}, // 光滑度
+                           @{@"value":@1,
+                             @"maxValue":@2}, // indensity
+                           @{@"value":@6.28,
+                             @"maxValue":@6.28}, // lightColor
+                           @{@"value":@6.28,
+                             @"maxValue":@6.28}, // ambientColor
+                           @{@"value":@0,
+                             @"maxValue":@6.28}, // diffuseColor
+                           @{@"value":@6.28,
+                             @"maxValue":@6.28},]; // specularColor
     for (int i = 0; i < 6; i++) {
+        NSDictionary *dict = keyValues[i];
         UISlider *slider = [[UISlider alloc] initWithFrame: CGRectMake(10, i * 30, [UIScreen mainScreen].bounds.size.width - 150, 30)];
+        slider.minimumValue = 0;
+        slider.maximumValue = [dict[@"maxValue"] floatValue];
+        slider.value = [dict[@"value"] floatValue];
         slider.tag = i + 1;
         [slider addTarget:self action:@selector(colorAdjust:) forControlEvents: UIControlEventValueChanged];
         [sliderStackView addArrangedSubview:slider];
@@ -178,6 +194,7 @@ typedef struct {
 
 - (void)colorAdjust:(UISlider *)sender
 {
+    NSLog(@"%f",sender.value);
     if (sender.tag == 1) {
         Material material = self.material;
         material.smoothness = sender.value;

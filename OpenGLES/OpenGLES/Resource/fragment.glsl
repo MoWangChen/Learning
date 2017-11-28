@@ -41,9 +41,9 @@ void main(void) {
     vec3 transformedTangent = normalize((normalMatrix * vec4(fragTangent, 1.0)).xyz);
     vec3 transformedBitangent = normalize((normalMatrix * vec4(fragBitangent, 1.0)).xyz);
 
-    mat3 TBN = mat3(transformedNormal,
-                    transformedTangent,
-                    transformedBitangent);
+    mat3 TBN = mat3(transformedTangent,
+                    transformedBitangent,
+                    transformedNormal);
     if(useNormalMap) {
         vec3 normalFromMap = (texture2D(normalMap, fragUV).rgb * 2.0 - 1.0);
         transformedNormal = TBN * normalFromMap;
