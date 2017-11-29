@@ -42,6 +42,8 @@
 		DDA37A891FBDA04700072E4F /* cube.mtl in Resources */ = {isa = PBXBuildFile; fileRef = DDA37A831FBDA04700072E4F /* cube.mtl */; };
 		DDA37A8C1FBDA08D00072E4F /* OBJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA37A8B1FBDA08C00072E4F /* OBJViewController.m */; };
 		DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */; };
+		DDC106AD1FCD66C400F0772A /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC106AC1FCD66C400F0772A /* Plane.m */; };
+		DDC106AF1FCD74ED00F0772A /* frag_framebuffer_plane.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDC106AE1FCD74ED00F0772A /* frag_framebuffer_plane.glsl */; };
 		DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0601F8CC6E600563E68 /* GLContext.m */; };
 		DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E06C1F8DF12500563E68 /* LaserViewController.m */; };
 		DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E06E1F8DF26A00563E68 /* laserFragment.glsl */; };
@@ -102,6 +104,9 @@
 		DDA37A8B1FBDA08C00072E4F /* OBJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OBJViewController.m; sourceTree = "<group>"; };
 		DDB20DD81F6FCAC700D9F05F /* CubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeViewController.h; sourceTree = "<group>"; };
 		DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeViewController.m; sourceTree = "<group>"; };
+		DDC106AB1FCD66C400F0772A /* Plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
+		DDC106AC1FCD66C400F0772A /* Plane.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
+		DDC106AE1FCD74ED00F0772A /* frag_framebuffer_plane.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_framebuffer_plane.glsl; sourceTree = "<group>"; };
 		DDE9E05F1F8CC6E600563E68 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
 		DDE9E0601F8CC6E600563E68 /* GLContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLContext.m; sourceTree = "<group>"; };
 		DDE9E0621F8DEB5400563E68 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
@@ -186,6 +191,7 @@
 				DDA07FEE1FA8591300127BF2 /* Cube */,
 				DD7085651FAC46F9006ECAC6 /* Cylinder */,
 				DD89B04B1FB4496000520ADF /* Terrain */,
+				DDC106AA1FCD66A400F0772A /* Plane */,
 				DD0C8FD01FBAF9B000EACE72 /* OBJ */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
@@ -233,6 +239,7 @@
 				DDE9E0621F8DEB5400563E68 /* laser.png */,
 				DDA04C5C1F666BCB004049FB /* fragment.glsl */,
 				DDA04C5D1F666BCB004049FB /* vertex.glsl */,
+				DDC106AE1FCD74ED00F0772A /* frag_framebuffer_plane.glsl */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -246,6 +253,15 @@
 				DDA07FF01FA8595800127BF2 /* Cube.m */,
 			);
 			path = Cube;
+			sourceTree = "<group>";
+		};
+		DDC106AA1FCD66A400F0772A /* Plane */ = {
+			isa = PBXGroup;
+			children = (
+				DDC106AB1FCD66C400F0772A /* Plane.h */,
+				DDC106AC1FCD66C400F0772A /* Plane.m */,
+			);
+			path = Plane;
 			sourceTree = "<group>";
 		};
 		DDE9E05E1F8CC6D200563E68 /* Tools */ = {
@@ -359,6 +375,7 @@
 				DDE9E0751F8E29B900563E68 /* laser.png in Resources */,
 				DDA37A881FBDA04700072E4F /* smoothMonkey.obj in Resources */,
 				DD89B0581FB57D0E00520ADF /* grass_01.jpg in Resources */,
+				DDC106AF1FCD74ED00F0772A /* frag_framebuffer_plane.glsl in Resources */,
 				DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC106AD1FCD66C400F0772A /* Plane.m in Sources */,
 				DDA37A8C1FBDA08D00072E4F /* OBJViewController.m in Sources */,
 				DD0C8FD31FBAF9E000EACE72 /* WavefrontOBJ.m in Sources */,
 				DD89B04E1FB4498300520ADF /* Terrain.m in Sources */,

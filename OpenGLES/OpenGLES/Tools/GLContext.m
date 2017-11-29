@@ -72,6 +72,7 @@
 {
     glBindVertexArrayOES(vao);
     glDrawArrays(GL_TRIANGLES, 0, vertexCount);
+    glBindVertexArrayOES(0);
 }
 
 - (void)drawTrianglesWithIndiceVAO:(GLuint)vao vertexCount:(GLint)vertexCount
@@ -122,6 +123,14 @@
 {
     glActiveTexture(textureChannel);
     glBindTexture(GL_TEXTURE_2D, textInfo.name);
+    GLuint textureID = (GLuint)textureChannel - (GLuint)GL_TEXTURE0;
+    [self setUniform1i:uniformName value:textureID];
+}
+
+- (void)bindTextureName:(GLuint)textureName to:(GLenum)textureChannel uniformName:(NSString *)uniformName
+{
+    glActiveTexture(textureChannel);
+    glBindTexture(GL_TEXTURE_2D, textureName);
     GLuint textureID = (GLuint)textureChannel - (GLuint)GL_TEXTURE0;
     [self setUniform1i:uniformName value:textureID];
 }
