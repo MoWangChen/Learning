@@ -33,6 +33,11 @@ uniform sampler2D diffuseMap;
 uniform sampler2D normalMap;
 uniform bool useNormalMap;
 
+// projectors
+uniform mat4 projectorMatrix;
+uniform sampler2D projectorMap;
+uniform bool useProjector;
+
 void main(void) {
     vec4 worldVertexPosition = modelMatrix * vec4(fragPosition, 1.0);
     
@@ -66,7 +71,23 @@ void main(void) {
 
     // 最终颜色
     vec3 finalColor = diffuse + ambient + specular;
-    gl_FragColor = vec4(finalColor, 1.0);
+    
+    if (useProjector) {
+        // 计算投影器产生的颜色
+        vec4 projectorColor = vec4(0.0);
+        vec4 positionInProjectorSpace = projectorMatrix * modelMatrix * vec4(fragPosition, 1.0);
+        positionInProjectorSpace /= positionInProjectorSpace.w;
+        vec2 projectorUV = (positionInProjectorSpace.xy + 1.0) * 0.5;
+        
+        if (projectorUV.x >= 0.0 && projectorUV.x <= 1.0 && projectorUV.y >= 0.0 && projectorUV.y <= 1.0) {
+            projectorColor = texture2D(projectorMap, projectorUV);
+            gl_FragColor = vec4(finalColor * 0.4 + projectorColor.rgb * 0.6, 1.0);
+        }else {
+            gl_FragColor = vec4(finalColor, 1.0);
+        }
+    }else {
+        gl_FragColor = vec4(finalColor, 1.0);
+    }
 }
 
 

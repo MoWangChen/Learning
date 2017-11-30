@@ -14,6 +14,7 @@
 #import "CylinderViewController.h"
 #import "TerrainViewController.h"
 #import "OBJViewController.h"
+#import "ProjectorViewController.h"
 
 @interface AppDelegate ()
 
@@ -26,7 +27,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [OBJViewController new];
+    _window.rootViewController = [ProjectorViewController new];
     [_window makeKeyAndVisible];
     
     return YES;

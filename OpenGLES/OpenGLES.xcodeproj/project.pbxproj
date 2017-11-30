@@ -44,6 +44,10 @@
 		DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB20DD91F6FCAC700D9F05F /* CubeViewController.m */; };
 		DDC106AD1FCD66C400F0772A /* Plane.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC106AC1FCD66C400F0772A /* Plane.m */; };
 		DDC106AF1FCD74ED00F0772A /* frag_framebuffer_plane.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDC106AE1FCD74ED00F0772A /* frag_framebuffer_plane.glsl */; };
+		DDC446331FCFF45400F75ED0 /* ProjectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC446321FCFF45400F75ED0 /* ProjectorViewController.m */; };
+		DDC446371FD0055500F75ED0 /* stoneFloor_NRM.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC446341FD0055400F75ED0 /* stoneFloor_NRM.png */; };
+		DDC446381FD0055500F75ED0 /* stoneFloor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDC446351FD0055500F75ED0 /* stoneFloor.jpg */; };
+		DDC446391FD0055500F75ED0 /* squarepants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDC446361FD0055500F75ED0 /* squarepants.jpg */; };
 		DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0601F8CC6E600563E68 /* GLContext.m */; };
 		DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E06C1F8DF12500563E68 /* LaserViewController.m */; };
 		DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E06E1F8DF26A00563E68 /* laserFragment.glsl */; };
@@ -107,6 +111,11 @@
 		DDC106AB1FCD66C400F0772A /* Plane.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plane.h; sourceTree = "<group>"; };
 		DDC106AC1FCD66C400F0772A /* Plane.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plane.m; sourceTree = "<group>"; };
 		DDC106AE1FCD74ED00F0772A /* frag_framebuffer_plane.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_framebuffer_plane.glsl; sourceTree = "<group>"; };
+		DDC446311FCFF45400F75ED0 /* ProjectorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectorViewController.h; sourceTree = "<group>"; };
+		DDC446321FCFF45400F75ED0 /* ProjectorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectorViewController.m; sourceTree = "<group>"; };
+		DDC446341FD0055400F75ED0 /* stoneFloor_NRM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stoneFloor_NRM.png; sourceTree = "<group>"; };
+		DDC446351FD0055500F75ED0 /* stoneFloor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stoneFloor.jpg; sourceTree = "<group>"; };
+		DDC446361FD0055500F75ED0 /* squarepants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = squarepants.jpg; sourceTree = "<group>"; };
 		DDE9E05F1F8CC6E600563E68 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
 		DDE9E0601F8CC6E600563E68 /* GLContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLContext.m; sourceTree = "<group>"; };
 		DDE9E0621F8DEB5400563E68 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
@@ -140,6 +149,8 @@
 				DD0C8FD21FBAF9E000EACE72 /* WavefrontOBJ.m */,
 				DDA37A8A1FBDA08C00072E4F /* OBJViewController.h */,
 				DDA37A8B1FBDA08C00072E4F /* OBJViewController.m */,
+				DDC446311FCFF45400F75ED0 /* ProjectorViewController.h */,
+				DDC446321FCFF45400F75ED0 /* ProjectorViewController.m */,
 			);
 			path = OBJ;
 			sourceTree = "<group>";
@@ -226,6 +237,9 @@
 				DDA37A7F1FBDA04700072E4F /* cube.obj */,
 				DDA37A801FBDA04700072E4F /* smoothMonkey.mtl */,
 				DDA37A821FBDA04700072E4F /* smoothMonkey.obj */,
+				DDC446361FD0055500F75ED0 /* squarepants.jpg */,
+				DDC446341FD0055400F75ED0 /* stoneFloor_NRM.png */,
+				DDC446351FD0055500F75ED0 /* stoneFloor.jpg */,
 				DD8A3FE91FCC797200324EFC /* normal.png */,
 				DD89B0541FB57BC300520ADF /* dirt_01.jpg */,
 				DD89B0521FB57BC300520ADF /* grass_01.jpg */,
@@ -351,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC446381FD0055500F75ED0 /* stoneFloor.jpg in Resources */,
 				DD16F9561F810E8000B9AD1B /* red.png in Resources */,
 				DD89B0561FB57C0F00520ADF /* frag_terrain.glsl in Resources */,
 				DD89B0571FB57D0B00520ADF /* terrain_01.jpg in Resources */,
@@ -368,6 +383,8 @@
 				DDA37A841FBDA04700072E4F /* car.mtl in Resources */,
 				DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */,
 				DDA04C501F666B41004049FB /* Main.storyboard in Resources */,
+				DDC446391FD0055500F75ED0 /* squarepants.jpg in Resources */,
+				DDC446371FD0055500F75ED0 /* stoneFloor_NRM.png in Resources */,
 				DDE9E0711F8DF26A00563E68 /* laserVertex.glsl in Resources */,
 				DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */,
 				DDA37A891FBDA04700072E4F /* cube.mtl in Resources */,
@@ -402,6 +419,7 @@
 				DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */,
 				DDE9E0741F8E04A100563E68 /* Laser.m in Sources */,
 				DD7085681FAC470F006ECAC6 /* Cylinder.m in Sources */,
+				DDC446331FCFF45400F75ED0 /* ProjectorViewController.m in Sources */,
 				DD5263E11FB2FD5A005D91ED /* CylinderViewController.m in Sources */,
 				DDE9E0781F8F740100563E68 /* GLObject.m in Sources */,
 				DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */,
