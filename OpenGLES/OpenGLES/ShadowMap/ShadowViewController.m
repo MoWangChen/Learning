@@ -81,7 +81,7 @@ typedef struct {
     [self createCube:GLKVector3Make(0.2, 1.3, 0.8) size:GLKVector3Make(0.3, 1.3, 0.4)];
     [self createFloor];
     
-    self.lightProjectionMatrix = GLKMatrix4MakeOrtho(-10, 10, -10, 10, -100, 100);
+    self.lightProjectionMatrix = GLKMatrix4MakeOrtho(-10, 10, -10, 10, 0.1, 28);
     self.lightCameraMatrix = GLKMatrix4MakeLookAt(-defaultLight.direction.x * 10, -defaultLight.direction.y * 10, -defaultLight.direction.z * 10, 0, 0, 0, 0, 1, 0);
     
     NSString *vertexShaderPath = [[NSBundle mainBundle] pathForResource:@"vertex" ofType:@"glsl"];
@@ -113,7 +113,7 @@ typedef struct {
     
     NSString *objFilePath = [[NSBundle mainBundle] pathForResource:@"cube" ofType:@"obj"];
     WavefrontOBJ *cube = [WavefrontOBJ objWithGLContext:self.glContext objFile:objFilePath diffuseMap:diffuseMap normalMap:normalMap];
-    cube.modelMatrix = GLKMatrix4Multiply(GLKMatrix4MakeTranslation(0, -0.1, 0), GLKMatrix4MakeScale(3, 0.2, 3));
+    cube.modelMatrix = GLKMatrix4Multiply(GLKMatrix4MakeTranslation(0, -0.1, 0), GLKMatrix4MakeScale(30, 0.2, 30));
     [self.objects addObject:cube];
 }
 
@@ -153,7 +153,7 @@ typedef struct {
     Directionlight light = self.light;
     light.direction = GLKVector3Make(-sin(self.elapsedTime), -1, -cos(self.elapsedTime));
     self.light = light;
-    self.lightProjectionMatrix = GLKMatrix4MakeOrtho(-10, 10, -10, 10, -100, 100);
+    self.lightProjectionMatrix = GLKMatrix4MakeOrtho(-10, 10, -10, 10, 0.1, 28);
     self.lightCameraMatrix = GLKMatrix4MakeLookAt(-light.direction.x * 10, -light.direction.y * 10, -light.direction.z * 10, 0, 0, 0, 0, 1, 0);
 }
 
