@@ -15,6 +15,7 @@
 #import "TerrainViewController.h"
 #import "OBJViewController.h"
 #import "ProjectorViewController.h"
+#import "ShadowViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,7 +28,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [ProjectorViewController new];
+    _window.rootViewController = [ShadowViewController new];
     [_window makeKeyAndVisible];
     
     return YES;

@@ -38,10 +38,14 @@ uniform mat4 projectorMatrix;
 uniform sampler2D projectorMap;
 uniform bool useProjector;
 
+// shadow
+uniform mat4 lightMatrix;
+uniform sampler2D shadowMap;
+
 void main(void) {
     vec4 worldVertexPosition = modelMatrix * vec4(fragPosition, 1.0);
     
-    vec3 normalizedLightDirection = normalize(light.direction - worldVertexPosition.xyz);
+    vec3 normalizedLightDirection = normalize(-light.direction);
     vec3 transformedNormal = normalize((normalMatrix * vec4(fragNormal, 1.0)).xyz);
     vec3 transformedTangent = normalize((normalMatrix * vec4(fragTangent, 1.0)).xyz);
     vec3 transformedBitangent = normalize((normalMatrix * vec4(fragBitangent, 1.0)).xyz);
@@ -54,10 +58,24 @@ void main(void) {
         transformedNormal = TBN * normalFromMap;
     }
     
+    float shadow = 0.0;
+    vec4 positionInLightSpace = lightMatrix * modelMatrix * vec4(fragPosition, 1.0);
+    positionInLightSpace /= positionInLightSpace.w;
+    positionInLightSpace = (positionInLightSpace + 1.0) * 0.5;
+    vec2 shadowUV = positionInLightSpace.xy;
+    if (shadowUV.x >= 0.0 && shadowUV.x <= 1.0 && shadowUV.y >= 0.0 && shadowUV.y <= 1.0) {
+        vec4 shadowColor = texture2D(shadowMap, shadowUV);
+        if (shadowColor.r < positionInLightSpace.z) {
+            shadow = 0.1;
+        }else {
+            shadow = 1.0;
+        }
+    }
+    
     // 计算漫反射
     float diffuseStrength = dot(normalizedLightDirection, transformedNormal);
     diffuseStrength = clamp(diffuseStrength, 0.0, 1.0);
-    vec3 diffuse = vec3(diffuseStrength * light.color * texture2D(diffuseMap, fragUV).rgb * light.indensity);
+    vec3 diffuse = vec3(diffuseStrength * light.color * texture2D(diffuseMap, fragUV).rgb * light.indensity * shadow);
 
     // 计算环境光
     vec3 ambient = vec3(light.ambientIndensity) * material.ambientColor;
@@ -67,27 +85,12 @@ void main(void) {
     vec3 halfVector = normalize(normalizedLightDirection + eyeVector);
     float specularStrength = dot(halfVector, transformedNormal);
     specularStrength = pow(specularStrength, material.smoothness);
-    vec3 specular = specularStrength * material.specularColor * light.color * light.indensity;
+    vec3 specular = specularStrength * material.specularColor * light.color * light.indensity * shadow;
 
     // 最终颜色
     vec3 finalColor = diffuse + ambient + specular;
     
-    if (useProjector) {
-        // 计算投影器产生的颜色
-        vec4 projectorColor = vec4(0.0);
-        vec4 positionInProjectorSpace = projectorMatrix * modelMatrix * vec4(fragPosition, 1.0);
-        positionInProjectorSpace /= positionInProjectorSpace.w;
-        vec2 projectorUV = (positionInProjectorSpace.xy + 1.0) * 0.5;
-        
-        if (projectorUV.x >= 0.0 && projectorUV.x <= 1.0 && projectorUV.y >= 0.0 && projectorUV.y <= 1.0) {
-            projectorColor = texture2D(projectorMap, projectorUV);
-            gl_FragColor = vec4(finalColor * 0.4 + projectorColor.rgb * 0.6, 1.0);
-        }else {
-            gl_FragColor = vec4(finalColor, 1.0);
-        }
-    }else {
-        gl_FragColor = vec4(finalColor, 1.0);
-    }
+    gl_FragColor = vec4(finalColor, 1.0);
 }
 
 

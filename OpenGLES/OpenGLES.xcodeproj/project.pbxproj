@@ -48,6 +48,8 @@
 		DDC446371FD0055500F75ED0 /* stoneFloor_NRM.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC446341FD0055400F75ED0 /* stoneFloor_NRM.png */; };
 		DDC446381FD0055500F75ED0 /* stoneFloor.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDC446351FD0055500F75ED0 /* stoneFloor.jpg */; };
 		DDC446391FD0055500F75ED0 /* squarepants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDC446361FD0055500F75ED0 /* squarepants.jpg */; };
+		DDC4463D1FD1347D00F75ED0 /* ShadowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4463C1FD1347D00F75ED0 /* ShadowViewController.m */; };
+		DDC4463F1FD13ECA00F75ED0 /* frag_shadowmap.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */; };
 		DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0601F8CC6E600563E68 /* GLContext.m */; };
 		DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E06C1F8DF12500563E68 /* LaserViewController.m */; };
 		DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E06E1F8DF26A00563E68 /* laserFragment.glsl */; };
@@ -116,6 +118,9 @@
 		DDC446341FD0055400F75ED0 /* stoneFloor_NRM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stoneFloor_NRM.png; sourceTree = "<group>"; };
 		DDC446351FD0055500F75ED0 /* stoneFloor.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stoneFloor.jpg; sourceTree = "<group>"; };
 		DDC446361FD0055500F75ED0 /* squarepants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = squarepants.jpg; sourceTree = "<group>"; };
+		DDC4463B1FD1347D00F75ED0 /* ShadowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadowViewController.h; sourceTree = "<group>"; };
+		DDC4463C1FD1347D00F75ED0 /* ShadowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadowViewController.m; sourceTree = "<group>"; };
+		DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_shadowmap.glsl; sourceTree = "<group>"; };
 		DDE9E05F1F8CC6E600563E68 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
 		DDE9E0601F8CC6E600563E68 /* GLContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLContext.m; sourceTree = "<group>"; };
 		DDE9E0621F8DEB5400563E68 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
@@ -204,6 +209,7 @@
 				DD89B04B1FB4496000520ADF /* Terrain */,
 				DDC106AA1FCD66A400F0772A /* Plane */,
 				DD0C8FD01FBAF9B000EACE72 /* OBJ */,
+				DDC4463A1FD1342800F75ED0 /* ShadowMap */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -254,6 +260,7 @@
 				DDA04C5C1F666BCB004049FB /* fragment.glsl */,
 				DDA04C5D1F666BCB004049FB /* vertex.glsl */,
 				DDC106AE1FCD74ED00F0772A /* frag_framebuffer_plane.glsl */,
+				DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -276,6 +283,15 @@
 				DDC106AC1FCD66C400F0772A /* Plane.m */,
 			);
 			path = Plane;
+			sourceTree = "<group>";
+		};
+		DDC4463A1FD1342800F75ED0 /* ShadowMap */ = {
+			isa = PBXGroup;
+			children = (
+				DDC4463B1FD1347D00F75ED0 /* ShadowViewController.h */,
+				DDC4463C1FD1347D00F75ED0 /* ShadowViewController.m */,
+			);
+			path = ShadowMap;
 			sourceTree = "<group>";
 		};
 		DDE9E05E1F8CC6D200563E68 /* Tools */ = {
@@ -373,6 +389,7 @@
 				DDA37A871FBDA04700072E4F /* car.obj in Resources */,
 				DD5263E71FB3051F005D91ED /* metal_03.png in Resources */,
 				DD8A3FEA1FCC797200324EFC /* normal.png in Resources */,
+				DDC4463F1FD13ECA00F75ED0 /* frag_shadowmap.glsl in Resources */,
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
 				DDA37A861FBDA04700072E4F /* smoothMonkey.mtl in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,
@@ -416,6 +433,7 @@
 				DD89B0511FB552C200520ADF /* TerrainViewController.m in Sources */,
 				DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */,
 				DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */,
+				DDC4463D1FD1347D00F75ED0 /* ShadowViewController.m in Sources */,
 				DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */,
 				DDE9E0741F8E04A100563E68 /* Laser.m in Sources */,
 				DD7085681FAC470F006ECAC6 /* Cylinder.m in Sources */,
