@@ -83,7 +83,7 @@
     }
     
     [glContext bindTexture:self.diffuseTexture to:GL_TEXTURE0 uniformName:@"diffuseMap"];
-    [glContext drawTrianglesWithIndiceVAO:indiceVbo vertexCount:36];
+//    [glContext drawTrianglesWithIndiceVAO:indiceVbo vertexCount:36];
 }
 
 #pragma mark - cube

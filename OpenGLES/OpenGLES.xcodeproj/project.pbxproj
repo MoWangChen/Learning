@@ -57,6 +57,14 @@
 		DDE9E0741F8E04A100563E68 /* Laser.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0731F8E04A100563E68 /* Laser.m */; };
 		DDE9E0751F8E29B900563E68 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E0621F8DEB5400563E68 /* laser.png */; };
 		DDE9E0781F8F740100563E68 /* GLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0771F8F740000563E68 /* GLObject.m */; };
+		DDFDD9A61FD526A600DB9450 /* cube-5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A01FD526A500DB9450 /* cube-5.jpg */; };
+		DDFDD9A71FD526A600DB9450 /* cube-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A11FD526A500DB9450 /* cube-3.jpg */; };
+		DDFDD9A81FD526A600DB9450 /* cube-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A21FD526A500DB9450 /* cube-2.jpg */; };
+		DDFDD9A91FD526A600DB9450 /* cube-1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A31FD526A500DB9450 /* cube-1.jpg */; };
+		DDFDD9AA1FD526A600DB9450 /* cube-4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A41FD526A600DB9450 /* cube-4.jpg */; };
+		DDFDD9AB1FD526A600DB9450 /* cube-6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A51FD526A600DB9450 /* cube-6.jpg */; };
+		DDFDD9AF1FD527E000DB9450 /* CubeMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFDD9AE1FD527E000DB9450 /* CubeMapViewController.m */; };
+		DDFDD9B11FD52C0500DB9450 /* metal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9B01FD52C0500DB9450 /* metal.jpg */; };
 		DDFF99421FA9C67D009E420A /* GLGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFF99411FA9C67D009E420A /* GLGeometry.m */; };
 /* End PBXBuildFile section */
 
@@ -132,6 +140,15 @@
 		DDE9E0731F8E04A100563E68 /* Laser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Laser.m; sourceTree = "<group>"; };
 		DDE9E0761F8F740000563E68 /* GLObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLObject.h; sourceTree = "<group>"; };
 		DDE9E0771F8F740000563E68 /* GLObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLObject.m; sourceTree = "<group>"; };
+		DDFDD9A01FD526A500DB9450 /* cube-5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-5.jpg"; sourceTree = "<group>"; };
+		DDFDD9A11FD526A500DB9450 /* cube-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-3.jpg"; sourceTree = "<group>"; };
+		DDFDD9A21FD526A500DB9450 /* cube-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-2.jpg"; sourceTree = "<group>"; };
+		DDFDD9A31FD526A500DB9450 /* cube-1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-1.jpg"; sourceTree = "<group>"; };
+		DDFDD9A41FD526A600DB9450 /* cube-4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-4.jpg"; sourceTree = "<group>"; };
+		DDFDD9A51FD526A600DB9450 /* cube-6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-6.jpg"; sourceTree = "<group>"; };
+		DDFDD9AD1FD527E000DB9450 /* CubeMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CubeMapViewController.h; sourceTree = "<group>"; };
+		DDFDD9AE1FD527E000DB9450 /* CubeMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CubeMapViewController.m; sourceTree = "<group>"; };
+		DDFDD9B01FD52C0500DB9450 /* metal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal.jpg; sourceTree = "<group>"; };
 		DDFF99401FA9C67D009E420A /* GLGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLGeometry.h; sourceTree = "<group>"; };
 		DDFF99411FA9C67D009E420A /* GLGeometry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLGeometry.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -210,6 +227,7 @@
 				DDC106AA1FCD66A400F0772A /* Plane */,
 				DD0C8FD01FBAF9B000EACE72 /* OBJ */,
 				DDC4463A1FD1342800F75ED0 /* ShadowMap */,
+				DDFDD9AC1FD527AC00DB9450 /* CubeMap */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -237,6 +255,13 @@
 		DDA07FED1FA858F400127BF2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DDFDD9B01FD52C0500DB9450 /* metal.jpg */,
+				DDFDD9A31FD526A500DB9450 /* cube-1.jpg */,
+				DDFDD9A21FD526A500DB9450 /* cube-2.jpg */,
+				DDFDD9A11FD526A500DB9450 /* cube-3.jpg */,
+				DDFDD9A41FD526A600DB9450 /* cube-4.jpg */,
+				DDFDD9A01FD526A500DB9450 /* cube-5.jpg */,
+				DDFDD9A51FD526A600DB9450 /* cube-6.jpg */,
 				DDA37A7E1FBDA04700072E4F /* car.mtl */,
 				DDA37A811FBDA04700072E4F /* car.obj */,
 				DDA37A831FBDA04700072E4F /* cube.mtl */,
@@ -322,6 +347,15 @@
 			path = Laser;
 			sourceTree = "<group>";
 		};
+		DDFDD9AC1FD527AC00DB9450 /* CubeMap */ = {
+			isa = PBXGroup;
+			children = (
+				DDFDD9AD1FD527E000DB9450 /* CubeMapViewController.h */,
+				DDFDD9AE1FD527E000DB9450 /* CubeMapViewController.m */,
+			);
+			path = CubeMap;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -390,20 +424,27 @@
 				DD5263E71FB3051F005D91ED /* metal_03.png in Resources */,
 				DD8A3FEA1FCC797200324EFC /* normal.png in Resources */,
 				DDC4463F1FD13ECA00F75ED0 /* frag_shadowmap.glsl in Resources */,
+				DDFDD9B11FD52C0500DB9450 /* metal.jpg in Resources */,
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
+				DDFDD9A61FD526A600DB9450 /* cube-5.jpg in Resources */,
 				DDA37A861FBDA04700072E4F /* smoothMonkey.mtl in Resources */,
+				DDFDD9AA1FD526A600DB9450 /* cube-4.jpg in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,
 				DDA04C521F666B41004049FB /* Assets.xcassets in Resources */,
+				DDFDD9A81FD526A600DB9450 /* cube-2.jpg in Resources */,
 				DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */,
 				DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */,
 				DD5263E51FB30519005D91ED /* metal_01.png in Resources */,
+				DDFDD9AB1FD526A600DB9450 /* cube-6.jpg in Resources */,
 				DDA37A841FBDA04700072E4F /* car.mtl in Resources */,
 				DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */,
+				DDFDD9A91FD526A600DB9450 /* cube-1.jpg in Resources */,
 				DDA04C501F666B41004049FB /* Main.storyboard in Resources */,
 				DDC446391FD0055500F75ED0 /* squarepants.jpg in Resources */,
 				DDC446371FD0055500F75ED0 /* stoneFloor_NRM.png in Resources */,
 				DDE9E0711F8DF26A00563E68 /* laserVertex.glsl in Resources */,
 				DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */,
+				DDFDD9A71FD526A600DB9450 /* cube-3.jpg in Resources */,
 				DDA37A891FBDA04700072E4F /* cube.mtl in Resources */,
 				DDA37A851FBDA04700072E4F /* cube.obj in Resources */,
 				DDE9E0751F8E29B900563E68 /* laser.png in Resources */,
@@ -425,6 +466,7 @@
 				DDA37A8C1FBDA08D00072E4F /* OBJViewController.m in Sources */,
 				DD0C8FD31FBAF9E000EACE72 /* WavefrontOBJ.m in Sources */,
 				DD89B04E1FB4498300520ADF /* Terrain.m in Sources */,
+				DDFDD9AF1FD527E000DB9450 /* CubeMapViewController.m in Sources */,
 				DDA07FF11FA8595800127BF2 /* Cube.m in Sources */,
 				DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */,
 				DDFF99421FA9C67D009E420A /* GLGeometry.m in Sources */,

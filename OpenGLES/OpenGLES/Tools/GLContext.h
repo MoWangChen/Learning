@@ -35,4 +35,5 @@
 // textture
 - (void)bindTexture:(GLKTextureInfo *)textInfo to:(GLenum)textureChannel uniformName:(NSString *)uniformName;
 - (void)bindTextureName:(GLuint)textureName to:(GLenum)textureChannel uniformName:(NSString *)uniformName;
+- (void)bindCubeTexture:(GLKTextureInfo *)textInfo to:(GLenum)textureChannel uniformName:(NSString *)uniformName;
 @end

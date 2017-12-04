@@ -16,6 +16,7 @@
 #import "OBJViewController.h"
 #import "ProjectorViewController.h"
 #import "ShadowViewController.h"
+#import "CubeMapViewController.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +29,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [ShadowViewController new];
+    _window.rootViewController = [CubeMapViewController new];
     [_window makeKeyAndVisible];
     
     return YES;
