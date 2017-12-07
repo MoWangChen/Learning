@@ -10,9 +10,13 @@
 		DD04DA661F6D7E8C0093FD7C /* GLBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD04DA651F6D7E8C0093FD7C /* GLBaseViewController.m */; };
 		DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD0709CB1F7225EC000CDE9B /* texture.jpg */; };
 		DD0C8FD31FBAF9E000EACE72 /* WavefrontOBJ.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0C8FD21FBAF9E000EACE72 /* WavefrontOBJ.m */; };
+		DD0E1C201FD78C8B0023BB1E /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0E1C1F1FD78C8B0023BB1E /* Camera.m */; };
+		DD0E1C231FD7DA520023BB1E /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD0E1C221FD7DA520023BB1E /* CameraViewController.m */; };
 		DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */; };
 		DD16F9551F810E7C00B9AD1B /* green.png in Resources */ = {isa = PBXBuildFile; fileRef = DD16F9501F81082500B9AD1B /* green.png */; };
 		DD16F9561F810E8000B9AD1B /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = DD16F9511F81082500B9AD1B /* red.png */; };
+		DD48CB901FD8D40400D0EBEB /* Mirror.m in Sources */ = {isa = PBXBuildFile; fileRef = DD48CB8F1FD8D40400D0EBEB /* Mirror.m */; };
+		DD48CB921FD8E28400D0EBEB /* frag_mirror.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DD48CB911FD8E28400D0EBEB /* frag_mirror.glsl */; };
 		DD5263E11FB2FD5A005D91ED /* CylinderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD5263E01FB2FD5A005D91ED /* CylinderViewController.m */; };
 		DD5263E51FB30519005D91ED /* metal_01.png in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E21FB2FF61005D91ED /* metal_01.png */; };
 		DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E31FB2FF61005D91ED /* metal_02.jpg */; };
@@ -74,10 +78,17 @@
 		DD0709CB1F7225EC000CDE9B /* texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = texture.jpg; sourceTree = "<group>"; };
 		DD0C8FD11FBAF9E000EACE72 /* WavefrontOBJ.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WavefrontOBJ.h; sourceTree = "<group>"; };
 		DD0C8FD21FBAF9E000EACE72 /* WavefrontOBJ.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WavefrontOBJ.m; sourceTree = "<group>"; };
+		DD0E1C1E1FD78C8B0023BB1E /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		DD0E1C1F1FD78C8B0023BB1E /* Camera.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		DD0E1C211FD7DA520023BB1E /* CameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		DD0E1C221FD7DA520023BB1E /* CameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		DD16F9501F81082500B9AD1B /* green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green.png; sourceTree = "<group>"; };
 		DD16F9511F81082500B9AD1B /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
 		DD16F9521F81097200B9AD1B /* AlphaMixtureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlphaMixtureViewController.h; sourceTree = "<group>"; };
 		DD16F9531F81097200B9AD1B /* AlphaMixtureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlphaMixtureViewController.m; sourceTree = "<group>"; };
+		DD48CB8E1FD8D40400D0EBEB /* Mirror.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mirror.h; sourceTree = "<group>"; };
+		DD48CB8F1FD8D40400D0EBEB /* Mirror.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mirror.m; sourceTree = "<group>"; };
+		DD48CB911FD8E28400D0EBEB /* frag_mirror.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_mirror.glsl; sourceTree = "<group>"; };
 		DD5263DF1FB2FD5A005D91ED /* CylinderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CylinderViewController.h; sourceTree = "<group>"; };
 		DD5263E01FB2FD5A005D91ED /* CylinderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CylinderViewController.m; sourceTree = "<group>"; };
 		DD5263E21FB2FF61005D91ED /* metal_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_01.png; sourceTree = "<group>"; };
@@ -177,6 +188,19 @@
 			path = OBJ;
 			sourceTree = "<group>";
 		};
+		DD0E1C1D1FD78C6B0023BB1E /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				DD0E1C1E1FD78C8B0023BB1E /* Camera.h */,
+				DD0E1C1F1FD78C8B0023BB1E /* Camera.m */,
+				DD48CB8E1FD8D40400D0EBEB /* Mirror.h */,
+				DD48CB8F1FD8D40400D0EBEB /* Mirror.m */,
+				DD0E1C211FD7DA520023BB1E /* CameraViewController.h */,
+				DD0E1C221FD7DA520023BB1E /* CameraViewController.m */,
+			);
+			path = Camera;
+			sourceTree = "<group>";
+		};
 		DD7085651FAC46F9006ECAC6 /* Cylinder */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +252,7 @@
 				DD0C8FD01FBAF9B000EACE72 /* OBJ */,
 				DDC4463A1FD1342800F75ED0 /* ShadowMap */,
 				DDFDD9AC1FD527AC00DB9450 /* CubeMap */,
+				DD0E1C1D1FD78C6B0023BB1E /* Camera */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -286,6 +311,7 @@
 				DDA04C5D1F666BCB004049FB /* vertex.glsl */,
 				DDC106AE1FCD74ED00F0772A /* frag_framebuffer_plane.glsl */,
 				DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */,
+				DD48CB911FD8E28400D0EBEB /* frag_mirror.glsl */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -447,6 +473,7 @@
 				DDFDD9A71FD526A600DB9450 /* cube-3.jpg in Resources */,
 				DDA37A891FBDA04700072E4F /* cube.mtl in Resources */,
 				DDA37A851FBDA04700072E4F /* cube.obj in Resources */,
+				DD48CB921FD8E28400D0EBEB /* frag_mirror.glsl in Resources */,
 				DDE9E0751F8E29B900563E68 /* laser.png in Resources */,
 				DDA37A881FBDA04700072E4F /* smoothMonkey.obj in Resources */,
 				DD89B0581FB57D0E00520ADF /* grass_01.jpg in Resources */,
@@ -471,6 +498,7 @@
 				DD16F9541F81097200B9AD1B /* AlphaMixtureViewController.m in Sources */,
 				DDFF99421FA9C67D009E420A /* GLGeometry.m in Sources */,
 				DDA04C4D1F666B41004049FB /* ViewController.m in Sources */,
+				DD0E1C231FD7DA520023BB1E /* CameraViewController.m in Sources */,
 				DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */,
 				DD89B0511FB552C200520ADF /* TerrainViewController.m in Sources */,
 				DDB20DDA1F6FCAC700D9F05F /* CubeViewController.m in Sources */,
@@ -480,6 +508,8 @@
 				DDE9E0741F8E04A100563E68 /* Laser.m in Sources */,
 				DD7085681FAC470F006ECAC6 /* Cylinder.m in Sources */,
 				DDC446331FCFF45400F75ED0 /* ProjectorViewController.m in Sources */,
+				DD48CB901FD8D40400D0EBEB /* Mirror.m in Sources */,
+				DD0E1C201FD78C8B0023BB1E /* Camera.m in Sources */,
 				DD5263E11FB2FD5A005D91ED /* CylinderViewController.m in Sources */,
 				DDE9E0781F8F740100563E68 /* GLObject.m in Sources */,
 				DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */,

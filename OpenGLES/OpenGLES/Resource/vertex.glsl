@@ -1,3 +1,5 @@
+#extension GL_APPLE_clip_distance : require
+
 attribute vec4 position;
 attribute vec4 color;
 attribute vec3 normal; //法线向量
@@ -20,6 +22,11 @@ varying vec2 fragUV;
 varying vec3 fragTangent;
 varying vec3 fragBitangent;
 
+// clipplane
+uniform bool clipplaneEnabled;
+uniform vec4 clipplane;
+varying highp float gl_ClipDistance[1];
+
 void main(void) {
     fragNormal = normal;
     fragUV = uv;
@@ -27,6 +34,9 @@ void main(void) {
     fragBitangent = bitangent;
     fragPosition = position.xyz;
     mat4 mvp = projectionMatrix * cameraMatrix * modelMatrix;
+    if (clipplaneEnabled) {
+        gl_ClipDistance[0] = dot((modelMatrix * position).xyz, clipplane.xyz) + clipplane.w;
+    }
     gl_Position = mvp * position;
 }
 
