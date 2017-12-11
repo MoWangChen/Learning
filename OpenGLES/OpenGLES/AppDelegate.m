@@ -18,6 +18,7 @@
 #import "ShadowViewController.h"
 #import "CubeMapViewController.h"
 #import "CameraViewController.h"
+#import "SkyBoxViewController.h"
 
 @interface AppDelegate ()
 
@@ -30,7 +31,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [CameraViewController new];
+    _window.rootViewController = [SkyBoxViewController new];
     [_window makeKeyAndVisible];
     
     return YES;

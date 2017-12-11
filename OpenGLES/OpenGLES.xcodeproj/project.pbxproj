@@ -21,6 +21,15 @@
 		DD5263E51FB30519005D91ED /* metal_01.png in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E21FB2FF61005D91ED /* metal_01.png */; };
 		DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E31FB2FF61005D91ED /* metal_02.jpg */; };
 		DD5263E71FB3051F005D91ED /* metal_03.png in Resources */ = {isa = PBXBuildFile; fileRef = DD5263E41FB2FF61005D91ED /* metal_03.png */; };
+		DD6EBF891FDA33FE006CCD54 /* SkyBox.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6EBF881FDA33FE006CCD54 /* SkyBox.m */; };
+		DD6EBF8C1FDA3410006CCD54 /* SkyBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6EBF8B1FDA3410006CCD54 /* SkyBoxViewController.m */; };
+		DD6EBF931FDA353E006CCD54 /* cube-4.tga in Resources */ = {isa = PBXBuildFile; fileRef = DD6EBF8D1FDA353C006CCD54 /* cube-4.tga */; };
+		DD6EBF941FDA353E006CCD54 /* cube-2.tga in Resources */ = {isa = PBXBuildFile; fileRef = DD6EBF8E1FDA353C006CCD54 /* cube-2.tga */; };
+		DD6EBF951FDA353E006CCD54 /* cube-5.tga in Resources */ = {isa = PBXBuildFile; fileRef = DD6EBF8F1FDA353D006CCD54 /* cube-5.tga */; };
+		DD6EBF961FDA353E006CCD54 /* cube-3.tga in Resources */ = {isa = PBXBuildFile; fileRef = DD6EBF901FDA353D006CCD54 /* cube-3.tga */; };
+		DD6EBF971FDA353E006CCD54 /* cube-6.tga in Resources */ = {isa = PBXBuildFile; fileRef = DD6EBF911FDA353D006CCD54 /* cube-6.tga */; };
+		DD6EBF981FDA353E006CCD54 /* cube-1.tga in Resources */ = {isa = PBXBuildFile; fileRef = DD6EBF921FDA353E006CCD54 /* cube-1.tga */; };
+		DD6EBF9A1FDA65F4006CCD54 /* frag_skybox.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DD6EBF991FDA65F4006CCD54 /* frag_skybox.glsl */; };
 		DD7085681FAC470F006ECAC6 /* Cylinder.m in Sources */ = {isa = PBXBuildFile; fileRef = DD7085671FAC470F006ECAC6 /* Cylinder.m */; };
 		DD89B04E1FB4498300520ADF /* Terrain.m in Sources */ = {isa = PBXBuildFile; fileRef = DD89B04D1FB4498300520ADF /* Terrain.m */; };
 		DD89B0511FB552C200520ADF /* TerrainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD89B0501FB552C200520ADF /* TerrainViewController.m */; };
@@ -94,6 +103,17 @@
 		DD5263E21FB2FF61005D91ED /* metal_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_01.png; sourceTree = "<group>"; };
 		DD5263E31FB2FF61005D91ED /* metal_02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = metal_02.jpg; sourceTree = "<group>"; };
 		DD5263E41FB2FF61005D91ED /* metal_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal_03.png; sourceTree = "<group>"; };
+		DD6EBF871FDA33FE006CCD54 /* SkyBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyBox.h; sourceTree = "<group>"; };
+		DD6EBF881FDA33FE006CCD54 /* SkyBox.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyBox.m; sourceTree = "<group>"; };
+		DD6EBF8A1FDA3410006CCD54 /* SkyBoxViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SkyBoxViewController.h; sourceTree = "<group>"; };
+		DD6EBF8B1FDA3410006CCD54 /* SkyBoxViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SkyBoxViewController.m; sourceTree = "<group>"; };
+		DD6EBF8D1FDA353C006CCD54 /* cube-4.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cube-4.tga"; sourceTree = "<group>"; };
+		DD6EBF8E1FDA353C006CCD54 /* cube-2.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cube-2.tga"; sourceTree = "<group>"; };
+		DD6EBF8F1FDA353D006CCD54 /* cube-5.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cube-5.tga"; sourceTree = "<group>"; };
+		DD6EBF901FDA353D006CCD54 /* cube-3.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cube-3.tga"; sourceTree = "<group>"; };
+		DD6EBF911FDA353D006CCD54 /* cube-6.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cube-6.tga"; sourceTree = "<group>"; };
+		DD6EBF921FDA353E006CCD54 /* cube-1.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = "cube-1.tga"; sourceTree = "<group>"; };
+		DD6EBF991FDA65F4006CCD54 /* frag_skybox.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_skybox.glsl; sourceTree = "<group>"; };
 		DD7085661FAC470F006ECAC6 /* Cylinder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cylinder.h; sourceTree = "<group>"; };
 		DD7085671FAC470F006ECAC6 /* Cylinder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cylinder.m; sourceTree = "<group>"; };
 		DD89B04C1FB4498300520ADF /* Terrain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Terrain.h; sourceTree = "<group>"; };
@@ -201,6 +221,17 @@
 			path = Camera;
 			sourceTree = "<group>";
 		};
+		DD6EBF861FDA33E9006CCD54 /* SkyBox */ = {
+			isa = PBXGroup;
+			children = (
+				DD6EBF871FDA33FE006CCD54 /* SkyBox.h */,
+				DD6EBF881FDA33FE006CCD54 /* SkyBox.m */,
+				DD6EBF8A1FDA3410006CCD54 /* SkyBoxViewController.h */,
+				DD6EBF8B1FDA3410006CCD54 /* SkyBoxViewController.m */,
+			);
+			path = SkyBox;
+			sourceTree = "<group>";
+		};
 		DD7085651FAC46F9006ECAC6 /* Cylinder */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +284,7 @@
 				DDC4463A1FD1342800F75ED0 /* ShadowMap */,
 				DDFDD9AC1FD527AC00DB9450 /* CubeMap */,
 				DD0E1C1D1FD78C6B0023BB1E /* Camera */,
+				DD6EBF861FDA33E9006CCD54 /* SkyBox */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -281,6 +313,12 @@
 			isa = PBXGroup;
 			children = (
 				DDFDD9B01FD52C0500DB9450 /* metal.jpg */,
+				DD6EBF921FDA353E006CCD54 /* cube-1.tga */,
+				DD6EBF8E1FDA353C006CCD54 /* cube-2.tga */,
+				DD6EBF901FDA353D006CCD54 /* cube-3.tga */,
+				DD6EBF8D1FDA353C006CCD54 /* cube-4.tga */,
+				DD6EBF8F1FDA353D006CCD54 /* cube-5.tga */,
+				DD6EBF911FDA353D006CCD54 /* cube-6.tga */,
 				DDFDD9A31FD526A500DB9450 /* cube-1.jpg */,
 				DDFDD9A21FD526A500DB9450 /* cube-2.jpg */,
 				DDFDD9A11FD526A500DB9450 /* cube-3.jpg */,
@@ -312,6 +350,7 @@
 				DDC106AE1FCD74ED00F0772A /* frag_framebuffer_plane.glsl */,
 				DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */,
 				DD48CB911FD8E28400D0EBEB /* frag_mirror.glsl */,
+				DD6EBF991FDA65F4006CCD54 /* frag_skybox.glsl */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -443,6 +482,7 @@
 			files = (
 				DDC446381FD0055500F75ED0 /* stoneFloor.jpg in Resources */,
 				DD16F9561F810E8000B9AD1B /* red.png in Resources */,
+				DD6EBF941FDA353E006CCD54 /* cube-2.tga in Resources */,
 				DD89B0561FB57C0F00520ADF /* frag_terrain.glsl in Resources */,
 				DD89B0571FB57D0B00520ADF /* terrain_01.jpg in Resources */,
 				DD16F9551F810E7C00B9AD1B /* green.png in Resources */,
@@ -453,10 +493,13 @@
 				DDFDD9B11FD52C0500DB9450 /* metal.jpg in Resources */,
 				DDA04C551F666B41004049FB /* LaunchScreen.storyboard in Resources */,
 				DDFDD9A61FD526A600DB9450 /* cube-5.jpg in Resources */,
+				DD6EBF981FDA353E006CCD54 /* cube-1.tga in Resources */,
 				DDA37A861FBDA04700072E4F /* smoothMonkey.mtl in Resources */,
 				DDFDD9AA1FD526A600DB9450 /* cube-4.jpg in Resources */,
+				DD6EBF961FDA353E006CCD54 /* cube-3.tga in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,
 				DDA04C521F666B41004049FB /* Assets.xcassets in Resources */,
+				DD6EBF971FDA353E006CCD54 /* cube-6.tga in Resources */,
 				DDFDD9A81FD526A600DB9450 /* cube-2.jpg in Resources */,
 				DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */,
 				DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */,
@@ -465,11 +508,13 @@
 				DDA37A841FBDA04700072E4F /* car.mtl in Resources */,
 				DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */,
 				DDFDD9A91FD526A600DB9450 /* cube-1.jpg in Resources */,
+				DD6EBF9A1FDA65F4006CCD54 /* frag_skybox.glsl in Resources */,
 				DDA04C501F666B41004049FB /* Main.storyboard in Resources */,
 				DDC446391FD0055500F75ED0 /* squarepants.jpg in Resources */,
 				DDC446371FD0055500F75ED0 /* stoneFloor_NRM.png in Resources */,
 				DDE9E0711F8DF26A00563E68 /* laserVertex.glsl in Resources */,
 				DDA04C5F1F666BCB004049FB /* vertex.glsl in Resources */,
+				DD6EBF951FDA353E006CCD54 /* cube-5.tga in Resources */,
 				DDFDD9A71FD526A600DB9450 /* cube-3.jpg in Resources */,
 				DDA37A891FBDA04700072E4F /* cube.mtl in Resources */,
 				DDA37A851FBDA04700072E4F /* cube.obj in Resources */,
@@ -479,6 +524,7 @@
 				DD89B0581FB57D0E00520ADF /* grass_01.jpg in Resources */,
 				DDC106AF1FCD74ED00F0772A /* frag_framebuffer_plane.glsl in Resources */,
 				DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */,
+				DD6EBF931FDA353E006CCD54 /* cube-4.tga in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,6 +538,7 @@
 				DDC106AD1FCD66C400F0772A /* Plane.m in Sources */,
 				DDA37A8C1FBDA08D00072E4F /* OBJViewController.m in Sources */,
 				DD0C8FD31FBAF9E000EACE72 /* WavefrontOBJ.m in Sources */,
+				DD6EBF8C1FDA3410006CCD54 /* SkyBoxViewController.m in Sources */,
 				DD89B04E1FB4498300520ADF /* Terrain.m in Sources */,
 				DDFDD9AF1FD527E000DB9450 /* CubeMapViewController.m in Sources */,
 				DDA07FF11FA8595800127BF2 /* Cube.m in Sources */,
@@ -510,6 +557,7 @@
 				DDC446331FCFF45400F75ED0 /* ProjectorViewController.m in Sources */,
 				DD48CB901FD8D40400D0EBEB /* Mirror.m in Sources */,
 				DD0E1C201FD78C8B0023BB1E /* Camera.m in Sources */,
+				DD6EBF891FDA33FE006CCD54 /* SkyBox.m in Sources */,
 				DD5263E11FB2FD5A005D91ED /* CylinderViewController.m in Sources */,
 				DDE9E0781F8F740100563E68 /* GLObject.m in Sources */,
 				DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */,
