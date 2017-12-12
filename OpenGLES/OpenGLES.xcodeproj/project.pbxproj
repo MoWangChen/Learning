@@ -70,6 +70,7 @@
 		DDE9E0741F8E04A100563E68 /* Laser.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0731F8E04A100563E68 /* Laser.m */; };
 		DDE9E0751F8E29B900563E68 /* laser.png in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E0621F8DEB5400563E68 /* laser.png */; };
 		DDE9E0781F8F740100563E68 /* GLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0771F8F740000563E68 /* GLObject.m */; };
+		DDF0B5861FDE85CB00F67F18 /* FogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDF0B5851FDE85CB00F67F18 /* FogViewController.m */; };
 		DDFDD9A61FD526A600DB9450 /* cube-5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A01FD526A500DB9450 /* cube-5.jpg */; };
 		DDFDD9A71FD526A600DB9450 /* cube-3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A11FD526A500DB9450 /* cube-3.jpg */; };
 		DDFDD9A81FD526A600DB9450 /* cube-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDD9A21FD526A500DB9450 /* cube-2.jpg */; };
@@ -171,6 +172,8 @@
 		DDE9E0731F8E04A100563E68 /* Laser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Laser.m; sourceTree = "<group>"; };
 		DDE9E0761F8F740000563E68 /* GLObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLObject.h; sourceTree = "<group>"; };
 		DDE9E0771F8F740000563E68 /* GLObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLObject.m; sourceTree = "<group>"; };
+		DDF0B5841FDE85CB00F67F18 /* FogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FogViewController.h; sourceTree = "<group>"; };
+		DDF0B5851FDE85CB00F67F18 /* FogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FogViewController.m; sourceTree = "<group>"; };
 		DDFDD9A01FD526A500DB9450 /* cube-5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-5.jpg"; sourceTree = "<group>"; };
 		DDFDD9A11FD526A500DB9450 /* cube-3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-3.jpg"; sourceTree = "<group>"; };
 		DDFDD9A21FD526A500DB9450 /* cube-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "cube-2.jpg"; sourceTree = "<group>"; };
@@ -285,6 +288,7 @@
 				DDFDD9AC1FD527AC00DB9450 /* CubeMap */,
 				DD0E1C1D1FD78C6B0023BB1E /* Camera */,
 				DD6EBF861FDA33E9006CCD54 /* SkyBox */,
+				DDF0B5831FDE85B500F67F18 /* Fog */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -410,6 +414,15 @@
 				DDE9E0731F8E04A100563E68 /* Laser.m */,
 			);
 			path = Laser;
+			sourceTree = "<group>";
+		};
+		DDF0B5831FDE85B500F67F18 /* Fog */ = {
+			isa = PBXGroup;
+			children = (
+				DDF0B5841FDE85CB00F67F18 /* FogViewController.h */,
+				DDF0B5851FDE85CB00F67F18 /* FogViewController.m */,
+			);
+			path = Fog;
 			sourceTree = "<group>";
 		};
 		DDFDD9AC1FD527AC00DB9450 /* CubeMap */ = {
@@ -560,6 +573,7 @@
 				DD6EBF891FDA33FE006CCD54 /* SkyBox.m in Sources */,
 				DD5263E11FB2FD5A005D91ED /* CylinderViewController.m in Sources */,
 				DDE9E0781F8F740100563E68 /* GLObject.m in Sources */,
+				DDF0B5861FDE85CB00F67F18 /* FogViewController.m in Sources */,
 				DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */,
 				DDA04C471F666B41004049FB /* main.m in Sources */,
 			);
