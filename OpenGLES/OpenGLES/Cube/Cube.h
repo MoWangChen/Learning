@@ -10,4 +10,6 @@
 
 @interface Cube : GLObject
 
+- (id)initWithGLContext:(GLContext *)context diffuseMap:(GLKTextureInfo *)diffuseMap;
+
 @end

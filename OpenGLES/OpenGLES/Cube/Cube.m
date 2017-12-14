@@ -21,10 +21,11 @@
 
 @implementation Cube
 
-- (id)initWithGLContext:(GLContext *)context {
+- (id)initWithGLContext:(GLContext *)context diffuseMap:(GLKTextureInfo *)diffuseMap {
     self = [super initWithGLContext:context];
     if (self) {
         self.modelMatrix = GLKMatrix4Identity;
+        self.diffuseTexture = diffuseMap;
         [self genVBO];
         [self genVAO];
         
@@ -111,8 +112,7 @@
     bool canInvert;
     GLKMatrix4 normalMatrix = GLKMatrix4InvertAndTranspose(self.modelMatrix, &canInvert);
     [glContext setUniformMatrix4fv:@"normalMatrix" value:canInvert ? normalMatrix : GLKMatrix4Identity];
-//    [glContext bindTexture:self.diffuseMap to:GL_TEXTURE0 uniformName:@"diffuseMap"];
-//    [glContext bindTexture:self.normalMap to:GL_TEXTURE1 uniformName:@"normalMap"];
+    [glContext bindTexture:self.diffuseTexture to:GL_TEXTURE0 uniformName:@"diffuseMap"];
     [glContext drawTrianglesWithVAO:vao vertexCount:36];
 }
 
