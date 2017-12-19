@@ -68,6 +68,10 @@
 		DDC4463D1FD1347D00F75ED0 /* ShadowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4463C1FD1347D00F75ED0 /* ShadowViewController.m */; };
 		DDC4463F1FD13ECA00F75ED0 /* frag_shadowmap.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */; };
 		DDCEA4311FE8BC0D004F0ADD /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCEA4301FE8BC0D004F0ADD /* tree.png */; };
+		DDCEA4351FE8E9EC004F0ADD /* ParticleSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCEA4341FE8E9EC004F0ADD /* ParticleSystem.m */; };
+		DDCEA4381FE9071E004F0ADD /* ParticleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDCEA4371FE9071E004F0ADD /* ParticleViewController.m */; };
+		DDCEA43A1FE90892004F0ADD /* frag_particle.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDCEA4391FE90892004F0ADD /* frag_particle.glsl */; };
+		DDCEA43C1FE90D50004F0ADD /* particle.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCEA43B1FE90D50004F0ADD /* particle.png */; };
 		DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0601F8CC6E600563E68 /* GLContext.m */; };
 		DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E06C1F8DF12500563E68 /* LaserViewController.m */; };
 		DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E06E1F8DF26A00563E68 /* laserFragment.glsl */; };
@@ -337,6 +341,12 @@
 		DDC4463C1FD1347D00F75ED0 /* ShadowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadowViewController.m; sourceTree = "<group>"; };
 		DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_shadowmap.glsl; sourceTree = "<group>"; };
 		DDCEA4301FE8BC0D004F0ADD /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
+		DDCEA4331FE8E9EC004F0ADD /* ParticleSystem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
+		DDCEA4341FE8E9EC004F0ADD /* ParticleSystem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticleSystem.m; sourceTree = "<group>"; };
+		DDCEA4361FE9071E004F0ADD /* ParticleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticleViewController.h; sourceTree = "<group>"; };
+		DDCEA4371FE9071E004F0ADD /* ParticleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticleViewController.m; sourceTree = "<group>"; };
+		DDCEA4391FE90892004F0ADD /* frag_particle.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_particle.glsl; sourceTree = "<group>"; };
+		DDCEA43B1FE90D50004F0ADD /* particle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = particle.png; sourceTree = "<group>"; };
 		DDE9E05F1F8CC6E600563E68 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
 		DDE9E0601F8CC6E600563E68 /* GLContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLContext.m; sourceTree = "<group>"; };
 		DDE9E0621F8DEB5400563E68 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
@@ -884,6 +894,7 @@
 				DDF0B5871FDFD6F900F67F18 /* Physics Engine */,
 				DDF0B7CB1FE12C5500F67F18 /* Game */,
 				DD8DDC1D1FE7B83F004C2170 /* Billboards */,
+				DDCEA4321FE8E9C6004F0ADD /* Particle */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -911,6 +922,7 @@
 		DDA07FED1FA858F400127BF2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DDCEA43B1FE90D50004F0ADD /* particle.png */,
 				DDCEA4301FE8BC0D004F0ADD /* tree.png */,
 				DDFDD9B01FD52C0500DB9450 /* metal.jpg */,
 				DD6EBF921FDA353E006CCD54 /* cube-1.tga */,
@@ -982,6 +994,18 @@
 				DDC4463C1FD1347D00F75ED0 /* ShadowViewController.m */,
 			);
 			path = ShadowMap;
+			sourceTree = "<group>";
+		};
+		DDCEA4321FE8E9C6004F0ADD /* Particle */ = {
+			isa = PBXGroup;
+			children = (
+				DDCEA4331FE8E9EC004F0ADD /* ParticleSystem.h */,
+				DDCEA4341FE8E9EC004F0ADD /* ParticleSystem.m */,
+				DDCEA4361FE9071E004F0ADD /* ParticleViewController.h */,
+				DDCEA4371FE9071E004F0ADD /* ParticleViewController.m */,
+				DDCEA4391FE90892004F0ADD /* frag_particle.glsl */,
+			);
+			path = Particle;
 			sourceTree = "<group>";
 		};
 		DDE9E05E1F8CC6D200563E68 /* Tools */ = {
@@ -1658,6 +1682,7 @@
 				DD6EBF961FDA353E006CCD54 /* cube-3.tga in Resources */,
 				DDA04C5E1F666BCB004049FB /* fragment.glsl in Resources */,
 				DDA04C521F666B41004049FB /* Assets.xcassets in Resources */,
+				DDCEA43A1FE90892004F0ADD /* frag_particle.glsl in Resources */,
 				DD6EBF971FDA353E006CCD54 /* cube-6.tga in Resources */,
 				DDF0B72A1FDFD72000F67F18 /* premake4.lua in Resources */,
 				DDFDD9A81FD526A600DB9450 /* cube-2.jpg in Resources */,
@@ -1668,6 +1693,7 @@
 				DD5263E51FB30519005D91ED /* metal_01.png in Resources */,
 				DDFDD9AB1FD526A600DB9450 /* cube-6.jpg in Resources */,
 				DDA37A841FBDA04700072E4F /* car.mtl in Resources */,
+				DDCEA43C1FE90D50004F0ADD /* particle.png in Resources */,
 				DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */,
 				DDFDD9A91FD526A600DB9450 /* cube-1.jpg in Resources */,
 				DD6EBF9A1FDA65F4006CCD54 /* frag_skybox.glsl in Resources */,
@@ -1734,6 +1760,7 @@
 				DDF0B7BB1FDFD72000F67F18 /* btGeometryUtil.cpp in Sources */,
 				DDFF99421FA9C67D009E420A /* GLGeometry.m in Sources */,
 				DDF0B79C1FDFD72000F67F18 /* btMultiBodyJointMotor.cpp in Sources */,
+				DDCEA4381FE9071E004F0ADD /* ParticleViewController.m in Sources */,
 				DDF0B7BD1FDFD72000F67F18 /* btVector3.cpp in Sources */,
 				DDA04C4D1F666B41004049FB /* ViewController.m in Sources */,
 				DDF0B7681FDFD72000F67F18 /* gim_memory.cpp in Sources */,
@@ -1863,6 +1890,7 @@
 				DDF0B7B31FDFD72000F67F18 /* btNNCGConstraintSolver.cpp in Sources */,
 				DDF0B7A91FDFD72000F67F18 /* btTypedConstraint.cpp in Sources */,
 				DDF0B7961FDFD72000F67F18 /* btKinematicCharacterController.cpp in Sources */,
+				DDCEA4351FE8E9EC004F0ADD /* ParticleSystem.m in Sources */,
 				DDF0B7221FDFD72000F67F18 /* btSoftSoftCollisionAlgorithm.cpp in Sources */,
 				DDF0B74D1FDFD72000F67F18 /* btCollisionWorldImporter.cpp in Sources */,
 				DDF0B7AB1FDFD72000F67F18 /* btHingeConstraint.cpp in Sources */,

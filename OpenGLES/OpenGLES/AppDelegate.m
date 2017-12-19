@@ -22,6 +22,7 @@
 #import "FogViewController.h"
 #import "PhysicsViewController.h"
 #import "BillboardViewController.h"
+#import "ParticleViewController.h"
 
 @interface AppDelegate ()
 
@@ -34,7 +35,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [BillboardViewController new];
+    _window.rootViewController = [ParticleViewController new];
     [_window makeKeyAndVisible];
     
     return YES;
