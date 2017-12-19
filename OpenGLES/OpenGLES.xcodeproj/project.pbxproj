@@ -38,6 +38,10 @@
 		DD89B0581FB57D0E00520ADF /* grass_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0521FB57BC300520ADF /* grass_01.jpg */; };
 		DD89B0591FB57D1100520ADF /* dirt_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DD89B0541FB57BC300520ADF /* dirt_01.jpg */; };
 		DD8A3FEA1FCC797200324EFC /* normal.png in Resources */ = {isa = PBXBuildFile; fileRef = DD8A3FE91FCC797200324EFC /* normal.png */; };
+		DD8DDC221FE7B83F004C2170 /* Billboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8DDC1F1FE7B83F004C2170 /* Billboard.m */; };
+		DD8DDC231FE7B83F004C2170 /* BillboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8DDC211FE7B83F004C2170 /* BillboardViewController.m */; };
+		DD8DDC251FE7BF3B004C2170 /* vtx_billboard.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DD8DDC241FE7BF3B004C2170 /* vtx_billboard.glsl */; };
+		DD8DDC271FE7BF50004C2170 /* frag_billboard.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DD8DDC261FE7BF50004C2170 /* frag_billboard.glsl */; };
 		DDA04C471F666B41004049FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C461F666B41004049FB /* main.m */; };
 		DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C491F666B41004049FB /* AppDelegate.m */; };
 		DDA04C4D1F666B41004049FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA04C4C1F666B41004049FB /* ViewController.m */; };
@@ -63,6 +67,7 @@
 		DDC446391FD0055500F75ED0 /* squarepants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDC446361FD0055500F75ED0 /* squarepants.jpg */; };
 		DDC4463D1FD1347D00F75ED0 /* ShadowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4463C1FD1347D00F75ED0 /* ShadowViewController.m */; };
 		DDC4463F1FD13ECA00F75ED0 /* frag_shadowmap.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */; };
+		DDCEA4311FE8BC0D004F0ADD /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = DDCEA4301FE8BC0D004F0ADD /* tree.png */; };
 		DDE9E0611F8CC6E600563E68 /* GLContext.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E0601F8CC6E600563E68 /* GLContext.m */; };
 		DDE9E06D1F8DF12500563E68 /* LaserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDE9E06C1F8DF12500563E68 /* LaserViewController.m */; };
 		DDE9E0701F8DF26A00563E68 /* laserFragment.glsl in Resources */ = {isa = PBXBuildFile; fileRef = DDE9E06E1F8DF26A00563E68 /* laserFragment.glsl */; };
@@ -290,6 +295,12 @@
 		DD89B0541FB57BC300520ADF /* dirt_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dirt_01.jpg; sourceTree = "<group>"; };
 		DD89B0551FB57C0F00520ADF /* frag_terrain.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_terrain.glsl; sourceTree = "<group>"; };
 		DD8A3FE91FCC797200324EFC /* normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = normal.png; sourceTree = "<group>"; };
+		DD8DDC1E1FE7B83F004C2170 /* BillboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillboardViewController.h; sourceTree = "<group>"; };
+		DD8DDC1F1FE7B83F004C2170 /* Billboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Billboard.m; sourceTree = "<group>"; };
+		DD8DDC201FE7B83F004C2170 /* Billboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Billboard.h; sourceTree = "<group>"; };
+		DD8DDC211FE7B83F004C2170 /* BillboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillboardViewController.m; sourceTree = "<group>"; };
+		DD8DDC241FE7BF3B004C2170 /* vtx_billboard.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vtx_billboard.glsl; sourceTree = "<group>"; };
+		DD8DDC261FE7BF50004C2170 /* frag_billboard.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_billboard.glsl; sourceTree = "<group>"; };
 		DDA04C421F666B41004049FB /* OpenGLES.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLES.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA04C461F666B41004049FB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DDA04C481F666B41004049FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -325,6 +336,7 @@
 		DDC4463B1FD1347D00F75ED0 /* ShadowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShadowViewController.h; sourceTree = "<group>"; };
 		DDC4463C1FD1347D00F75ED0 /* ShadowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShadowViewController.m; sourceTree = "<group>"; };
 		DDC4463E1FD13ECA00F75ED0 /* frag_shadowmap.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = frag_shadowmap.glsl; sourceTree = "<group>"; };
+		DDCEA4301FE8BC0D004F0ADD /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		DDE9E05F1F8CC6E600563E68 /* GLContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLContext.h; sourceTree = "<group>"; };
 		DDE9E0601F8CC6E600563E68 /* GLContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLContext.m; sourceTree = "<group>"; };
 		DDE9E0621F8DEB5400563E68 /* laser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = laser.png; sourceTree = "<group>"; };
@@ -825,6 +837,19 @@
 			path = Terrain;
 			sourceTree = "<group>";
 		};
+		DD8DDC1D1FE7B83F004C2170 /* Billboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD8DDC201FE7B83F004C2170 /* Billboard.h */,
+				DD8DDC1F1FE7B83F004C2170 /* Billboard.m */,
+				DD8DDC1E1FE7B83F004C2170 /* BillboardViewController.h */,
+				DD8DDC211FE7B83F004C2170 /* BillboardViewController.m */,
+				DD8DDC241FE7BF3B004C2170 /* vtx_billboard.glsl */,
+				DD8DDC261FE7BF50004C2170 /* frag_billboard.glsl */,
+			);
+			path = Billboards;
+			sourceTree = "<group>";
+		};
 		DDA04C391F666B41004049FB = {
 			isa = PBXGroup;
 			children = (
@@ -858,6 +883,7 @@
 				DDF0B5831FDE85B500F67F18 /* Fog */,
 				DDF0B5871FDFD6F900F67F18 /* Physics Engine */,
 				DDF0B7CB1FE12C5500F67F18 /* Game */,
+				DD8DDC1D1FE7B83F004C2170 /* Billboards */,
 				DDA07FED1FA858F400127BF2 /* Resource */,
 				DDA04C481F666B41004049FB /* AppDelegate.h */,
 				DDA04C491F666B41004049FB /* AppDelegate.m */,
@@ -885,6 +911,7 @@
 		DDA07FED1FA858F400127BF2 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DDCEA4301FE8BC0D004F0ADD /* tree.png */,
 				DDFDD9B01FD52C0500DB9450 /* metal.jpg */,
 				DD6EBF921FDA353E006CCD54 /* cube-1.tga */,
 				DD6EBF8E1FDA353C006CCD54 /* cube-2.tga */,
@@ -1610,7 +1637,9 @@
 				DDC446381FD0055500F75ED0 /* stoneFloor.jpg in Resources */,
 				DD16F9561F810E8000B9AD1B /* red.png in Resources */,
 				DDF0B7BE1FDFD72000F67F18 /* premake4.lua in Resources */,
+				DDCEA4311FE8BC0D004F0ADD /* tree.png in Resources */,
 				DD6EBF941FDA353E006CCD54 /* cube-2.tga in Resources */,
+				DD8DDC251FE7BF3B004C2170 /* vtx_billboard.glsl in Resources */,
 				DD89B0561FB57C0F00520ADF /* frag_terrain.glsl in Resources */,
 				DD89B0571FB57D0B00520ADF /* terrain_01.jpg in Resources */,
 				DD16F9551F810E7C00B9AD1B /* green.png in Resources */,
@@ -1634,6 +1663,7 @@
 				DDFDD9A81FD526A600DB9450 /* cube-2.jpg in Resources */,
 				DD0709CC1F7225EC000CDE9B /* texture.jpg in Resources */,
 				DDF0B7931FDFD72000F67F18 /* CMakeLists.txt in Resources */,
+				DD8DDC271FE7BF50004C2170 /* frag_billboard.glsl in Resources */,
 				DD5263E61FB3051C005D91ED /* metal_02.jpg in Resources */,
 				DD5263E51FB30519005D91ED /* metal_01.png in Resources */,
 				DDFDD9AB1FD526A600DB9450 /* cube-6.jpg in Resources */,
@@ -1736,6 +1766,8 @@
 				DDF0B7BC1FDFD72000F67F18 /* btPolarDecomposition.cpp in Sources */,
 				DDA04C4A1F666B41004049FB /* AppDelegate.m in Sources */,
 				DDF0B7A31FDFD72000F67F18 /* btDantzigLCP.cpp in Sources */,
+				DD8DDC231FE7B83F004C2170 /* BillboardViewController.m in Sources */,
+				DD8DDC221FE7B83F004C2170 /* Billboard.m in Sources */,
 				DDF0B72D1FDFD72000F67F18 /* btQuantizedBvh.cpp in Sources */,
 				DDF0B7791FDFD72000F67F18 /* btConcaveShape.cpp in Sources */,
 				DDF0B78B1FDFD72000F67F18 /* btHeightfieldTerrainShape.cpp in Sources */,

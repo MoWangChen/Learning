@@ -21,6 +21,17 @@
 
 @implementation Cube
 
+- (instancetype)initWithGLContext:(GLContext *)context
+{
+    self = [super initWithGLContext:context];
+    if (self) {
+        self.modelMatrix = GLKMatrix4Identity;
+        [self genVBO];
+        [self genVAO];
+    }
+    return self;
+}
+
 - (id)initWithGLContext:(GLContext *)context diffuseMap:(GLKTextureInfo *)diffuseMap {
     self = [super initWithGLContext:context];
     if (self) {

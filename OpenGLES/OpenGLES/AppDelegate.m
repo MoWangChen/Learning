@@ -21,6 +21,7 @@
 #import "SkyBoxViewController.h"
 #import "FogViewController.h"
 #import "PhysicsViewController.h"
+#import "BillboardViewController.h"
 
 @interface AppDelegate ()
 
@@ -33,7 +34,7 @@
     // Override point for customization after application launch.
     
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [PhysicsViewController new];
+    _window.rootViewController = [BillboardViewController new];
     [_window makeKeyAndVisible];
     
     return YES;
