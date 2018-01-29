@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>相册</title>
+</head>
+<body>
+
+    <h2>画廊</h2>
+
+    <ul id="imagegallery">
+        <li>
+            <a href="image/1.jpg" title="nv1">
+                <img src="image/1-small.jpg" width="100" alt="女1">
+            </a>
+        </li>
+        <li>
+            <a href="image/2.jpg" title="nv2">
+                <img src="image/2-small.jpg" width="100" alt="女2">
+            </a>
+        </li>
+        <li>
+            <a href="image/3.jpg" title="nv3">
+                <img src="image/3-small.jpg" width="100" alt="女3">
+            </a>
+        </li>
+        <li>
+            <a href="image/4.jpg" title="nv4">
+                <img src="image/4-small.jpg" width="100" alt="女4">
+            </a>
+        </li>
+    </ul>
+
+    <div style="clear: both"></div>
+
+    <img src="image/placeholder.png" id="image" width="450px"/>
+
+    <div id="des">
+        <p>选择一个图片</p>
+    </div>
+
+</body>
+</html>
+
+<style>
+    body {
+        font-family: "Helvetica", "Arial", Serif;
+        color: #333;
+        background-color: #ccc;
+        margin: 1em 10%;
+    }
+
+    h1 {
+        color: #333;
+        background-color: transparent;
+    }
+
+    a {
+        color: #c60;
+        background-color: transparent;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    ul {
+        padding:0;
+    }
+
+    li {
+        float: left;
+        padding: 1em;
+        list-style: none;
+    }
+
+    #imagegallery {
+        list-style: none;
+    }
+
+    #imagegallery  li{
+        margin: 0px 20px 20px 0px;
+        padding:0px;
+        display: inline;
+    }
+
+    #imagegallery li a image {
+        border: 0;
+    }
+</style>
+
+<script>
+
+    var liArr = document.getElementsByTagName("li");
+    console.log(liArr);
+//    var li = liArr[0];
+//    console.log(li);
+//    var a = li.firstElementChild;
+//    console.log(a);
+
+    var image = document.getElementById("image");
+    var des = document.getElementById("des");
+
+    for (var i = 0; i < liArr.length; ++i) {
+        var li = liArr[i];
+        var a = li.firstElementChild;
+        console.log(a);
+
+        var img = a.firstElementChild;
+        console.log(img);
+
+        a.onclick = function () {
+            console.log(this);
+            image.src = this.href;
+            des.innerHTML = this.title;
+            return false;
+        }
+    }
+
+</script>

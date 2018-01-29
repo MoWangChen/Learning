@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框赋值</title>
+</head>
+<body>
+
+    <input type="text" /><br><br>
+    <input type="text" /><br><br>
+    <input type="text" /><br><br>
+    <input type="text" /><br><br>
+    <input type="text" /><br><br>
+    <input type="text" /><br><br>
+
+    <button>赋值</button><br><br>
+    <button>取值</button><br><br>
+
+</body>
+</html>
+
+<script>
+
+    var inpArr = document.getElementsByTagName("input");
+    var btnArr = document.getElementsByTagName("button");
+
+    btnArr[0].onclick = function () {
+        for (var i = 0; i < inpArr.length; i++) {
+            inpArr[i].value = i;
+        }
+    }
+
+    btnArr[1].onclick = function () {
+        var newArr = [];
+        for (var i = 0; i < inpArr.length; i++) {
+            newArr.push(inpArr[i].value);
+        }
+        console.log(newArr);
+    }
+
+</script>

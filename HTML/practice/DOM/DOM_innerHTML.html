@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHTML</title>
+</head>
+<body>
+
+    <input id="inp1" type="text" value="I am value">
+    <button> I am button</button>
+
+    <div id="box1">
+        I am box1
+        <div id="box2"> I am box2</div>
+    </div>
+
+    <div id="box3">
+        I am box3
+        <div id="box4"> I am box4</div>
+    </div>
+
+</body>
+</html>
+
+<script>
+//    console.log(document.getElementById("inp1").value);
+//    console.log(document.getElementById("box1").innerHTML);
+//    document.getElementById("box1").innerHTML = "<h1>I am H1</h1>"
+//    console.log(document.getElementById("box1").innerHTML);
+
+    console.log(document.getElementById("box3").innerText);
+    document.getElementById("box3").innerText = "<h1>I am H1</h1>";
+    console.log(document.getElementById("box3").innerText);
+
+</script>

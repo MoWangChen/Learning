@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选反选</title>
+</head>
+<body>
+
+    <div class="wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="theadInp" />
+                    </th>
+                    <th>菜名</th>
+                    <th>饭店</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>地三鲜</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>西红柿鸡蛋</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>土豆丝</td>
+                    <td>田老师</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>炒黄豆</td>
+                    <td>田老师</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .wrap {
+        width: 300px;
+        margin: 100px auto 0;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid #c0c0c0;
+        width: 300px;
+    }
+
+    th , td {
+        border: 1px solid #d0d0d0;
+        color: #404060;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #09c;
+        font: bold 16px "楷体";
+        color: #ffffff;
+    }
+
+    td {
+        font: 14px "楷体";
+    }
+
+    tbody tr {
+        background-color: #f0f0f0;
+    }
+
+    tbody tr:hover {
+        cursor: pointer;
+        background-color: #fafafa;
+    }
+
+</style>
+
+<script>
+
+    window.onload = function () {
+
+        var topInp = document.getElementById("theadInp");
+        var tbody = document.getElementById("tbody");
+        var botInpArr = tbody.getElementsByTagName("input");
+
+        topInp.onclick = function () {
+            for (var i = 0; i < botInpArr.length; i++) {
+                botInpArr[i].checked = this.checked;
+            }
+        }
+
+        for (var i = 0; i < botInpArr.length; i++) {
+            botInpArr[i].onclick = function () {
+                var bool = true;
+                for (var i = 0; i < botInpArr.length; i++) {
+                    if (botInpArr[i].checked == false) {
+                        bool = false;
+                    }
+                }
+                topInp.checked = bool;
+            }
+        }
+
+    }
+
+</script>

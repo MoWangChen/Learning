@@ -6,14 +6,89 @@
 	
 </head>
 <body>
-	哈哈哈
+
 </body>
 </html>
 
 <script type="text/javascript">
-	alert("测试");
-	confirm("ceshi");
-	console.log("ceshi");
-	document.write("结束\"了\"");
+//	alert("测试");
+//	confirm("ceshi");
+//	console.log("ceshi");
+//	document.write("<h1>结束\"了\"</h1>");
+//
+//	var str = '1';
+//	console.log(isNaN(str));
+//
+//	console.log(true);
+
+//	var a = 1;
+//	var b = 2;
+//	a++;
+//
+//	var num = ++a + (a++) + a + (++b) + b++;
+////	3 + 3 + 4 + 3 + 3 = 16;
+//	console.log(num);
+
+//	// switch 底层使用的是 '==='
+//	switch ('111') {
+//		case 111:
+//		    alert('1');
+//		    break;
+//		case 222:
+//		    alert('2');
+//		    break;
+//		case '111':
+//		    alert('3');
+//		    break;
+//		default:
+//		    alert('4');
+//	};
+
+
+//	var date = new Date();
+//	console.log(date.getDay());
+//	var num = date.getDay();
+//	switch (num) {
+//		case 0:
+//	    	console.log('0');
+//
+//		case 1:
+//		    console.log('1');
+//		    break;
+//		case 3:
+//		    console.log('3');
+//		    break;
+//		default:
+//		    console.log('test');
+//	};
+
+
+//	document.write("<br>")
+//    document.write("☆")
+//    document.write("☆")
+//    document.write("☆<br>")
+//
+//    document.write("☆")
+//    document.write("☆")
+//    document.write("☆<br>")
+//
+//    document.write("☆")
+//    document.write("☆")
+//    document.write("☆")
+
+	document.write('<table border="1">');
+    for(var i=1;i<=9;i++){
+        document.write('<tr>')
+        for(var j=1;j<=i;j++){
+            document.write('<td>');
+            document.write(i+"*"+j+"="+i*j+"  ");
+            document.write('</td>');
+        }
+        document.write("</tr>");
+    }
+    document.write('</table>');
+
+
+
 
 </script>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+
+//    var array1 = [1, 2, 3];
+//    var array2 = [];
+//    console.log(typeof array1);
+//    console.log(array2);
+//
+//    var arr1 = new Array();
+//    var arr2 = new Array("关羽", "张飞");
+//    var arr3 = new Array(3);
+//    console.log(arr1);
+//    console.log(arr2);
+//    console.log(arr3);
+
+
+//    var arr = ['刘备','关羽','张飞'];
+//    console.log(arr);
+//    console.log(arr.length);
+//
+//    console.log(arr[1]);
+//    console.log(arr[0]);
+//    console.log(arr[100]);
+
+
+//    var arr = [7, 6, 18, 10, 5, 4, 3, 2, 1];
+//    for(var i = 0; i < arr.length; i++) {
+//        var bool = true;
+//        for(var j = 0; j < arr.length - i - 1; j++) {
+//            if (arr[j] > arr[j + 1]) {
+//                var temp = arr[j + 1];
+//                arr[j + 1] = arr[j];
+//                arr[j] = temp;
+//                bool = false;
+//            }
+//        }
+//        if(bool) break;
+//    }
+//
+//
+//    console.log(arr);
+
+
+//    var arr1 = [1, 2, 3];
+//    var arr2 = new Array();
+//
+//    var str1 = new String("abc");
+//    var str2 = "abc";
+//
+//    console.log(arr1 instanceof Array);
+//    console.log(Array.isArray(str1));
+//    console.log(str1 instanceof String);
+//    console.log(typeof str2)
+//    console.log(str2 instanceof String);
+
+
+//    var stu = new Stu();
+//    function Stu() {
+//        console.log("stu")
+//    }
+//    console.log(stu instanceof Stu)
+
+
+//    console.log(arr1);
+//    console.log(arr1.toString());
+//    console.log(typeof  arr1.toString());
+//    console.log(arr1.valueOf());
+//    console.log(typeof arr1.valueOf());
+
+
+//    var arr = ["guanyu", 'zhangfei', 'liubei'];
+//    var str1 = arr.join();
+//    console.log(str1)
+//    var str2 = arr.join('');
+//    console.log()
+
+
+//    var arr = [];
+//    arr.push(1);
+//    console.log(arr);
+
+
+//    fn(1,2,3);
+//    fn(1);
+//    fn(2,3,4,5);
+//
+//    function fn(a, b) {
+//        // arguments 实参数组, 可以修改元素, 但是不能改变长度,实参个数的长度
+////        arguments[0] = 0;
+////        console.log(arguments);
+////        console.log(arguments instanceof Array);
+//
+//        // error argument 不能使用push方法
+////        arguments.push(11);
+////        console.log(arguments);
+//
+//        // 形参个数
+////        console.log(fn.length);
+//        // 实参个数
+////        console.log(arguments.length)
+//
+////        arguments.callee 整个函数,函数名
+//        console.log(arguments.callee);
+//    }
+
+
+//    var arr1 = ["关羽", "张飞"];
+//    var arr2 = [1, 2, 3];
+//
+//    console.log(arr1);
+
+    // 数组末尾添加元素 (返回值为新数组长度)
+//    var arr = arr1.push("abc", "de");
+//    arr  = arr1.push(arr2);
+//    console.log(arr1);
+//    console.log(arr);
+
+    // 数组末尾删除元素 (返回值为被删除的元素)
+//    var arr = arr1.pop();
+//    console.log(arr1);
+//    console.log(arr);
+
+    // 数组最前面添加元素 (返回新数组长度)
+//    var arr = arr1.unshift("abc");
+//    console.log(arr1);
+//    console.log(arr);
+
+    // 数组最前面删除元素 (返回被删除元素)
+//    var arr = arr1.shift();
+//    console.log(arr1);
+//    console.log(arr);
+
+
+
+//    var arr1 = [4, 7, 8, 4, 3, 1, 6 , 6];
+
+    // 反转数组
+//    console.log(arr1.reverse());
+
+    // 数组排序
+//    console.info(arr1.sort());
+//    console.log(arr1);
+//
+//    arr1.sort(function (a, b) {
+//        return a - b;
+//    })
+//    console.log(arr1);
+//
+//    alert("2".charCodeAt());
+
+//    var arr2 = ["a", "b", "c"];
+
+    // concat 数组链接
+//    var arr3 = arr1.concat(arr2);
+//    console.log(arr1);
+//    console.log(arr2);
+//    console.log(arr3);
+
+    // slice 数组截取
+//    var arr4 = arr3.slice(2);
+//    console.log(arr4);
+//
+//    var arr5 = arr3.splice(1, 5);
+//    console.log(arr5);
+
+//    console.log(arr1.indexOf(4));
+//    console.log(arr1.indexOf(10));
+//    console.log(arr1.lastIndexOf(4))
+
+
+//    var arr2 = ["a", "b", "c", "d", "e", "ff"];
+//    var bool = arr2.every(function (element, index, array) {
+//        console.log(element);
+//        console.log(index);
+//        if(element.length > 1) return false;
+//
+//        return true;
+//    })
+//
+//    alert(bool);
+
+
+//    var filter = arr2.filter(function (element, index, array) {
+//        if (element.length > 1) return true;
+//        return false;
+//    });
+//    console.log(filter);
+
+
+//    var foreach = "";
+//    arr2.forEach(function (p1, p2, p3) {
+//        foreach += p1;
+//    });
+//    console.log(foreach);
+
+
+//    var map = arr2.map(function (p1, p2, p3) {
+//        return p1 += "Hello";
+//    });
+//    console.log(map)
+
+
+//    var flag = arr2.some(function (p1, p2, p3) {
+//        if (p1.length > 1) return true;
+//        return false;
+//    });
+//    alert(flag);
+
+
+
+    var arr2 = ["a", "b", "c", "d", "e", "ff"];
+    console.log(arr2);
+    // 清空数组
+    arr2.splice(0);
+    console.log(arr2);
+
+    arr2.length = 0;
+    console.log(arr2);
+
+
+
+
+</script>

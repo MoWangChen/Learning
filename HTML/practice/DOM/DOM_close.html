@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>close</title>
+</head>
+<body>
+
+    <div class="top-banner" id="topBanner">
+        <div class="w">
+            <img src="image/1.jpg"/>
+            <a href="#" id="closeBanner">X</a>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<style>
+
+    * {
+        padding: 0;
+        margin: 5px;
+        margin: 0;
+    }
+
+    .top-banner {
+        background-color: pink;
+        height: 80px;
+    }
+
+    .w {
+        width: 1210px;
+        margin: 10px atuo;
+        position: relative;
+    }
+
+    img {
+        width: 1210px;
+        height: 80px;
+    }
+
+    a {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: #fff;
+    }
+
+    .hide {
+        display: none !important;
+    }
+
+</style>
+
+<script>
+
+    var topBanner = document.getElementById("topBanner");
+    var closeBanner = document.getElementById("closeBanner");
+
+    closeBanner.onclick = function () {
+        console.log(1);
+        topBanner.className += " hide";
+    }
+
+</script>

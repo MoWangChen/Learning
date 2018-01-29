@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <img src="image/jd1.png" id="box" style="cursor: pointer; border: 1px solid #ccc" />
+
+    <div id="box2" ></div>
+
+</body>
+</html>
+
+<script>
+    var img = document.getElementById("box");
+    img.onmouseover = function () {
+        this.src = "image/jd2.png";
+    }
+    img.onmouseout = function () {
+        this.src = "image/jd1.png";
+    }
+
+    console.log(document);
+    console.log(document.getElementById("box"));
+    console.log(document.getElementsByClassName("aaa"));
+
+</script>

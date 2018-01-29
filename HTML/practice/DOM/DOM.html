@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+
+    <div  id="box" ></div>
+
+</body>
+</html>
+
+<style>
+    /*div {*/
+        /*width: 100px;*/
+        /*height: 100px;*/
+        /*background-color: pink;*/
+        /*cursor: pointer;*/
+    /*}*/
+
+    .background {
+        background-color: red;
+    }
+</style>
+
+<script>
+//    var div = document.getElementById("box");
+//    div.onclick = function () {
+//        alert("1");
+//        div.className = "background";
+//        div.style.height = "200px";
+//        div.style.width = "200px";
+//        div.style.backgroundColor = "purple";
+//    }
+
+//    div.onclick = fn;
+//
+//    function fn() {
+//        alert(2);
+//    }
+
+    // onLoad 事件
+    window.onload = function () {
+        var aaa = document.getElementById("box");
+        console.log(aaa);
+        aaa.style.width = "100px";
+        aaa.style.height = "100px";
+        aaa.style.backgroundColor = "red";
+//        aaa.style.height =
+    }
+
+
+</script>

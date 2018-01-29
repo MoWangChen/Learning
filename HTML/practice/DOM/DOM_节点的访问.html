@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点</title>
+</head>
+<body>
+
+    <!--<div class="box1">-->
+        <!--<div class="box2" id="box2"></div>-->
+        <!--<div class="box3"></div>-->
+    <!--</div>-->
+
+    <a href="http://www.baidu.com" style="margin:10px; display: block" onclick="fn(); return false">百度</a>
+    <img src="image/1.jpg" class="box" id="test" title="图片" />
+
+</body>
+</html>
+
+<script>
+
+//    var box2 = document.getElementsByClassName("box2");
+//    var ele = box2[0];
+//    console.log(box2);
+//    console.log(ele);
+//    console.log(ele.parentNode);
+//    console.log(ele.nextElementSibling);
+//
+//    console.log(ele.parentNode.firstElementChild);
+//    console.log(ele.parentNode.children);
+
+
+//    var a = document.createElement("li");
+//    var b = document.createElement("abc");
+//    console.log(a);
+//    console.log(b);
+//
+//    var box1 = document.getElementsByClassName("box1")[0];
+//    box1.appendChild(a);
+//    box1.insertBefore(b, a);
+//    box1.removeChild(a);
+//
+//    var c = box1.cloneNode();
+//    var d = box1.cloneNode(true);
+//    console.log(c);
+//    console.log(d);
+//
+//    console.log(document);
+
+
+//    var eleNode = document.getElementsByTagName("img")[0];
+//
+//    eleNode.src = "image/jd2.png";
+//    eleNode.aaa = "bbb";
+//    console.log(eleNode.aaa);
+//    console.log(eleNode.src);
+//    console.log(eleNode.tagName);
+//    console.log(eleNode["title"]);
+//    console.log(eleNode["className"]);
+//    console.log(eleNode["alt"]);
+
+//    console.log(eleNode.getAttribute("id"));
+//    eleNode.setAttribute("id", "hello");
+//    console.log(eleNode.getAttribute("id"));
+//    eleNode.setAttribute("ccc", "ddd");
+//    eleNode.removeAttribute("id");
+//    console.log(eleNode.getAttribute("id"));
+//    console.log(eleNode["ccc"]);
+
+    var img = document.getElementsByTagName("img")[0];
+    function fn() {
+        img.src = "image/2.jpg";
+    }
+
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本框高亮显示</title>
+</head>
+<body>
+
+账号: <input type="text" onblur="fn(this)">
+密码: <input type="password" onblur="fn(this)">
+
+</body>
+</html>
+
+<style>
+    .wrong {
+        border: 2px solid red;
+    }
+
+    .right {
+        border: 2px solid #91B81D;
+    }
+</style>
+
+<script>
+    function fn(aaa) {
+        // html 中的input标签行内调用function的时候, 是先通过window调用的function, 所以打印this等于打印window
+        console.log(this);
+        // 只有传递的this才是标签本身
+        console.info(aaa);
+
+        if (aaa.value.length < 6 || aaa.value.length > 12) {
+            aaa.className = "wrong";
+        }else {
+            aaa.className = "right";
+        }
+    }
+</script>
