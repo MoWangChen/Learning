@@ -13,12 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let qrView = ColorfulQRCodeView(frame: CGRect(x: 50, y:50, width: 100, height: 100));
+        let qrView = ColorfulQRCodeMetalView(frame: CGRect(x: 50, y:50, width: 100, height: 100));
         self.view.addSubview(qrView);
         qrView.backgroundColor = UIColor.lightGray
         
         if let image = UIImage.init(named: "qrcode") {
-            qrView.setQRcodeImage(qrcodeImage: image)
+            qrView.setQRCodeImage(qrcodeImage: image)
         }
     }
 

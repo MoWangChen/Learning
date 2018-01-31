@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD2E5A562021A04D006A570B /* ColorfulQRCodeMetalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2E5A552021A04D006A570B /* ColorfulQRCodeMetalView.swift */; };
+		DD2E5A582021B65F006A570B /* qrcode.metal in Sources */ = {isa = PBXBuildFile; fileRef = DD2E5A572021B65F006A570B /* qrcode.metal */; };
 		DD6A8D76201F2851001B9B05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A8D75201F2851001B9B05 /* AppDelegate.swift */; };
 		DD6A8D78201F2851001B9B05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6A8D77201F2851001B9B05 /* ViewController.swift */; };
 		DD6A8D7B201F2851001B9B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6A8D79201F2851001B9B05 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD2E5A552021A04D006A570B /* ColorfulQRCodeMetalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulQRCodeMetalView.swift; sourceTree = "<group>"; };
+		DD2E5A572021B65F006A570B /* qrcode.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = qrcode.metal; sourceTree = "<group>"; };
 		DD6A8D72201F2851001B9B05 /* colorQrCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = colorQrCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD6A8D75201F2851001B9B05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD6A8D77201F2851001B9B05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 				DD6A8D75201F2851001B9B05 /* AppDelegate.swift */,
 				DD6A8D77201F2851001B9B05 /* ViewController.swift */,
 				DD6A8D87201F2A56001B9B05 /* ColorfulQRCodeView.swift */,
+				DD2E5A552021A04D006A570B /* ColorfulQRCodeMetalView.swift */,
+				DD2E5A572021B65F006A570B /* qrcode.metal */,
 				DD6A8D79201F2851001B9B05 /* Main.storyboard */,
 				DD6A8D7C201F2851001B9B05 /* Assets.xcassets */,
 				DD6A8D7E201F2851001B9B05 /* LaunchScreen.storyboard */,
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2E5A582021B65F006A570B /* qrcode.metal in Sources */,
 				DD6A8D78201F2851001B9B05 /* ViewController.swift in Sources */,
 				DD6A8D88201F2A56001B9B05 /* ColorfulQRCodeView.swift in Sources */,
+				DD2E5A562021A04D006A570B /* ColorfulQRCodeMetalView.swift in Sources */,
 				DD6A8D76201F2851001B9B05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
