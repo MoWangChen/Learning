@@ -1,0 +1,11 @@
+Package: com.iosre.iosregreetings
+Name: iOSREGreetings
+Depends: mobilesubstrate, firmware (>= 8.0)
+Architecture: iphoneos-arm
+Description: Greetings from iOSRE!
+Maintainer: mowangchen
+Author: mowangchen
+Section: Tweaks
+Homepage: http://bbs.iosre.com
+Version: 0.0.1-4+debug
+Installed-Size: 136

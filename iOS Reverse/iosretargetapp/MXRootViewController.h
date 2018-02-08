@@ -1,0 +1,3 @@
+@interface MXRootViewController : UITableViewController
+
+@end

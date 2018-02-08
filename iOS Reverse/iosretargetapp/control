@@ -1,0 +1,8 @@
+Package: com.iosre.iosretargetapp
+Name: iOSRETargetApp
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome application!
+Maintainer: mowangchen
+Author: mowangchen
+Section: Utilities
